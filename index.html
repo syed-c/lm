@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      window.onerror = function(message, source, lineno, colno, error) {
+        // Safe-guard: Ignore cross-origin third-party "Script error" or empty source references
+        // since they do not affect our application and are usually triggered by browser extensions or iframe wrappers.
+        if (message === "Script error." || message === "Script error" || !source) {
+          console.warn("Benign cross-origin script error ignored:", message);
+          return true; // Return true to prevent browser propagation of cross-origin script errors
+        }
+
+        console.error("%c🚨 GLOBAL ERROR CAPTURED:", "color: white; background: #e11d48; font-weight: bold; padding: 4px 8px; border-radius: 4px;");
+        console.error("Message:", message);
+        console.error("Source:", source, "Line:", lineno, "Col:", colno);
+        if (error && error.stack) {
+          console.error("Stack Trace:\n", error.stack);
+        } else {
+          console.error("No stack trace available.");
+        }
+
+        var errorData = {
+          type: 'error',
+          message: message,
+          source: source,
+          lineno: lineno,
+          colno: colno,
+          stack: error ? error.stack : null
+        };
+        fetch('/api/log-client-error', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(errorData)
+        }).catch(function() {});
+        return false;
+      };
+      window.addEventListener('unhandledrejection', function(event) {
+        var message = event.reason ? (event.reason.message || String(event.reason)) : 'Promise rejected';
+        var stack = event.reason ? event.reason.stack : null;
+
+        // Safe-guard: Ignore cross-origin third-party rejection errors
+        if (message.indexOf('Script error') !== -1) {
+          console.warn("Benign unhandled rejection ignored:", message);
+          event.preventDefault(); // Prevent default browser logging of this unhandled promise rejection
+          return;
+        }
+
+        console.error("%c🚨 UNHANDLED PROMISE REJECTION CAPTURED:", "color: white; background: #be123c; font-weight: bold; padding: 4px 8px; border-radius: 4px;");
+        console.error("Reason:", event.reason);
+        if (stack) {
+          console.error("Stack Trace:\n", stack);
+        }
+
+        var errorData = {
+          type: 'unhandledrejection',
+          message: message,
+          stack: stack
+        };
+        fetch('/api/log-client-error', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(errorData)
+        }).catch(function() {});
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
