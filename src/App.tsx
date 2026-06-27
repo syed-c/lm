@@ -7,6 +7,7 @@ import React from 'react';
 import { AppRouter, RouteView, useRouter, Link } from './components/AppRouter.tsx';
 import { SiteHeader } from './components/SiteHeader.tsx';
 import { SiteFooter } from './components/SiteFooter.tsx';
+import { FloatingContactWidget } from './components/FloatingContactWidget.tsx';
 
 // View Imports
 import { HomeView } from './components/views/HomeView.tsx';
@@ -284,6 +285,9 @@ export default function App() {
         
         {/* Core Footer */}
         <SiteFooter />
+        
+        {/* Floating Patient Appointment / Care Routing Widget */}
+        <FloatingContactWidget />
       </div>
     </AppRouter>
   );

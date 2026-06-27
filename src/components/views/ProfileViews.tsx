@@ -21,7 +21,114 @@ interface PortraitPlaceholderProps {
   landscape?: boolean;
 }
 
+const getImageUrlByDescription = (desc: string): string | null => {
+  const d = desc.toLowerCase();
+  
+  // 1. Dr. Liyan Massaband - Official Portraits & Profiles
+  if (
+    d.includes('profile headshot') || 
+    d.includes('biographical portrait') || 
+    d.includes('portrait description') || 
+    d.includes('sidebar profile') || 
+    d.includes('official profile') ||
+    d.includes('official biographical portrait') ||
+    d.includes('official profile headshot')
+  ) {
+    return 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop';
+  }
+  
+  // 2. Warm Reflected Studio Portrait / Her Story / Journey
+  if (
+    d.includes('warm reflected') || 
+    d.includes('her-story') || 
+    d.includes('journey portrait') ||
+    d.includes('story portrait')
+  ) {
+    return 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop';
+  }
+
+  // 3. Clinical / Philosophy / Patient Care & Consultation
+  if (
+    d.includes('philosophy') || 
+    d.includes('patient care') || 
+    d.includes('patient consultation') || 
+    d.includes('comfort') ||
+    d.includes('consultation scene')
+  ) {
+    return 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop';
+  }
+
+  // 4. Burbank Practice / Magnolia Dentistry / Magnolia Office
+  if (
+    d.includes('burbank') || 
+    d.includes('magnolia')
+  ) {
+    return 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop';
+  }
+
+  // 5. Beverly Hills Practice / ConfiDental / ConfiDental Smile Design
+  if (
+    d.includes('beverly hills') || 
+    d.includes('confidental') ||
+    d.includes('smile design')
+  ) {
+    return 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop';
+  }
+
+  // 6. Academic / USC / Credentials & diplomas
+  if (
+    d.includes('academic') || 
+    d.includes('university') || 
+    d.includes('credential') ||
+    d.includes('diploma')
+  ) {
+    return 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop';
+  }
+
+  // 7. Press / Corporate / Speaking & Closing Snapshot
+  if (
+    d.includes('press') || 
+    d.includes('media') || 
+    d.includes('corporate') || 
+    d.includes('closing') ||
+    d.includes('speaking')
+  ) {
+    return 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?q=80&w=800&auto=format&fit=crop';
+  }
+
+  return 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop';
+};
+
 export const PortraitPlaceholder: React.FC<PortraitPlaceholderProps> = ({ description, landscape = false }) => {
+  const imageUrl = getImageUrlByDescription(description);
+
+  if (imageUrl) {
+    return (
+      <div 
+        className={`relative overflow-hidden rounded-2xl border border-brand-stone bg-brand-ivory group shadow-sm transition-all duration-300 hover:border-brand-bronze hover:shadow-md ${
+          landscape ? 'aspect-16/9' : 'aspect-3/4'
+        }`}
+        id={`portrait-${description.toLowerCase().replace(/[^a-z]/g, '-')}`}
+      >
+        <img 
+          src={imageUrl} 
+          alt={description}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          referrerPolicy="no-referrer"
+        />
+        {/* Elegant overlay for title and accessibility caption */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <p className="text-white text-xs font-sans font-bold leading-tight">
+            {description}
+          </p>
+          <span className="text-[10px] text-slate-300 font-mono block mt-1 uppercase tracking-wider">
+            Verified Photography Clearances Active
+          </span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`border border-brand-stone bg-brand-ivory text-slate-600 p-6 md:p-8 rounded-2xl flex flex-col items-center justify-center text-center relative overflow-hidden transition-all duration-300 group hover:border-brand-bronze hover:shadow-xs ${
       landscape ? 'aspect-16/9' : 'aspect-3/4'
