@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter, Link } from '../AppRouter.tsx';
 import { VIDEOS, ARTICLES, BRAND_CONFIG, ArticleRecord, VideoRecord } from '../../data.ts';
 import { SourceReferenceBadge } from '../SourceReferenceBadge.tsx';
+import { InteractiveVideoPlayer } from '../InteractiveVideoPlayer.tsx';
 import { 
   Play, 
   Clock, 
@@ -116,61 +117,8 @@ export const MicroMarkdownParser: React.FC<{ text: string }> = ({ text }) => {
 
 // Lazy loaded Video Player Component (Performance benchmark)
 export const LazyVideoPlayer: React.FC<{ video: VideoRecord }> = ({ video }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const getYoutubeEmbedUrl = (youtubeId: string) => {
-    return `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`;
-  };
-
-  const getPosterUrl = (youtubeId: string) => {
-    // If pending/mock ID, use elegant placeholder representation
-    if (youtubeId.startsWith('placeholder')) {
-      return `https://picsum.photos/seed/${youtubeId}/1280/720`;
-    }
-    return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
-  };
-
   return (
-    <div className="relative aspect-video bg-black rounded-2xl overflow-hidden border border-brand-stone group shadow-md" id={`video-player-frame-${video.id}`}>
-      {isPlaying ? (
-        <iframe
-          src={getYoutubeEmbedUrl(video.youtubeId)}
-          title={video.title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full"
-        />
-      ) : (
-        <>
-          {/* Static High Res poster image */}
-          <img
-            src={getPosterUrl(video.youtubeId)}
-            alt={video.title}
-            className="w-full h-full object-cover opacity-80 group-hover:scale-102 transition-transform duration-500 ease-out"
-            referrerPolicy="no-referrer"
-          />
-
-          {/* Elegant dark overlay */}
-          <div className="absolute inset-0 bg-neutral-900/30" />
-
-          {/* Large play button with hover interaction */}
-          <button
-            onClick={() => setIsPlaying(true)}
-            className="absolute inset-0 flex flex-col items-center justify-center text-brand-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-bronze cursor-pointer"
-            aria-label={`Play video: ${video.title}`}
-          >
-            <div className="p-5 md:p-6 bg-brand-bronze hover:bg-brand-bronze-light text-brand-white rounded-full transition-all duration-300 transform group-hover:scale-110 shadow-2xl flex items-center justify-center">
-              <Play className="w-7 h-7 fill-white translate-x-0.5" />
-            </div>
-            
-            <span className="mt-4 px-3 py-1 bg-neutral-900/95 backdrop-blur-xs text-xs font-mono tracking-widest text-slate-200 uppercase rounded-full border border-neutral-800 shadow-lg">
-              Duration: {video.duration} • Click to Load Video
-            </span>
-          </button>
-        </>
-      )}
-    </div>
+    <InteractiveVideoPlayer video={video} aspectRatioClassName="aspect-video" />
   );
 };
 

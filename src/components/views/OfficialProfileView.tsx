@@ -18,7 +18,8 @@ import {
   ChevronRight,
   UserCheck
 } from 'lucide-react';
-import { BRAND_CONFIG, VERIFIED_SOURCES } from '../../data.ts';
+import { BRAND_CONFIG, VERIFIED_SOURCES, VIDEOS } from '../../data.ts';
+import { InteractiveVideoPlayer } from '../InteractiveVideoPlayer.tsx';
 
 export const OfficialProfileView: React.FC = () => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
@@ -334,14 +335,11 @@ export const OfficialProfileView: React.FC = () => {
               </p>
 
               {/* Video Player Display */}
-              <div className="border border-brand-stone rounded-2xl overflow-hidden bg-brand-charcoal relative aspect-16/9 shadow-md flex items-center justify-center p-2 group" id="featured-video-module">
-                <iframe 
-                  className="w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/-6nZKwfkXzc" 
-                  title="Dr. Liyan Massaband Official Verification Introduction Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                />
+              <div className="max-w-3xl" id="featured-video-module">
+                {(() => {
+                  const featuredVid = VIDEOS.find(v => v.youtubeId === "-6nZKwfkXzc") || VIDEOS[0];
+                  return <InteractiveVideoPlayer video={featuredVid} aspectRatioClassName="aspect-video" />;
+                })()}
               </div>
 
               <div className="flex justify-between items-center bg-brand-stone/10 p-4 rounded-xl border border-brand-stone">

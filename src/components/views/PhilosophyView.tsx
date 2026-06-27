@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter, Link } from '../AppRouter.tsx';
 import { SourceReferenceBadge } from '../SourceReferenceBadge.tsx';
 import { PortraitPlaceholder } from './ProfileViews.tsx';
+import { InteractiveVideoPlayer } from '../InteractiveVideoPlayer.tsx';
 import { 
   HeartHandshake, 
   Sparkles, 
@@ -17,7 +18,7 @@ import {
   ChevronRight,
   Accessibility
 } from 'lucide-react';
-import { BRAND_CONFIG } from '../../data.ts';
+import { BRAND_CONFIG, VIDEOS } from '../../data.ts';
 
 export const PhilosophyView: React.FC = () => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
@@ -166,14 +167,11 @@ export const PhilosophyView: React.FC = () => {
               </p>
 
               {/* Patient Comfort YouTube Short Embed */}
-              <div className="border border-brand-stone rounded-2xl overflow-hidden bg-brand-charcoal aspect-9/16 max-w-xs mx-auto md:mx-0 shadow-md relative group my-6 overflow-hidden flex items-center justify-center p-2" id="shorts-video-player">
-                <iframe 
-                  className="w-full h-full rounded-xl"
-                  src="https://www.youtube.com/embed/MLlNGQlBmVI" 
-                  title="Dr. Liyan Massaband Shorts Video - Patient Dental Anxiety Mitigation"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                />
+              <div className="max-w-lg my-6" id="shorts-video-player">
+                {(() => {
+                  const anxietyVideo = VIDEOS.find(v => v.youtubeId === "MLlNGQlBmVI") || VIDEOS[6];
+                  return <InteractiveVideoPlayer video={anxietyVideo} aspectRatioClassName="aspect-video" />;
+                })()}
               </div>
             </section>
 

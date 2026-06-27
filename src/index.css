@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Elegant Brand Fonts */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-mono: "Plus Jakarta Sans", var(--font-sans);
+  /* Round and Bold Geometric Brand Fonts */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "Outfit", monospace;
 
   /* Sophisticated Dental Clinic Light Color System */
-  --color-brand-charcoal: #2A302E;         /* Rich clinical slate-charcoal text */
+  --color-brand-charcoal: #1A2421;         /* Deepest rich pine/charcoal for premium readability */
   --color-brand-dark: #FAF8F5;             /* Warm alabaster/ivory background */
-  --color-brand-ivory: #F3ECE2;            /* Luxurious sand-gold panel surface */
+  --color-brand-ivory: #F5EDE4;            /* Luxurious sand-gold panel surface */
   --color-brand-white: #FAF8F5;            /* Crisp clean body backdrop */
-  --color-brand-stone: #E1DACF;            /* Delicate champagne-stone borders */
-  --color-brand-bronze: #1F4D44;           /* Royal Eucalyptus Teal Accent - highly medical & serene */
-  --color-brand-bronze-light: #2D6B5E;     /* Brighter teal hover */
-  --color-brand-plum: #A38560;             /* Muted Champagne Gold secondary accent */
-  --color-brand-plum-light: #BFA888;       /* Lighter gold hover */
+  --color-brand-stone: #DFD5C6;            /* Delicate champagne-stone borders */
+  --color-brand-bronze: #123C33;           /* Royal deep green-teal accent - authoritative & medical */
+  --color-brand-bronze-light: #1A5448;     /* Warm friendly teal hover */
+  --color-brand-plum: #A37F55;             /* Muted Champagne Gold secondary accent */
+  --color-brand-plum-light: #BC9970;       /* Lighter gold hover */
 }
 
 /* Base Accessibility, Layout and Scroll Anchoring Customizations */
@@ -26,14 +26,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #FAF8F5;
-    color: #2A302E;
+    color: #1A2421;
   }
 
   body {
     font-family: var(--font-sans);
     overflow-x: hidden;
     background-color: #FAF8F5;
-    color: #2A302E;
+    color: #1A2421;
   }
 
   /* Structural shell layout - clean and seamless */
@@ -44,31 +44,35 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
-    color: #1A2E26; /* Deep forest-teal for rich contrast */
+    font-weight: 700; /* Force bold/extra bold round styles */
+    letter-spacing: -0.015em;
+    color: #0F2D26; /* High contrast deep medical pine forest */
   }
 
   /* Maintain beautiful, high-contrast light-mode colors */
   .text-slate-500 {
-    color: #6B7280 !important;
+    color: #4A5560 !important; /* Made significantly darker for readability */
   }
   .text-slate-600 {
-    color: #4B5563 !important;
+    color: #33414D !important; /* Made significantly darker */
   }
   .text-slate-400 {
-    color: #8C8C8C !important;
+    color: #5C6A75 !important; /* Lifted from low-contrast light grey to readable slate */
+  }
+  .text-slate-300 {
+    color: #E2E8F0 !important;
   }
   .text-slate-800 {
-    color: #1F2937 !important;
+    color: #0F171E !important;
   }
   .text-slate-700 {
-    color: #374151 !important;
+    color: #24303B !important;
   }
   .text-slate-900 {
-    color: #111827 !important;
+    color: #090D11 !important;
   }
   .text-brand-charcoal {
-    color: #2A302E !important;
+    color: #1A2421 !important;
   }
 
   /* Soft light-mode container backgrounds */
@@ -79,25 +83,25 @@
     background-color: #FAF8F5 !important;
   }
   .bg-brand-ivory {
-    background-color: #F3ECE2 !important;
+    background-color: #F5EDE4 !important;
   }
   
   /* Inputs & Forms styled after luxury medical/clinic theme */
   input, textarea, select {
     background-color: #FFFFFF !important;
-    border-color: #E1DACF !important;
-    color: #2A302E !important;
+    border-color: #DFD5C6 !important;
+    color: #1A2421 !important;
   }
   input:focus, textarea:focus, select:focus {
-    border-color: #1F4D44 !important;
-    --tw-ring-color: #1F4D44 !important;
+    border-color: #123C33 !important;
+    --tw-ring-color: #123C33 !important;
   }
 
   /* Custom keyboard focus states compliant with WCAG AA */
   *:focus-visible {
-    outline: 2px solid #1F4D44;
+    outline: 2px solid #123C33;
     outline-offset: 4px;
-    box-shadow: 0 0 0 4px rgba(31, 77, 68, 0.4);
+    box-shadow: 0 0 0 4px rgba(18, 60, 51, 0.4);
   }
 
   /* Clean up lists to match standard */
@@ -110,7 +114,7 @@
     @apply font-sans leading-relaxed text-slate-700 space-y-6 text-[17px] md:text-[18px];
   }
   .markdown-body h2 {
-    @apply text-2xl md:text-3xl font-display font-medium text-brand-bronze tracking-tight mt-8 mb-4 border-b border-brand-stone pb-2;
+    @apply text-2xl md:text-3xl font-display font-bold text-brand-bronze tracking-tight mt-8 mb-4 border-b border-brand-stone pb-2;
   }
   .markdown-body p {
     @apply mt-2 mb-6 text-slate-700;

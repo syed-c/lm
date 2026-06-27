@@ -3,6 +3,7 @@ import { useRouter, Link } from '../AppRouter.tsx';
 import { EnquiryForm } from '../EnquiryForm.tsx';
 import { SourceReferenceBadge } from '../SourceReferenceBadge.tsx';
 import { PortraitPlaceholder } from './ProfileViews.tsx';
+import { InteractiveVideoPlayer } from '../InteractiveVideoPlayer.tsx';
 import { 
   GraduationCap, 
   ArrowRight, 
@@ -1171,37 +1172,8 @@ export const HomeView: React.FC = () => {
 
             {/* Featured player panel */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
-              <div className="lg:col-span-8 bg-black rounded-2xl overflow-hidden border border-brand-stone relative group aspect-video">
-                {activeVideoId === vids.featuredVideo.id ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${vids.featuredVideo.youtubeId}?autoplay=1&rel=0`}
-                    title={vids.featuredVideo.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <>
-                    <img 
-                      src={`https://img.youtube.com/vi/${vids.featuredVideo.youtubeId}/hqdefault.jpg`} 
-                      alt={vids.featuredVideo.title}
-                      className="w-full h-full object-cover opacity-70 group-hover:scale-102 transition-transform duration-300 pointer-events-none"
-                    />
-                    <div className="absolute inset-0 bg-neutral-950/40 flex flex-col items-center justify-center p-4">
-                      <button
-                        onClick={() => setActiveVideoId(vids.featuredVideo.id)}
-                        className="p-5 bg-brand-bronze hover:bg-brand-bronze-light text-brand-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-2xl flex items-center justify-center cursor-pointer focus:ring-2 focus:ring-offset-2 focus:ring-brand-bronze"
-                        aria-label={`Play Featured Video: ${vids.featuredVideo.title}`}
-                      >
-                        <Play className="w-7 h-7 fill-white translate-x-0.5" />
-                      </button>
-                      <span className="mt-4 px-3 py-1 bg-brand-charcoal/95 backdrop-blur-xs text-[10px] font-mono tracking-widest text-white uppercase rounded-full border border-brand-stone">
-                        Featured Click to Load Video Embed (4:12 Min)
-                      </span>
-                    </div>
-                  </>
-                )}
+              <div className="lg:col-span-8">
+                <InteractiveVideoPlayer video={vids.featuredVideo} aspectRatioClassName="aspect-video" />
               </div>
 
               {/* Side text descriptors */}
