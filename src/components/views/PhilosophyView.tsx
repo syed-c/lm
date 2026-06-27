@@ -166,7 +166,7 @@ export const PhilosophyView: React.FC = () => {
               </p>
 
               {/* Patient Comfort YouTube Short Embed */}
-              <div className="border border-brand-stone rounded-2xl overflow-hidden bg-[#0A0A0A] aspect-9/16 max-w-xs mx-auto md:mx-0 shadow-md relative group my-6 overflow-hidden flex items-center justify-center p-2" id="shorts-video-player">
+              <div className="border border-brand-stone rounded-2xl overflow-hidden bg-brand-charcoal aspect-9/16 max-w-xs mx-auto md:mx-0 shadow-md relative group my-6 overflow-hidden flex items-center justify-center p-2" id="shorts-video-player">
                 <iframe 
                   className="w-full h-full rounded-xl"
                   src="https://www.youtube.com/embed/MLlNGQlBmVI" 
@@ -310,49 +310,49 @@ export const PhilosophyView: React.FC = () => {
       </div>
 
       {/* Recommended Related Navigation Links */}
-      <section className="bg-brand-charcoal text-slate-300 py-16 border-t border-brand-stone" id="authority-hub-navigation">
+      <section className="bg-brand-ivory text-slate-700 py-16 border-t border-brand-stone" id="authority-hub-navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <span className="text-[10px] font-mono text-brand-bronze uppercase tracking-widest block">Authority Index Ecosystem</span>
-            <h3 className="font-display font-medium text-2xl text-brand-white">Explore Dr. Liyan Massaband's Profile</h3>
+            <h3 className="font-display font-medium text-2xl text-brand-charcoal">Explore Dr. Liyan Massaband's Profile</h3>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="related-pages-grid">
-            <Link to="/dr-liyan-massaband/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Official Directory</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Official Profile</span>
+            <Link to="/dr-liyan-massaband/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Official Directory</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Official Profile</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/her-story/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Biography</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Her Story</span>
+            <Link to="/her-story/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Biography</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Her Story</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/education-and-credentials/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Academia</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Education & Certs</span>
+            <Link to="/education-and-credentials/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Academia</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Education & Certs</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/professional-journey/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Timeline</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Journey</span>
+            <Link to="/professional-journey/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Timeline</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Journey</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/clinical-affiliations/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Clinics</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Affiliations</span>
+            <Link to="/clinical-affiliations/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Clinics</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Affiliations</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>

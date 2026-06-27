@@ -164,7 +164,7 @@ export const LazyVideoPlayer: React.FC<{ video: VideoRecord }> = ({ video }) => 
               <Play className="w-7 h-7 fill-white translate-x-0.5" />
             </div>
             
-            <span className="mt-4 px-3 py-1 bg-brand-dark/80 backdrop-blur-xs text-xs font-mono tracking-widest text-slate-300 uppercase rounded-full border border-brand-charcoal">
+            <span className="mt-4 px-3 py-1 bg-neutral-900/95 backdrop-blur-xs text-xs font-mono tracking-widest text-slate-200 uppercase rounded-full border border-neutral-800 shadow-lg">
               Duration: {video.duration} • Click to Load Video
             </span>
           </button>

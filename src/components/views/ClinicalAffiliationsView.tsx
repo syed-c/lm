@@ -21,19 +21,19 @@ export const ClinicalAffiliationsView: React.FC = () => {
       </div>
 
       {/* Redirection Legal Banner (SEO Protection) */}
-      <div className="bg-brand-charcoal border border-brand-stone/40 p-5 md:p-6 rounded-2xl mb-12 max-w-5xl text-slate-300 font-sans flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-brand-ivory border border-brand-stone p-5 md:p-6 rounded-2xl mb-12 max-w-5xl text-slate-600 font-sans flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs">
         <div className="space-y-1.5 max-w-2xl">
-          <span className="text-xs font-mono font-bol text-brand-bronze uppercase tracking-wider block flex items-center gap-1.5">
+          <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-wider block flex items-center gap-1.5">
             <ShieldAlert className="w-4 h-4" /> Separation of Commercial entities
           </span>
-          <p className="text-xs text-slate-400 leading-relaxed">
+          <p className="text-xs text-slate-500 leading-relaxed">
             This authority platform does not collect dental diagnostics, treat patients, or compete against localized clinic search queries. Patient appointments and booking integrations are securely routed to the respective clinics below.
           </p>
         </div>
         
-        <div className="bg-brand-dark/80 px-3.5 py-2.5 rounded-lg text-xs font-mono text-center shrink-0 border border-brand-charcoal">
-          <span className="text-brand-white block font-bold">NPI COMPLIANCE</span>
-          <span className="text-brand-bronze">LICENSE ACTIVE</span>
+        <div className="bg-brand-bronze/5 px-3.5 py-2.5 rounded-lg text-xs font-mono text-center shrink-0 border border-brand-stone/40">
+          <span className="text-brand-charcoal block font-bold">NPI COMPLIANCE</span>
+          <span className="text-brand-bronze font-bold">LICENSE ACTIVE</span>
         </div>
       </div>
 

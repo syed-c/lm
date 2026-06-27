@@ -90,8 +90,8 @@ export const EducationView: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Section (Dark Academic Editorial) */}
-      <section className="bg-[#0b0b0b] text-brand-white py-12 md:py-20 border-b border-brand-stone" id="education-hero">
+      {/* Hero Section (Ivory Academic Clinical) */}
+      <section className="bg-brand-ivory text-brand-charcoal py-12 md:py-20 border-b border-brand-stone/40" id="education-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
             
@@ -109,30 +109,30 @@ export const EducationView: React.FC = () => {
               </span>
               
               <div className="space-y-2">
-                <h1 className="font-display font-medium text-3xl md:text-5.5xl tracking-tight text-brand-white leading-none">
+                <h1 className="font-display font-medium text-3xl md:text-5.5xl tracking-tight text-brand-charcoal leading-none">
                   Education & Credentials
                 </h1>
-                <p className="text-xs font-mono uppercase tracking-widest text-slate-400 font-medium">
+                <p className="text-xs font-mono uppercase tracking-widest text-slate-500 font-medium">
                   Verifiable Licensure & Double Degree Frameworks
                 </p>
               </div>
 
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed font-sans max-w-2xl">
+              <p className="text-slate-650 text-sm md:text-base leading-relaxed font-sans max-w-2xl">
                 Review the certified historical milestones of Dr. Liyan Massaband’s academic training. Fusing systematic physiological sciences, public health preventative coordination, and modern surgical dental technologies, her credentials demonstrate a verified dedication to biological patient wellness.
               </p>
 
               {/* Institution Icons Highlight */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-brand-stone/30 text-center text-xs text-slate-400 font-mono">
+              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-brand-stone/30 text-center text-xs text-slate-500 font-mono">
                 <div className="space-y-1">
-                  <span className="block font-bold text-brand-white text-xs">UArizona</span>
+                  <span className="block font-bold text-brand-charcoal text-xs">UArizona</span>
                   <span>Physiological BS</span>
                 </div>
                 <div className="space-y-1 border-l border-brand-stone/40">
-                  <span className="block font-bold text-brand-white text-xs">USC</span>
+                  <span className="block font-bold text-brand-charcoal text-xs">USC</span>
                   <span>Public Health MPH</span>
                 </div>
                 <div className="space-y-1 border-l border-brand-stone/40">
-                  <span className="block font-bold text-brand-white text-xs">Midwestern</span>
+                  <span className="block font-bold text-brand-charcoal text-xs">Midwestern</span>
                   <span>Dental Medal DMD</span>
                 </div>
               </div>
@@ -468,10 +468,10 @@ export const EducationView: React.FC = () => {
         </section>
 
         {/* University Brand & Logo Disclaimer Section */}
-        <section className="mt-16 bg-[#1a1a1a] border border-brand-charcoal p-5 md:p-6 rounded-xl text-[11px] text-slate-400 font-mono leading-relaxed flex items-start gap-4" id="university-trademark-disclaimer">
+        <section className="mt-16 bg-brand-stone/10 border border-brand-stone/30 p-5 md:p-6 rounded-xl text-[11px] text-slate-500 font-mono leading-relaxed flex items-start gap-4" id="university-trademark-disclaimer">
           <FileCheck className="w-5 h-5 text-brand-bronze shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <span className="font-bold text-slate-200 uppercase">Trademark & Institutional Entity Disclaimer:</span>
+            <span className="font-bold text-brand-charcoal uppercase">Trademark & Institutional Entity Disclaimer:</span>
             <p className="text-[10px]">
               Academic nomenclature, including the University of Arizona, the University of Southern California (USC), and Midwestern University, is utilized here for historical biographical reference only. These listings corroborate Dr. Massaband’s verified academic past but do not constitute corporate sponsorship, endorsement, or marketing agreements from these respective board offices.
             </p>
@@ -481,49 +481,49 @@ export const EducationView: React.FC = () => {
       </div>
 
       {/* Recommended Related Navigation Links */}
-      <section className="bg-brand-charcoal text-slate-300 py-16 border-t border-brand-stone" id="authority-hub-navigation">
+      <section className="bg-brand-ivory text-slate-700 py-16 border-t border-brand-stone" id="authority-hub-navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <span className="text-[10px] font-mono text-brand-bronze uppercase tracking-widest block">Authority Index Ecosystem</span>
-            <h3 className="font-display font-medium text-2xl text-brand-white">Explore Dr. Liyan Massaband's Profile</h3>
+            <h3 className="font-display font-medium text-2xl text-brand-charcoal">Explore Dr. Liyan Massaband's Profile</h3>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="related-pages-grid">
-            <Link to="/dr-liyan-massaband/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Official Directory</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Official Profile</span>
+            <Link to="/dr-liyan-massaband/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Official Directory</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Official Profile</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/her-story/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Biography</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Her Story</span>
+            <Link to="/her-story/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Biography</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Her Story</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/professional-journey/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Timeline</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Journey</span>
+            <Link to="/professional-journey/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Timeline</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Journey</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/philosophy/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Core Beliefs</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Philosophy</span>
+            <Link to="/philosophy/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Core Beliefs</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Philosophy</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/clinical-affiliations/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Clinics</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Affiliations</span>
+            <Link to="/clinical-affiliations/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Clinics</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Affiliations</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>

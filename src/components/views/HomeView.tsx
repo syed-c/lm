@@ -803,359 +803,9 @@ export const HomeView: React.FC = () => {
   const { section_12_articles: artSec } = cmsData;
   const { section_13_closing: closing } = cmsData;
 
-  // Custom static facts which are currently unapproved
-  const unapprovedFactsList = [
-    { text: 'Magnolia Dentistry: "15+ Years transforming smiles"', source: 'Burbank clinic profile' },
-    { text: 'Magnolia Dentistry: "1,000+ Successful implant procedures"', source: 'Burbank clinic surgery logs' },
-    { text: 'First-person personal statement placeholder: "[Insert approved statement about care, trust..."', source: 'Home Introduction panel' },
-    { text: 'Clinical result case visual images representing prior patient examples', source: 'Practice gallery sheets' }
-  ];
-
-  // List of required photographs labeled clearly with descriptions
-  const photographsRequiredList = [
-    { title: 'Official Biographical Portrait', aspect: 'Vertical Portrait', desc: 'Dr. Liyan Massaband looking confident, lit with split ambient studio lighting, styled against plain charcoal.', area: 'Editorial Hero' },
-    { title: 'Environmental Practice Snapshot', aspect: 'Asymmetric Landscape', desc: 'Natural candid photograph of Dr. Massaband engaged in biological consultation planning.', area: 'Introduction Profile' },
-    { title: 'Academic Record Snapshot', aspect: 'Document Scan', desc: 'Official diploma framework check verification layouts.', area: 'Education and Credentials' },
-    { title: 'Patient Consultation Scene', aspect: 'Soft focus horizontal', desc: 'Dr. Liyan discussing restoration diagnostics over a physical anatomical dental model.', area: 'Philosophy of Care' },
-    { title: 'Magnolia Office Environment', aspect: 'Symmetry Landscape', desc: 'Burbank Magnolia Dentistry clean architectural facade and digital operations floor.', area: 'Clinical Affiliations' },
-    { title: 'ConfiDental Smile Design room', aspect: 'High-contrast landscape', desc: 'Beverly Hills ConfiDental cosmetic treatment space.', area: 'Clinical Affiliations' },
-    { title: 'Media Enquiries Consultation Snapshot', aspect: 'Split-toned Horizontal', desc: 'Dr. Liyan Massaband holding speaking notes on stage.', area: 'Editorial Closing Card' }
-  ];
-
   return (
     <div id="homepage-root-node" className="relative min-h-screen bg-brand-white text-brand-charcoal">
       
-      {/* ⚙️ SUBTLE FLOATING CMS CONTROLLERS FOR DEVELOPER TESTABILITY */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <button
-          onClick={() => setCmsPanelOpen(!cmsPanelOpen)}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-bronze hover:bg-brand-bronze-light text-white shadow-xl transition-all cursor-pointer group border border-brand-stone/30"
-          title="Open CMS Simulation Control Panel"
-          id="cms-floating-action-trigger"
-        >
-          <Settings className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-        </button>
-      </div>
-
-      {cmsPanelOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-charcoal/65 backdrop-blur-md animate-reveal">
-          <div className="bg-[#121212] border border-brand-stone shadow-2xl rounded-2xl w-full max-w-5xl mx-4 max-h-[85vh] overflow-hidden flex flex-col text-xs text-slate-300" id="cms-dashboard-expanded-panel">
-            
-            {/* Header */}
-            <div className="p-4 bg-brand-charcoal border-b border-brand-stone flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="font-mono text-white font-bold uppercase tracking-widest text-[10.5px]">
-                  Studio CMS Simulation Dashboard v1.1
-                </span>
-                <span className="text-[10px] text-slate-400">| Sandbox database simulator</span>
-              </div>
-              <button
-                onClick={() => setCmsPanelOpen(false)}
-                className="px-3 py-1 text-slate-200 hover:text-white bg-white/10 hover:bg-white/20 rounded-lg font-sans font-bold cursor-pointer transition-colors"
-              >
-                Close Panel
-              </button>
-            </div>
-
-            {/* Body */}
-            <div className="flex-1 overflow-y-auto p-5">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                
-                {/* CMS Navigation sidebar */}
-                <div className="lg:col-span-3 flex flex-col gap-2 border-r border-brand-stone/30 pr-4">
-                  <span className="text-[9.5px] font-mono uppercase text-slate-500 font-bold tracking-widest block mb-1">
-                    Database Management
-                  </span>
-                  <button
-                    onClick={() => setActiveCmsTab('sections')}
-                    className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
-                      activeCmsTab === 'sections' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
-                    }`}
-                  >
-                    <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5" /> 1. Section Controls</span>
-                    <span className="text-[10px] bg-brand-bronze/10 text-brand-bronze px-1.5 py-0.2 rounded font-mono">13</span>
-                  </button>
-                  <button
-                    onClick={() => setActiveCmsTab('fields')}
-                    className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
-                      activeCmsTab === 'fields' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
-                    }`}
-                  >
-                    <span className="flex items-center gap-1.5"><BookOpen className="w-3.5 h-3.5" /> 2. Copy String Inputs</span>
-                    <span className="text-[10px] bg-neutral-800 text-slate-400 px-1.5 py-0.2 rounded font-mono">Realtime</span>
-                  </button>
-                  <button
-                    onClick={() => setActiveCmsTab('audits')}
-                    className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
-                      activeCmsTab === 'audits' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
-                    }`}
-                  >
-                    <span className="flex items-center gap-1.5"><Info className="w-3.5 h-3.5" /> 3. Verification Lists</span>
-                    <span className="text-[10px] bg-brand-bronze/20 text-brand-bronze px-2 py-0.5 rounded-full font-mono animate-pulse">!</span>
-                  </button>
-                  
-                  <div className="mt-4 p-3.5 bg-neutral-950/80 border border-brand-stone rounded-lg font-mono text-[10px] text-slate-500 space-y-1.5 leading-relaxed">
-                    <p className="text-slate-300 font-sans font-semibold">CMS Integration State:</p>
-                    <p>All values edit dynamically in real time. Changes are reflected synchronously below.</p>
-                  </div>
-                </div>
-
-                {/* CMS Content Center */}
-                <div className="lg:col-span-9 max-h-[55vh] overflow-y-auto pr-2">
-                
-                {/* TAB 1: Sections Control */}
-                {activeCmsTab === 'sections' && (
-                  <div className="space-y-4">
-                    <h3 className="font-display font-semibold text-slate-250 text-sm">
-                      Master Section Configurator (Manage Visibility, Workflow States, & Legal Sources)
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {Object.keys(cmsData).map((key) => {
-                        const secKey = key as keyof HomepageCMSState;
-                        const sec = cmsData[secKey];
-                        const sectionLabelString = secKey.replace('section_', '').replace(/_/g, ' ').toUpperCase();
-
-                        return (
-                          <div key={secKey} className="p-3 bg-neutral-950 border border-brand-stone rounded-xl space-y-2 flex flex-col justify-between">
-                            <div className="flex items-center justify-between border-b border-brand-stone/40 pb-1.5">
-                              <span className="font-mono text-[10px] text-brand-bronze font-bold">
-                                {sectionLabelString}
-                              </span>
-                              <div className="flex items-center gap-1.5">
-                                <span className={`text-[9px] px-1.5 py-0.2 rounded font-mono ${sec.show ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}`}>
-                                  {sec.show ? 'VISIBLE' : 'HIDDEN'}
-                                </span>
-                                <span className={`text-[9px] px-1.5 py-0.2 rounded font-mono ${sec.isApproved ? 'bg-sky-500/10 text-sky-400' : 'bg-amber-500/10 text-amber-500 animate-pulse'}`}>
-                                  {sec.isApproved ? 'APPROVED' : 'PENDING'}
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-2 text-[10px]">
-                              {/* Show/Hide Toggles */}
-                              <label className="flex items-center gap-1.5 cursor-pointer hover:text-white">
-                                <input 
-                                  type="checkbox" 
-                                  checked={sec.show} 
-                                  onChange={() => handleToggleSection(secKey)} 
-                                  className="rounded border-neutral-700 accent-brand-bronze cursor-pointer"
-                                />
-                                <span>Display Section</span>
-                              </label>
-
-                              {/* Approved Toggles */}
-                              <label className="flex items-center gap-1.5 cursor-pointer hover:text-white">
-                                <input 
-                                  type="checkbox" 
-                                  checked={sec.isApproved} 
-                                  onChange={() => handleToggleApproved(secKey)} 
-                                  className="rounded border-neutral-700 accent-brand-bronze cursor-pointer"
-                                />
-                                <span>Client Approved</span>
-                              </label>
-                            </div>
-
-                            <div className="pt-1.5 border-t border-brand-stone/30 grid grid-cols-2 gap-2 text-[10px]">
-                              <div>
-                                <span className="text-slate-500 block text-[9px] uppercase font-mono">Workflow</span>
-                                <select
-                                  value={sec.status}
-                                  onChange={(e) => handleStatusChange(secKey, e.target.value as 'Published' | 'Draft')}
-                                  className="w-full bg-neutral-900 border border-neutral-800 text-slate-350 rounded-sm py-0.5 px-1 mt-0.5 text-[9.5px]"
-                                >
-                                  <option value="Published">Published State</option>
-                                  <option value="Draft">Draft Mode</option>
-                                </select>
-                              </div>
-
-                              <div>
-                                <span className="text-slate-500 block text-[9px] uppercase font-mono text-ellipsis overflow-hidden">Source Verification</span>
-                                <span className="text-slate-400 text-[9px] block mt-1.5 truncate" title={sec.sourceRecord}>
-                                  {sec.sourceRecord}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-
-                {/* TAB 2: Copy String Inputs */}
-                {activeCmsTab === 'fields' && (
-                  <div className="space-y-4">
-                    <h3 className="font-display font-semibold text-slate-250 text-sm">
-                      Interactive Text Engine (Customize Page Headings & Paragraph Variables Instantly)
-                    </h3>
-                    
-                    <div className="space-y-4 p-4 bg-neutral-950 border border-brand-stone rounded-xl">
-                      {/* Hero Section Config Fields */}
-                      <div className="space-y-2 border-b border-brand-stone pb-3">
-                        <span className="font-mono text-brand-bronze text-[10px] font-bold block mb-1">SECTION 1: HERO HEADER FIELDS</span>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          <div>
-                            <label className="text-[10px] text-slate-500 font-mono uppercase block mb-1">Hero Eyebrow</label>
-                            <input 
-                              type="text" 
-                              value={hero.eyebrow} 
-                              onChange={(e) => handleTextChange('section_1_hero', 'eyebrow', e.target.value)}
-                              className="w-full px-2 py-1.5 rounded bg-neutral-900 border border-neutral-800 text-slate-200 text-xs" 
-                            />
-                          </div>
-                          <div>
-                            <label className="text-[10px] text-slate-500 font-mono uppercase block mb-1">H1 Main Heading Title</label>
-                            <input 
-                              type="text" 
-                              value={hero.h1} 
-                              onChange={(e) => handleTextChange('section_1_hero', 'h1', e.target.value)}
-                              className="w-full px-2 py-1.5 rounded bg-neutral-900 border border-neutral-800 text-slate-200 text-xs" 
-                            />
-                          </div>
-                        </div>
-                        <div className="mt-2">
-                          <label className="text-[10px] text-slate-500 font-mono uppercase block mb-1">Sub-heading Statement</label>
-                          <input 
-                            type="text" 
-                            value={hero.statement} 
-                            onChange={(e) => handleTextChange('section_1_hero', 'statement', e.target.value)}
-                            className="w-full px-2 py-1.5 rounded bg-neutral-900 border border-neutral-800 text-slate-200 text-xs" 
-                          />
-                        </div>
-                      </div>
-
-                      {/* Bio Quote Config Fields */}
-                      <div className="space-y-2 border-b border-brand-stone pb-3">
-                        <div className="flex items-center justify-between">
-                          <span className="font-mono text-brand-bronze text-[10px] font-bold block">SECTION 2: BIOGRAPHICAL INTRO STATEMENT</span>
-                          <span className="text-[9px] bg-amber-500/10 text-amber-500 px-1.5 py-0.2 rounded font-mono font-bold animate-pulse">Needs Approval</span>
-                        </div>
-                        <div>
-                          <label className="text-[10px] text-slate-500 font-mono uppercase block mb-1">First Person Quote Narrative</label>
-                          <textarea 
-                            value={intro.quoteText} 
-                            onChange={(e) => handleTextChange('section_2_intro', 'quoteText', e.target.value)}
-                            rows={2}
-                            className="w-full px-2 py-1.5 rounded bg-neutral-900 border border-neutral-800 text-slate-200 text-xs font-sans" 
-                          />
-                        </div>
-                      </div>
-
-                      {/* Professional Focus Toggles */}
-                      <div className="space-y-2">
-                        <span className="font-mono text-brand-bronze text-[10px] font-bold block mb-1">SECTION 10: PROFESSIONAL IMPACT DATA TOGGLE</span>
-                        <div className="p-3 bg-neutral-900 rounded-lg flex items-center justify-between border border-neutral-850">
-                          <div>
-                            <p className="font-sans font-semibold text-slate-200 text-xs">Statistical vs Qualitative Fallback Switch</p>
-                            <p className="font-sans text-[11px] text-slate-500 mt-0.5">Toggle to simulate non-approval of marketing stats ("15+ Years", "1,000+ Implants").</p>
-                          </div>
-                          <button
-                            onClick={handleToggleNumericImpactFallback}
-                            className={`px-3 py-1.5 font-mono text-[10px] uppercase font-bold rounded-md transition-colors ${
-                              impact.useStatsFallback ? 'bg-brand-bronze text-white' : 'bg-neutral-850 border border-neutral-700 text-slate-300 hover:text-white'
-                            }`}
-                          >
-                            {impact.useStatsFallback ? 'Showing Numeric Statistics' : 'Fallback: Focused Qualitative Grid'}
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* TAB 3: Verification Audits */}
-                {activeCmsTab === 'audits' && (
-                  <div className="space-y-5">
-                    
-                    {/* Awaiting Approvals Card */}
-                    <div className="p-4 bg-neutral-950 border border-brand-stone rounded-xl space-y-3">
-                      <div className="flex items-center gap-2 text-amber-500">
-                        <AlertCircle className="w-4 h-4" />
-                        <h4 className="font-sans font-bold text-slate-200 text-xs">13. Lists of Factual Statements Mocked/Awaiting Direct Client Consent</h4>
-                      </div>
-                      <p className="text-slate-500 leading-relaxed font-sans text-[11px]">
-                        The following clinical, procedural or career timeline statements reside under draft classification or awaiting written evidentiary consent prior to final launch:
-                      </p>
-                      <ul className="space-y-2 pt-1 font-sans text-xs">
-                        {unapprovedFactsList.map((item, index) => (
-                          <li key={index} className="flex gap-2 items-start bg-neutral-900/50 p-2 rounded border border-brand-stone/40">
-                            <span className="text-brand-bronze font-mono font-bold">[{index + 1}]</span>
-                            <div>
-                              <p className="text-slate-200 font-semibold">{item.text}</p>
-                              <span className="text-[10px] text-slate-500 block font-mono">Registry Source Checked: {item.source}</span>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Photographs Required Card */}
-                    <div className="p-4 bg-neutral-950 border border-brand-stone rounded-xl space-y-3">
-                      <div className="flex items-center gap-2 text-sky-400">
-                        <Camera className="w-4 h-4" />
-                        <h4 className="font-sans font-bold text-slate-200 text-xs">14. Complete Inventory of Brand Photographs Still To Be Commissioned</h4>
-                      </div>
-                      <p className="text-slate-500 leading-relaxed font-sans text-[11px]">
-                        The website currently employs modern typographic and structural vector canvas grids. Real professional custom shots are required to populate the following slots:
-                      </p>
-                      <ul className="space-y-2 pt-1 font-sans text-xs">
-                        {photographsRequiredList.map((photo, index) => (
-                          <li key={index} className="flex gap-2 items-start bg-neutral-900/50 p-2.5 rounded border border-brand-stone/40">
-                            <span className="text-slate-400 font-mono font-bold">[{index + 1}]</span>
-                            <div>
-                              <div className="flex items-center gap-2">
-                                <p className="text-slate-200 font-bold">{photo.title}</p>
-                                <span className="bg-brand-stone text-brand-bronze px-1.5 py-0.2 rounded font-mono text-[9px] uppercase tracking-wider">{photo.aspect}</span>
-                              </div>
-                              <p className="text-slate-400 mt-1">{photo.desc}</p>
-                              <span className="text-[10px] text-brand-bronze font-mono block mt-0.5">Integration Anchor: {photo.area}</span>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Clinic vs Personal Brand Comparison Guide */}
-                    <div className="p-4 bg-neutral-950 border border-brand-stone rounded-xl space-y-3">
-                      <div className="flex items-center gap-2 text-emerald-400">
-                        <CheckCircle2 className="w-4 h-4" />
-                        <h4 className="font-sans font-bold text-slate-200 text-xs">15. Strategic Review: Why This Homepage Differs From A Generic Clinic Funnel</h4>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans text-xs">
-                        <div className="p-3 bg-rose-500/5 border border-rose-500/10 rounded-lg space-y-2">
-                          <p className="font-bold text-rose-450 uppercase tracking-widest text-[10px] font-mono">Traditional Dental Clinic Template</p>
-                          <ul className="space-y-1 text-[11px] text-slate-400 list-disc list-inside">
-                            <li>Commercial CTA buttons ("Book Free Coupon Now", "Get 20% Off Implants").</li>
-                            <li>Sales funnels focused entirely on pricing package cards, financing, and insurance.</li>
-                            <li>Generic lists of dental checkups, cavity fillings, and basic cleanings.</li>
-                            <li>Impersonal stock models smiling in dental surgery chairs.</li>
-                            <li>Unsubstantiated reviews and generic marketing credentials tags.</li>
-                          </ul>
-                        </div>
-                        <div className="p-3 bg-emerald-500/5 border border-emerald-500/10 rounded-lg space-y-2">
-                          <p className="font-bold text-emerald-450 uppercase tracking-widest text-[10px] font-mono">Dr. Liyan's Authorized Personal Website</p>
-                          <ul className="space-y-1 text-[11px] text-slate-350 list-disc list-inside">
-                            <li>Focus is strictly on the physician's credentials, education (D.M.D., M.P.H.), and verified curriculum.</li>
-                            <li>All patient booking requests route as external redirections to specified physical practices.</li>
-                            <li>Shares actual educational content, public conversations, and publication references with checking sources.</li>
-                            <li>Aesthetic section is integrated with biological mechanics and listening systems.</li>
-                            <li>Integrates digital NPI registry tags and CMS verified indicators for active trust logs.</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                )}
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* 1. DARK HERO SECTION */}
       {hero.show && (
         <section className="relative bg-brand-white text-slate-800 py-16 md:py-28 border-b border-brand-stone flex items-center justify-center overflow-hidden" id="editorial-hero">
@@ -1349,11 +999,11 @@ export const HomeView: React.FC = () => {
 
                   {/* Verification source metrics */}
                   <div className="pt-4 mt-6 border-t border-brand-stone/30 flex items-center justify-between text-[10px] text-slate-500 font-mono">
-                    <span className="flex items-center gap-1 p-1 bg-neutral-900 border border-neutral-800 rounded">
+                    <span className="flex items-center gap-1 p-1 bg-brand-bronze/5 border border-brand-stone/30 rounded">
                       <Award className="w-3.5 h-3.5 text-brand-bronze" />
-                      <span>{item.verifiedSource}</span>
+                      <span className="text-brand-bronze font-semibold">{item.verifiedSource}</span>
                     </span>
-                    <span className="text-amber-500 bg-amber-500/5 px-2 py-0.5 rounded border border-amber-500/20 text-[9px] font-bold">VERIFIED</span>
+                    <span className="text-amber-600 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 text-[9px] font-bold">VERIFIED</span>
                   </div>
                 </div>
               ))}
@@ -1362,11 +1012,11 @@ export const HomeView: React.FC = () => {
             {/* Legal Disclaimers */}
             <div className="mt-8 pt-4 border-t border-brand-stone/20 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[11px] text-slate-500 font-sans">
               <p className="max-w-2xl">
-                ⚠️ <span className="font-semibold text-slate-400">Notice:</span> {edu.disclosureNote}
+                ⚠️ <span className="font-semibold text-slate-500">Notice:</span> {edu.disclosureNote}
               </p>
               <button
                 onClick={() => handleActionClick('/education-and-credentials/')}
-                className="font-mono text-brand-bronze hover:text-slate-350 transition-colors uppercase font-semibold inline-flex items-center gap-1.5 cursor-pointer hover:underline"
+                className="font-mono text-brand-bronze hover:text-brand-bronze-light transition-colors uppercase font-semibold inline-flex items-center gap-1.5 cursor-pointer hover:underline"
               >
                 <span>{edu.actionLinkText}</span>
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -1377,9 +1027,9 @@ export const HomeView: React.FC = () => {
         </section>
       )}
 
-      {/* 4. PHILOSOPHY OF CARE Section (Dark Canvas) */}
+      {/* 4. PHILOSOPHY OF CARE Section (Light Editorial Canvas) */}
       {philo.show && (
-        <section className="bg-brand-dark py-16 md:py-24 border-b border-brand-stone" id="philosophy-care">
+        <section className="bg-brand-white py-16 md:py-24 border-b border-brand-stone" id="philosophy-care">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
@@ -1388,23 +1038,23 @@ export const HomeView: React.FC = () => {
                 <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">
                   {philo.sectionLabel}
                 </span>
-                <h2 className="font-display font-medium text-[#FFFFFF] text-2xl md:text-4xl tracking-tight leading-snug">
+                <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-4xl tracking-tight leading-snug">
                   {philo.heading}
                 </h2>
                 
-                <p className="text-sm md:text-base text-slate-300 leading-relaxed font-sans">
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
                   {philo.narrative}
                 </p>
 
                 {/* Principles grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 font-sans text-xs">
                   {philo.principles.map((pr) => (
-                    <div key={pr.id} className="p-4 bg-brand-ivory border border-brand-stone rounded-xl space-y-1.5 hover:border-brand-bronze/30 transition-colors duration-200">
+                    <div key={pr.id} className="p-4 bg-white border border-brand-stone rounded-xl space-y-1.5 hover:border-brand-bronze/30 transition-all duration-200 shadow-xs hover:shadow-sm">
                       <div className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-brand-bronze" />
-                        <h4 className="font-bold text-slate-200 text-[13px]">{pr.title}</h4>
+                        <h4 className="font-bold text-brand-charcoal text-[13px]">{pr.title}</h4>
                       </div>
-                      <p className="text-[#A3A3A3] leading-relaxed pl-3.5">{pr.description}</p>
+                      <p className="text-slate-500 leading-relaxed pl-3.5">{pr.description}</p>
                     </div>
                   ))}
                 </div>
@@ -1412,7 +1062,7 @@ export const HomeView: React.FC = () => {
                 <div className="pt-2">
                   <button
                     onClick={() => handleActionClick('/philosophy/')}
-                    className="px-5 py-2.5 bg-brand-stone hover:bg-neutral-800 border border-brand-stone text-slate-100 hover:text-brand-white font-sans text-xs font-bold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-1.5 uppercase tracking-wide"
+                    className="px-5 py-2.5 bg-white hover:bg-brand-stone border border-brand-stone text-brand-charcoal font-sans text-xs font-bold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-1.5 uppercase tracking-wide"
                   >
                     <span>{philo.actionLinkText}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -1424,8 +1074,8 @@ export const HomeView: React.FC = () => {
               <div className="lg:col-span-5">
                 <div className="relative group">
                   <PortraitPlaceholder description={philo.portraitDescription} />
-                  <span className="absolute bottom-3 left-3 bg-brand-dark/90 backdrop-blur-md text-[9px] font-mono tracking-wider text-slate-400 px-2.5 py-0.5 rounded-full border border-brand-stone uppercase">
-                    Consultation Scene Ref checking
+                  <span className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md text-[9px] font-mono tracking-wider text-slate-600 px-2.5 py-0.5 rounded-full border border-brand-stone uppercase shadow-xs">
+                    Consultation Scene
                   </span>
                 </div>
               </div>
@@ -1919,9 +1569,9 @@ export const HomeView: React.FC = () => {
         </section>
       )}
 
-      {/* 11. MEDIA AND PROFESSIONAL ENQUIRIES Section (Dark Canvas) */}
+      {/* 11. MEDIA AND PROFESSIONAL ENQUIRIES Section (Light Editorial Canvas) */}
       {media.show && (
-        <section className="bg-brand-dark py-16 md:py-24 border-b border-[#2A2A2A]" id="media-collaborations">
+        <section className="bg-brand-white py-16 md:py-24 border-b border-brand-stone/40" id="media-collaborations">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
@@ -1931,11 +1581,11 @@ export const HomeView: React.FC = () => {
                   {media.sectionLabel}
                 </span>
                 
-                <h2 className="font-display font-medium text-[#FFFFFF] text-2xl md:text-3xl tracking-tight leading-snug">
+                <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-3xl tracking-tight leading-snug">
                   {media.heading}
                 </h2>
                 
-                <p className="text-xs md:text-sm text-slate-350 leading-relaxed font-sans">
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-sans">
                   {media.supportingCopy}
                 </p>
 
@@ -1944,7 +1594,7 @@ export const HomeView: React.FC = () => {
                   <span className="text-[10px] font-mono tracking-widest text-slate-500 uppercase block mb-1">
                     Proposed Discussion Themes
                   </span>
-                  <ul className="space-y-2 text-xs font-sans text-slate-300">
+                  <ul className="space-y-2 text-xs font-sans text-slate-600">
                     {media.topics.map((tp, idx) => (
                       <li key={idx} className="flex gap-2 items-start">
                         <span className="text-brand-bronze font-mono font-bold mt-0.5">↳</span>
@@ -1958,7 +1608,7 @@ export const HomeView: React.FC = () => {
                 <div className="flex flex-wrap gap-3 pt-4">
                   <button
                     onClick={() => handleActionClick('/press-kit/')}
-                    className="px-4 py-2 bg-brand-ivory hover:bg-brand-stone border border-brand-stone/45 text-brand-charcoal text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
+                    className="px-4 py-2 bg-white hover:bg-brand-stone border border-brand-stone text-brand-charcoal text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
                   >
                     <FileText className="w-4 h-4 text-brand-bronze" />
                     <span>{media.actionKitText}</span>
@@ -1966,7 +1616,7 @@ export const HomeView: React.FC = () => {
 
                   <button
                     onClick={() => handleActionClick('/speaking/')}
-                    className="px-4 py-2 bg-brand-ivory hover:bg-brand-stone border border-brand-stone/45 text-brand-charcoal text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
+                    className="px-4 py-2 bg-white hover:bg-brand-stone border border-brand-stone text-brand-charcoal text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
                   >
                     <span>{media.actionCollabText}</span>
                   </button>

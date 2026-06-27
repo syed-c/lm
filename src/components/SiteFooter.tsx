@@ -102,14 +102,6 @@ export const SiteFooter: React.FC = () => {
                 <Link to="/medical-disclaimer/" className="hover:text-brand-bronze transition-colors">Medical Disclaimer</Link>
                 <Link to="/accessibility/" className="hover:text-brand-bronze transition-colors">Accessibility Policy</Link>
                 <Link to="/privacy-policy/" className="hover:text-brand-bronze transition-colors">Privacy Policy</Link>
-                <Link to="/authority-dashboard/" className="hover:text-brand-bronze transition-colors flex items-center gap-1">
-                  <span>PR & Authority Console</span>
-                  <span className="text-[9px] bg-brand-stone/50 text-brand-bronze px-1 rounded uppercase font-semibold font-sans">PRO</span>
-                </Link>
-                <Link to="/brand-governance/" className="hover:text-brand-bronze transition-colors flex items-center gap-1">
-                  <span>Brand Governance Vault</span>
-                  <span className="text-[9px] bg-brand-stone/50 text-brand-bronze px-1 rounded uppercase font-semibold font-sans">ADMIN</span>
-                </Link>
               </nav>
             </div>
 

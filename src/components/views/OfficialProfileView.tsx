@@ -133,8 +133,8 @@ export const OfficialProfileView: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Section (Dark Editorial) */}
-      <section className="bg-[#0b0b0b] text-brand-white py-12 md:py-20 border-b border-brand-stone" id="profile-hero">
+      {/* Hero Section (Ivory Clinical) */}
+      <section className="bg-brand-ivory text-brand-charcoal py-12 md:py-20 border-b border-brand-stone/40" id="profile-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
             
@@ -152,15 +152,15 @@ export const OfficialProfileView: React.FC = () => {
               </span>
               
               <div className="space-y-2">
-                <h1 className="font-display font-medium text-3xl md:text-5.5xl tracking-tight text-brand-white leading-tight">
-                  Dr. Liyan Massaband, <span className="text-slate-400 text-2xl md:text-4xl block md:inline-block font-sans font-normal ml-0 md:ml-1.5">D.M.D., M.P.H.</span>
+                <h1 className="font-display font-medium text-3xl md:text-5.5xl tracking-tight text-brand-charcoal leading-tight">
+                  Dr. Liyan Massaband, <span className="text-slate-500 text-2xl md:text-4xl block md:inline-block font-sans font-normal ml-0 md:ml-1.5">D.M.D., M.P.H.</span>
                 </h1>
                 <p className="text-xs font-mono uppercase tracking-widest text-brand-bronze font-medium">
                   Dentist • D.M.D. • M.P.H. • Burbank • Beverly Hills
                 </p>
               </div>
 
-              <p className="text-slate-300 text-base md:text-lg leading-relaxed font-sans max-w-2xl">
+              <p className="text-slate-650 text-base md:text-lg leading-relaxed font-sans max-w-2xl">
                 Dr. Liyan Massaband is a California dentist with an academic foundation in physiological sciences, public health and dental medicine. She is professionally associated with Magnolia Dentistry in Burbank and ConfiDental Beverly Hills.
               </p>
 
@@ -168,19 +168,19 @@ export const OfficialProfileView: React.FC = () => {
               <div className="flex flex-wrap gap-3.5 pt-2">
                 <Link 
                   to="/her-story/" 
-                  className="px-5 py-2.5 bg-brand-bronze text-brand-white font-display text-[13px] font-semibold tracking-wide rounded-lg hover:bg-white hover:text-brand-charcoal transition-colors duration-200"
+                  className="px-5 py-2.5 bg-brand-bronze text-white font-display text-[13px] font-semibold tracking-wide rounded-lg hover:bg-brand-charcoal transition-colors duration-200 shadow-xs"
                 >
                   Explore Her Story
                 </Link>
                 <Link 
                   to="/education-and-credentials/" 
-                  className="px-5 py-2.5 border border-brand-stone hover:border-brand-bronze text-slate-300 hover:text-brand-white font-display text-[13px] font-semibold tracking-wide rounded-lg transition-colors duration-200"
+                  className="px-5 py-2.5 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze font-display text-[13px] font-semibold tracking-wide rounded-lg transition-colors duration-200"
                 >
                   View Education & Credentials
                 </Link>
                 <Link 
                   to="/contact/" 
-                  className="px-5 py-2.5 text-slate-400 hover:text-brand-bronze font-display text-[13px] font-semibold tracking-wide rounded-lg transition-colors duration-200"
+                  className="px-5 py-2.5 text-slate-500 hover:text-brand-bronze font-display text-[13px] font-semibold tracking-wide rounded-lg transition-colors duration-200"
                 >
                   Media Enquiries
                 </Link>
@@ -334,7 +334,7 @@ export const OfficialProfileView: React.FC = () => {
               </p>
 
               {/* Video Player Display */}
-              <div className="border border-brand-stone rounded-2xl overflow-hidden bg-[#0A0A0A] relative aspect-16/9 shadow-md flex items-center justify-center p-2 group" id="featured-video-module">
+              <div className="border border-brand-stone rounded-2xl overflow-hidden bg-brand-charcoal relative aspect-16/9 shadow-md flex items-center justify-center p-2 group" id="featured-video-module">
                 <iframe 
                   className="w-full h-full rounded-xl"
                   src="https://www.youtube.com/embed/-6nZKwfkXzc" 
@@ -427,22 +427,22 @@ export const OfficialProfileView: React.FC = () => {
             </section>
 
             {/* SECTION 7: MEDIA CONTACT */}
-            <section className="bg-brand-charcoal text-slate-300 border border-brand-stone/40 p-6 md:p-8 rounded-2xl space-y-6" id="media-engagement-section">
+            <section className="bg-brand-ivory text-slate-700 border border-brand-stone/40 p-6 md:p-8 rounded-2xl space-y-6" id="media-engagement-section">
               <div className="space-y-2">
-                <span className="text-[10px] font-mono text-brand-bronze uppercase block tracking-wider">Independent Collaborative Services</span>
-                <h3 className="font-display font-semibold text-lg md:text-xl text-brand-white">
+                <span className="text-[10px] font-mono text-brand-bronze uppercase block tracking-wider font-bold">Independent Collaborative Services</span>
+                <h3 className="font-display font-semibold text-lg md:text-xl text-brand-charcoal">
                   Media, Interviews and Professional Enquiries
                 </h3>
               </div>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed font-sans">
+              <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-sans">
                 Dr. Liyan Massaband is available to collaborate with health journalists, podcast hosts, health alumni boards, and event organizers seeking factual perspectives on dental epidemiology and biological aesthetics.
               </p>
               <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono">
-                <Link to="/press-kit/" className="text-brand-bronze hover:text-brand-white transition-colors flex items-center gap-1 bg-[#151515] px-3.5 py-2.5 rounded-lg border border-brand-stone/20 shadow-xs">
-                  <FileText className="w-4 h-4" /> Download Press Kit
+                <Link to="/press-kit/" className="text-brand-charcoal hover:text-brand-bronze transition-colors flex items-center gap-1 bg-white hover:bg-brand-white px-3.5 py-2.5 rounded-lg border border-brand-stone shadow-xs">
+                  <FileText className="w-4 h-4 text-brand-bronze" /> Download Press Kit
                 </Link>
-                <Link to="/contact/" className="text-brand-bronze hover:text-brand-white transition-colors flex items-center gap-1 bg-[#151515] px-3.5 py-2.5 rounded-lg border border-brand-stone/20 shadow-xs">
-                  <Mail className="w-4 h-4" /> Submit Media Inquiry
+                <Link to="/contact/" className="text-brand-charcoal hover:text-brand-bronze transition-colors flex items-center gap-1 bg-white hover:bg-brand-white px-3.5 py-2.5 rounded-lg border border-brand-stone shadow-xs">
+                  <Mail className="w-4 h-4 text-brand-bronze" /> Submit Media Inquiry
                 </Link>
               </div>
             </section>
@@ -554,57 +554,57 @@ export const OfficialProfileView: React.FC = () => {
       </section>
 
       {/* Authority Related Page Navigation */}
-      <section className="bg-brand-charcoal text-slate-300 py-16 border-t border-brand-stone" id="authority-hub-navigation">
+      <section className="bg-brand-ivory text-slate-700 py-16 border-t border-brand-stone" id="authority-hub-navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <span className="text-[10px] font-mono text-brand-bronze uppercase tracking-widest block">Authority Index Ecosystem</span>
-            <h3 className="font-display font-medium text-2xl text-brand-white">Explore Dr. Liyan Massaband's Profile</h3>
+            <h3 className="font-display font-medium text-2xl text-brand-charcoal">Explore Dr. Liyan Massaband's Profile</h3>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4" id="related-pages-grid">
-            <Link to="/her-story/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Biography</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Her Story</span>
+            <Link to="/her-story/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Biography</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Her Story</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/education-and-credentials/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Academia</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Education & Certs</span>
+            <Link to="/education-and-credentials/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Academia</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Education & Certs</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/professional-journey/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Timeline</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Journey</span>
+            <Link to="/professional-journey/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Timeline</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Journey</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/philosophy/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Core Beliefs</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Philosophy</span>
+            <Link to="/philosophy/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Core Beliefs</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Philosophy</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/clinical-affiliations/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Clinics</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Affiliations</span>
+            <Link to="/clinical-affiliations/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Clinics</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Affiliations</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
 
-            <Link to="/media/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[10px] font-mono uppercase tracking-wider block">Press Hub</span>
-              <span className="text-brand-white font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Media Centre</span>
+            <Link to="/media/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-28 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider block">Press Hub</span>
+              <span className="text-brand-charcoal font-display text-[13px] font-semibold block mt-2 group-hover:text-brand-bronze transition-colors">Media Centre</span>
               <span className="text-brand-bronze text-[10px] font-mono mt-auto flex items-center justify-center gap-0.5">
                 Explore <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
               </span>

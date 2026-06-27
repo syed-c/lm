@@ -351,32 +351,32 @@ export const ProfessionalMentionsView: React.FC = () => {
       </div>
 
       {/* Media Centre Footer Hub navigation */}
-      <section className="bg-brand-charcoal text-slate-300 py-16 border-t border-brand-stone">
+      <section className="bg-brand-ivory text-slate-700 py-16 border-t border-brand-stone">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <span className="text-[10px] font-mono text-brand-bronze uppercase tracking-widest block font-bold">Authority Index Ecosystem</span>
-            <h3 className="font-display font-medium text-2xl text-brand-white">Return to the PR & Public Assets Centre</h3>
+            <h3 className="font-display font-medium text-2xl text-brand-charcoal">Return to the PR & Public Assets Centre</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto" id="mentions-related-pages-grid">
-            <Link to="/media/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[9px] font-mono uppercase tracking-wider block">Media Center</span>
-              <span className="text-brand-white font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Media & Public Presence</span>
+            <Link to="/media/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[9px] font-mono uppercase tracking-wider block">Media Center</span>
+              <span className="text-brand-charcoal font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Media & Public Presence</span>
             </Link>
 
-            <Link to="/press-kit/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[9px] font-mono uppercase tracking-wider block">Approved Assets</span>
-              <span className="text-brand-white font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Press Kit & Bios</span>
+            <Link to="/press-kit/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[9px] font-mono uppercase tracking-wider block">Approved Assets</span>
+              <span className="text-brand-charcoal font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Press Kit & Bios</span>
             </Link>
 
-            <Link to="/speaking/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[9px] font-mono uppercase tracking-wider block">Booking</span>
-              <span className="text-brand-white font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Speaking & Podcasts</span>
+            <Link to="/speaking/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[9px] font-mono uppercase tracking-wider block">Booking</span>
+              <span className="text-brand-charcoal font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Speaking & Podcasts</span>
             </Link>
 
-            <Link to="/videos/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[9px] font-mono uppercase tracking-wider block">Education</span>
-              <span className="text-brand-white font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Videos & Broadcasts</span>
+            <Link to="/videos/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[9px] font-mono uppercase tracking-wider block">Education</span>
+              <span className="text-brand-charcoal font-display text-sm font-semibold block mt-1 group-hover:text-brand-bronze transition-colors">Videos & Broadcasts</span>
             </Link>
           </div>
         </div>

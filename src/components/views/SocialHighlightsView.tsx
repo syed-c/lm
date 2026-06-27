@@ -269,27 +269,27 @@ export const SocialHighlightsView: React.FC = () => {
       </section>
 
       {/* Nav Hub footer */}
-      <section className="bg-brand-charcoal text-slate-300 py-16 border-t border-brand-stone" id="social-footer">
+      <section className="bg-brand-ivory text-slate-700 py-16 border-t border-brand-stone" id="social-footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <span className="text-[10px] font-mono text-brand-bronze uppercase tracking-widest block">Educational Media Core Network</span>
-            <h3 className="font-display font-medium text-2xl text-brand-white">Read Confirmed Digital Outposts</h3>
+            <h3 className="font-display font-medium text-2xl text-brand-charcoal">Read Confirmed Digital Outposts</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto" id="social-other-pages-grid">
-            <Link to="/media/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[9px] font-mono uppercase tracking-wider block">Media Hub</span>
-              <span className="text-brand-white font-display text-sm group-hover:text-brand-bronze transition-colors block font-semibold mt-1">Media Center Landing</span>
+            <Link to="/media/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[9px] font-mono uppercase tracking-wider block">Media Hub</span>
+              <span className="text-brand-charcoal font-display text-sm group-hover:text-brand-bronze transition-colors block font-semibold mt-1">Media Center Landing</span>
             </Link>
 
-            <Link to="/professional-mentions/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[9px] font-mono uppercase tracking-wider block">External Directory Metrics</span>
-              <span className="text-brand-white font-display text-sm group-hover:text-brand-bronze transition-colors block font-semibold mt-1">Professional Mentions</span>
+            <Link to="/professional-mentions/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[9px] font-mono uppercase tracking-wider block">External Directory Metrics</span>
+              <span className="text-brand-charcoal font-display text-sm group-hover:text-brand-bronze transition-colors block font-semibold mt-1">Professional Mentions</span>
             </Link>
 
-            <Link to="/videos/" className="group p-4 bg-[#151515] hover:bg-[#1a1a1a] border border-brand-stone/20 rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze">
-              <span className="text-slate-400 text-[9px] font-mono uppercase tracking-wider block">Streaming</span>
-              <span className="text-brand-white font-display text-sm group-hover:text-brand-bronze transition-colors block font-semibold mt-1">Videos & Conversations</span>
+            <Link to="/videos/" className="group p-4 bg-white hover:bg-brand-white border border-brand-stone rounded-xl text-center flex flex-col justify-between h-24 transition-all hover:border-brand-bronze hover:shadow-xs">
+              <span className="text-slate-500 text-[9px] font-mono uppercase tracking-wider block">Streaming</span>
+              <span className="text-brand-charcoal font-display text-sm group-hover:text-brand-bronze transition-colors block font-semibold mt-1">Videos & Conversations</span>
             </Link>
           </div>
         </div>

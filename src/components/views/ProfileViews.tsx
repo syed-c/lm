@@ -23,28 +23,28 @@ interface PortraitPlaceholderProps {
 
 export const PortraitPlaceholder: React.FC<PortraitPlaceholderProps> = ({ description, landscape = false }) => {
   return (
-    <div className={`border border-brand-stone bg-brand-charcoal text-slate-300 p-6 md:p-8 rounded-2xl flex flex-col items-center justify-center text-center relative overflow-hidden transition-all duration-300 group hover:border-brand-bronze ${
+    <div className={`border border-brand-stone bg-brand-ivory text-slate-600 p-6 md:p-8 rounded-2xl flex flex-col items-center justify-center text-center relative overflow-hidden transition-all duration-300 group hover:border-brand-bronze hover:shadow-xs ${
       landscape ? 'aspect-16/9' : 'aspect-3/4'
     }`} id={`portrait-${description.toLowerCase().replace(/[^a-z]/g, '-')}`}>
       {/* Decorative camera matrix background */}
-      <div className="absolute inset-0 bg-neutral-900/10 mix-blend-overlay" />
-      <div className="absolute top-3 right-3 text-[9px] font-mono tracking-widest text-slate-500 bg-brand-dark/60 px-2 py-0.5 rounded-full border border-brand-charcoal">
+      <div className="absolute inset-0 bg-brand-bronze/5 mix-blend-overlay" />
+      <div className="absolute top-3 right-3 text-[9px] font-mono tracking-widest text-brand-bronze bg-brand-bronze/10 px-2.5 py-0.5 rounded-full border border-brand-stone">
         ASSET PLACEHOLDER: PENDING
       </div>
 
-      <div className="bg-brand-dark/80 p-4 rounded-full border border-brand-stone/30 mb-4 group-hover:scale-105 transition-transform duration-300">
+      <div className="bg-brand-bronze/10 p-4 rounded-full border border-brand-stone/30 mb-4 group-hover:scale-105 transition-transform duration-300">
         <Camera className="w-6 h-6 text-brand-bronze" />
       </div>
 
       <div className="space-y-1.5 max-w-xs relative z-10">
-        <span className="font-display font-semibold text-brand-white text-[14px] md:text-[15px] block leading-tight">
+        <span className="font-display font-semibold text-brand-charcoal text-[14px] md:text-[15px] block leading-tight">
           {description}
         </span>
-        <span className="text-[10px] text-slate-400 font-mono block uppercase tracking-wider">
+        <span className="text-[10px] text-slate-500 font-mono block uppercase tracking-wider">
           Focal Point: Centered • Approved Portrait Profile
         </span>
         <p className="text-[11px] text-slate-500 leading-normal font-sans">
-          Asset Specification: Studio high-res portrait, charcoal overlay. Photographer credit, licensing agreement, and release files pending update.
+          Asset Specification: Studio high-res portrait, ivory theme match. Photographer credit, licensing agreement, and release files pending update.
         </p>
       </div>
     </div>
@@ -61,24 +61,24 @@ export const AboutView: React.FC = () => {
         <div className="lg:col-span-5 space-y-6">
           <PortraitPlaceholder description="Dr. Liyan Massaband - Official Biographical Portrait" />
           
-          <div className="bg-brand-charcoal text-slate-300 border border-brand-stone/30 rounded-2xl p-6 space-y-4">
+          <div className="bg-white border border-brand-stone rounded-2xl p-6 space-y-4 shadow-xs">
             <span className="text-xs font-mono font-medium text-brand-bronze uppercase tracking-wider block">Verified Licensure Audit</span>
             <div className="space-y-2.5 text-xs">
-              <div className="flex justify-between border-b border-brand-stone/15 pb-2">
-                <span className="text-slate-400">Credentialing:</span>
-                <span className="font-medium text-brand-white">D.M.D., M.P.H.</span>
+              <div className="flex justify-between border-b border-brand-stone/35 pb-2">
+                <span className="text-slate-500">Credentialing:</span>
+                <span className="font-semibold text-brand-charcoal">D.M.D., M.P.H.</span>
               </div>
-              <div className="flex justify-between border-b border-brand-stone/15 pb-2">
-                <span className="text-slate-400">NPI Provider Number:</span>
-                <span className="font-mono text-brand-white">1346588407</span>
+              <div className="flex justify-between border-b border-brand-stone/35 pb-2">
+                <span className="text-slate-500">NPI Provider Number:</span>
+                <span className="font-mono text-brand-charcoal font-semibold">1346588407</span>
               </div>
-              <div className="flex justify-between border-b border-brand-stone/15 pb-2">
-                <span className="text-slate-400">Jurisdiction:</span>
-                <span className="font-medium text-brand-white">California Dental Board License</span>
+              <div className="flex justify-between border-b border-brand-stone/35 pb-2">
+                <span className="text-slate-500">Jurisdiction:</span>
+                <span className="font-semibold text-brand-charcoal">California Dental Board License</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Verification Authority:</span>
-                <span className="text-brand-bronze flex items-center gap-1 font-semibold">
+                <span className="text-slate-500">Verification Authority:</span>
+                <span className="text-brand-bronze flex items-center gap-1 font-bold">
                   <BookmarkCheck className="w-3.5 h-3.5" /> Federal NPI Registry
                 </span>
               </div>
@@ -194,23 +194,23 @@ export const CredentialsView: React.FC = () => {
         <div className="lg:col-span-4 space-y-6">
           <PortraitPlaceholder description="University of Southern California Academic Record Snapshot" />
 
-          <div className="bg-brand-charcoal border border-brand-stone/40 text-slate-300 p-6 rounded-2xl space-y-4">
-            <h4 className="font-display font-semibold text-brand-white text-base flex items-center gap-2 border-b border-brand-stone/20 pb-3">
+          <div className="bg-white border border-brand-stone text-slate-600 p-6 rounded-2xl space-y-4 shadow-xs">
+            <h4 className="font-display font-semibold text-brand-charcoal text-base flex items-center gap-2 border-b border-brand-stone/35 pb-3">
               <Award className="w-5 h-5 text-brand-bronze" />
               Verified Board Registries
             </h4>
             <div className="space-y-4 text-xs font-sans">
               <div className="space-y-1">
-                <span className="text-slate-400 block uppercase font-mono text-[9px] tracking-widest">Registrant Name:</span>
-                <span className="font-medium text-brand-white text-[13px]">Liyan Massaband</span>
+                <span className="text-slate-500 block uppercase font-mono text-[9px] tracking-widest">Registrant Name:</span>
+                <span className="font-bold text-brand-charcoal text-[13px]">Liyan Massaband</span>
               </div>
               <div className="space-y-1">
-                <span className="text-slate-400 block uppercase font-mono text-[9px] tracking-widest">Taxonomy Code:</span>
-                <span className="font-medium text-brand-white font-mono">1223G0001X — General Practice Dentistry</span>
+                <span className="text-slate-500 block uppercase font-mono text-[9px] tracking-widest">Taxonomy Code:</span>
+                <span className="font-semibold text-brand-charcoal font-mono">1223G0001X — General Practice Dentistry</span>
               </div>
               <div className="space-y-1">
-                <span className="text-slate-400 block uppercase font-mono text-[9px] tracking-widest">Licensing board:</span>
-                <span className="font-medium text-brand-white">Dental Board of California (DCA)</span>
+                <span className="text-slate-500 block uppercase font-mono text-[9px] tracking-widest">Licensing board:</span>
+                <span className="font-bold text-brand-charcoal">Dental Board of California (DCA)</span>
               </div>
               <p className="text-[11px] text-slate-500 leading-relaxed font-mono">
                 Credentials are automatically queried via State DCA registers. Licensure remains in complete compliance with zero structural administrative actions or history of sanctions.
