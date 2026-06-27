@@ -101,6 +101,14 @@ export const Link: React.FC<LinkProps> = ({ to, children, className, onClick, ..
   );
 };
 
+export const normalizePath = (p: string): string => {
+  let clean = p.trim();
+  if (clean !== '/' && clean.endsWith('/')) {
+    clean = clean.slice(0, -1);
+  }
+  return clean || '/';
+};
+
 // Layout container to trigger standard motion fades on route changing
 export const RouteView: React.FC<{ routePath: string; exact?: boolean; children: React.ReactNode }> = ({ 
   routePath, 
@@ -111,9 +119,11 @@ export const RouteView: React.FC<{ routePath: string; exact?: boolean; children:
 
   let match = false;
   if (exact) {
-    match = path === routePath;
+    match = normalizePath(path).toLowerCase() === normalizePath(routePath).toLowerCase();
   } else {
-    match = path.startsWith(routePath);
+    const normPath = normalizePath(path).toLowerCase();
+    const normRoute = normalizePath(routePath).toLowerCase();
+    match = normPath === normRoute || normPath.startsWith(normRoute + '/');
   }
 
   if (!match) return null;

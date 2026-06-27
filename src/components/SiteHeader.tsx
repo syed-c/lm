@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter, Link } from './AppRouter.tsx';
+import { useRouter, Link, normalizePath } from './AppRouter.tsx';
 import { Menu, X, ChevronDown, Sparkles, Phone, Video, Calendar, ShieldCheck } from 'lucide-react';
 import { BRAND_CONFIG } from '../data.ts';
 
@@ -59,10 +59,18 @@ export const SiteHeader: React.FC = () => {
     }
   };
 
-  const isActive = (p: string) => (path === p) || (p !== '/' && path.startsWith(p));
+  const isActive = (p: string) => {
+    const normPath = normalizePath(path).toLowerCase();
+    const normP = normalizePath(p).toLowerCase();
+    return normPath === normP || (normP !== '/' && normPath.startsWith(normP + '/'));
+  };
 
   const isDropdownActive = (links: { to: string }[]) => {
-    return links.some(lnk => lnk.to !== '/' && path.startsWith(lnk.to));
+    const normPath = normalizePath(path).toLowerCase();
+    return links.some(lnk => {
+      const normLnk = normalizePath(lnk.to).toLowerCase();
+      return normLnk !== '/' && (normPath === normLnk || normPath.startsWith(normLnk + '/'));
+    });
   };
 
   return (

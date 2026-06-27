@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { AppRouter, RouteView, useRouter, Link } from './components/AppRouter.tsx';
+import { AppRouter, RouteView, useRouter, Link, normalizePath } from './components/AppRouter.tsx';
 import { SiteHeader } from './components/SiteHeader.tsx';
 import { SiteFooter } from './components/SiteFooter.tsx';
 import { FloatingContactWidget } from './components/FloatingContactWidget.tsx';
@@ -203,12 +203,14 @@ const Fallback404Route: React.FC = () => {
     '/editorial-standards/', '/sitemap/', '/authority-dashboard/', '/brand-governance/', '/fact-sheet/'
   ];
 
+  const normalizedPath = normalizePath(path).toLowerCase();
+
   // Skip if we find dynamic patterns
-  if (path.startsWith('/articles/') || path.startsWith('/videos/')) {
+  if (normalizedPath.startsWith('/articles/') || normalizedPath.startsWith('/videos/')) {
     return null;
   }
 
-  const isMatched = knownRoutes.includes(path || '/');
+  const isMatched = knownRoutes.some(route => normalizePath(route).toLowerCase() === normalizedPath);
 
   if (isMatched) return null;
 
