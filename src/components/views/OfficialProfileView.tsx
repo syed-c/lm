@@ -532,7 +532,7 @@ export const OfficialProfileView: React.FC = () => {
               <UserCheck className="w-5 h-5 text-brand-bronze" /> References and Entity Verification Log
             </h3>
             <span className="text-[10px] font-mono uppercase bg-brand-bronze/10 text-brand-bronze px-3 py-1 rounded-full border border-brand-bronze/35">
-              FACT STATE: AUDITED
+              VERIFIED PHYSICIAN RECORD
             </span>
           </div>
 

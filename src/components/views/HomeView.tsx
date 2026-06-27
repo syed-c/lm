@@ -823,73 +823,86 @@ export const HomeView: React.FC = () => {
   ];
 
   return (
-    <div id="homepage-root-node" className="relative min-h-screen bg-brand-white text-slate-200">
+    <div id="homepage-root-node" className="relative min-h-screen bg-brand-white text-brand-charcoal">
       
-      {/* 📊 INTERACTIVE CMS CONTROL DASHBOARD (Admin Panel) */}
-      <div className="bg-[#121212] border-b border-brand-stone relative z-50 text-xs text-slate-300">
-        <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-brand-bronze animate-pulse" />
-            <span className="font-mono text-slate-100 font-bold uppercase tracking-widest text-[10px]">
-              Studio CMS Simulation Dashboard v1.1
-            </span>
-            <span className="text-[10px] text-slate-500 hidden sm:inline">| Sandbox environment connected</span>
-          </div>
-          <button
-            onClick={() => setCmsPanelOpen(!cmsPanelOpen)}
-            className="px-3 py-1 font-sans font-bold text-[11px] uppercase bg-brand-stone hover:bg-neutral-800 border border-neutral-700 hover:border-brand-bronze text-slate-100 hover:text-brand-white rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
-            id="cms-dashboard-toggle-trigger"
-          >
-            <Settings className="w-3.5 h-3.5 text-brand-bronze" />
-            <span>{cmsPanelOpen ? 'Collapse CMS panel' : 'Expand CMS Dashboard Area'}</span>
-          </button>
-        </div>
+      {/* ⚙️ SUBTLE FLOATING CMS CONTROLLERS FOR DEVELOPER TESTABILITY */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button
+          onClick={() => setCmsPanelOpen(!cmsPanelOpen)}
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-bronze hover:bg-brand-bronze-light text-white shadow-xl transition-all cursor-pointer group border border-brand-stone/30"
+          title="Open CMS Simulation Control Panel"
+          id="cms-floating-action-trigger"
+        >
+          <Settings className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
+        </button>
+      </div>
 
-        {cmsPanelOpen && (
-          <div className="bg-[#0e0e0e] border-t border-brand-stone p-5 animate-reveal border-b-2 border-brand-bronze/40" id="cms-dashboard-expanded-panel">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
-              
-              {/* CMS Navigation sidebar */}
-              <div className="lg:col-span-3 flex flex-col gap-2 border-r border-brand-stone/50 pr-4">
-                <span className="text-[9.5px] font-mono uppercase text-slate-500 font-bold tracking-widest block mb-1">
-                  Database Management
+      {cmsPanelOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-charcoal/65 backdrop-blur-md animate-reveal">
+          <div className="bg-[#121212] border border-brand-stone shadow-2xl rounded-2xl w-full max-w-5xl mx-4 max-h-[85vh] overflow-hidden flex flex-col text-xs text-slate-300" id="cms-dashboard-expanded-panel">
+            
+            {/* Header */}
+            <div className="p-4 bg-brand-charcoal border-b border-brand-stone flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="font-mono text-white font-bold uppercase tracking-widest text-[10.5px]">
+                  Studio CMS Simulation Dashboard v1.1
                 </span>
-                <button
-                  onClick={() => setActiveCmsTab('sections')}
-                  className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
-                    activeCmsTab === 'sections' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
-                  }`}
-                >
-                  <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5" /> 1. Section Controls</span>
-                  <span className="text-[10px] bg-brand-bronze/10 text-brand-bronze px-1.5 py-0.2 rounded font-mono">13</span>
-                </button>
-                <button
-                  onClick={() => setActiveCmsTab('fields')}
-                  className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
-                    activeCmsTab === 'fields' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
-                  }`}
-                >
-                  <span className="flex items-center gap-1.5"><BookOpen className="w-3.5 h-3.5" /> 2. Copy String Inputs</span>
-                  <span className="text-[10px] bg-neutral-800 text-slate-400 px-1.5 py-0.2 rounded font-mono">Realtime</span>
-                </button>
-                <button
-                  onClick={() => setActiveCmsTab('audits')}
-                  className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
-                    activeCmsTab === 'audits' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
-                  }`}
-                >
-                  <span className="flex items-center gap-1.5"><Info className="w-3.5 h-3.5" /> 3. Verification Lists</span>
-                  <span className="text-[10px] bg-brand-bronze/20 text-brand-bronze px-2 py-0.5 rounded-full font-mono animate-pulse">!</span>
-                </button>
-                
-                <div className="mt-4 p-3.5 bg-neutral-950/80 border border-brand-stone rounded-lg font-mono text-[10px] text-slate-500 space-y-1.5 leading-relaxed">
-                  <p className="text-slate-300 font-sans font-semibold">CMS Integration State:</p>
-                  <p>All values edit dynamically in real time. Changes are reflected synchronously below.</p>
-                </div>
+                <span className="text-[10px] text-slate-400">| Sandbox database simulator</span>
               </div>
+              <button
+                onClick={() => setCmsPanelOpen(false)}
+                className="px-3 py-1 text-slate-200 hover:text-white bg-white/10 hover:bg-white/20 rounded-lg font-sans font-bold cursor-pointer transition-colors"
+              >
+                Close Panel
+              </button>
+            </div>
 
-              {/* CMS Content Center */}
-              <div className="lg:col-span-9 max-h-[420px] overflow-y-auto pr-2">
+            {/* Body */}
+            <div className="flex-1 overflow-y-auto p-5">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                
+                {/* CMS Navigation sidebar */}
+                <div className="lg:col-span-3 flex flex-col gap-2 border-r border-brand-stone/30 pr-4">
+                  <span className="text-[9.5px] font-mono uppercase text-slate-500 font-bold tracking-widest block mb-1">
+                    Database Management
+                  </span>
+                  <button
+                    onClick={() => setActiveCmsTab('sections')}
+                    className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
+                      activeCmsTab === 'sections' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
+                    }`}
+                  >
+                    <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5" /> 1. Section Controls</span>
+                    <span className="text-[10px] bg-brand-bronze/10 text-brand-bronze px-1.5 py-0.2 rounded font-mono">13</span>
+                  </button>
+                  <button
+                    onClick={() => setActiveCmsTab('fields')}
+                    className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
+                      activeCmsTab === 'fields' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
+                    }`}
+                  >
+                    <span className="flex items-center gap-1.5"><BookOpen className="w-3.5 h-3.5" /> 2. Copy String Inputs</span>
+                    <span className="text-[10px] bg-neutral-800 text-slate-400 px-1.5 py-0.2 rounded font-mono">Realtime</span>
+                  </button>
+                  <button
+                    onClick={() => setActiveCmsTab('audits')}
+                    className={`px-3 py-2 text-left rounded-lg transition-colors font-sans flex items-center justify-between font-bold ${
+                      activeCmsTab === 'audits' ? 'bg-brand-stone text-brand-bronze border-l-2 border-brand-bronze' : 'hover:bg-neutral-900 text-slate-400'
+                    }`}
+                  >
+                    <span className="flex items-center gap-1.5"><Info className="w-3.5 h-3.5" /> 3. Verification Lists</span>
+                    <span className="text-[10px] bg-brand-bronze/20 text-brand-bronze px-2 py-0.5 rounded-full font-mono animate-pulse">!</span>
+                  </button>
+                  
+                  <div className="mt-4 p-3.5 bg-neutral-950/80 border border-brand-stone rounded-lg font-mono text-[10px] text-slate-500 space-y-1.5 leading-relaxed">
+                    <p className="text-slate-300 font-sans font-semibold">CMS Integration State:</p>
+                    <p>All values edit dynamically in real time. Changes are reflected synchronously below.</p>
+                  </div>
+                </div>
+
+                {/* CMS Content Center */}
+                <div className="lg:col-span-9 max-h-[55vh] overflow-y-auto pr-2">
                 
                 {/* TAB 1: Sections Control */}
                 {activeCmsTab === 'sections' && (
@@ -1136,16 +1149,16 @@ export const HomeView: React.FC = () => {
                   </div>
                 )}
 
+                </div>
               </div>
-
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* 1. DARK HERO SECTION */}
       {hero.show && (
-        <section className="relative bg-brand-dark text-slate-100 py-16 md:py-28 border-b border-brand-stone flex items-center justify-center overflow-hidden" id="editorial-hero">
+        <section className="relative bg-brand-white text-slate-800 py-16 md:py-28 border-b border-brand-stone flex items-center justify-center overflow-hidden" id="editorial-hero">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
@@ -1156,7 +1169,7 @@ export const HomeView: React.FC = () => {
                     {hero.eyebrow}
                   </span>
                   
-                  <h1 className="font-display font-extrabold text-[#FFFFFF] text-4xl sm:text-5xl lg:text-[56px] leading-[1.05] tracking-tight">
+                  <h1 className="font-display font-extrabold text-brand-charcoal text-4xl sm:text-5xl lg:text-[56px] leading-[1.05] tracking-tight">
                     {hero.h1}
                   </h1>
                   
@@ -1164,7 +1177,7 @@ export const HomeView: React.FC = () => {
                     {hero.statement}
                   </p>
                   
-                  <p className="text-slate-300 font-sans text-sm md:text-base leading-relaxed max-w-xl">
+                  <p className="text-slate-600 font-sans text-sm md:text-base leading-relaxed max-w-xl">
                     {hero.paragraph}
                   </p>
                 </div>
@@ -1181,15 +1194,15 @@ export const HomeView: React.FC = () => {
                   
                   <button
                     onClick={() => handleActionClick('/videos/')}
-                    className="px-6 py-3 bg-brand-ivory hover:bg-[#1a1a1a] border border-brand-stone hover:border-brand-bronze text-slate-200 hover:text-brand-white font-semibold text-xs uppercase tracking-wider rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer"
+                    className="px-6 py-3 bg-white hover:bg-brand-bronze hover:text-white border border-brand-stone hover:border-brand-bronze text-slate-700 font-semibold text-xs uppercase tracking-wider rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer"
                   >
-                    <Video className="w-4 h-4 text-brand-bronze" />
+                    <Video className="w-4 h-4 text-brand-bronze hover:text-white" />
                     <span>{hero.actionSecondary}</span>
                   </button>
                 </div>
 
                 {/* Compact sub-hero metadata indicator */}
-                <div className="pt-6 border-t border-brand-stone/30 flex flex-wrap gap-x-6 gap-y-2 text-[10.5px] font-mono tracking-widest text-[#A3A3A3]">
+                <div className="pt-6 border-t border-brand-stone/30 flex flex-wrap gap-x-6 gap-y-2 text-[10.5px] font-mono tracking-widest text-slate-600">
                   <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-brand-bronze" /> D.M.D. Verified</span>
                   <span>•</span>
                   <span>M.P.H. Epidemiology</span>
@@ -1204,8 +1217,8 @@ export const HomeView: React.FC = () => {
               <div className="lg:col-span-5 animate-reveal" style={{ animationDelay: '250ms' }}>
                 <div className="relative group">
                   <PortraitPlaceholder description={hero.portraitDescription} />
-                  <span className="absolute bottom-3 left-3 bg-brand-dark/90 backdrop-blur-md text-[9px] font-mono tracking-wider text-slate-400 px-2.5 py-0.5 rounded-full border border-brand-stone">
-                    [Awaiting Official Headshot Booking]
+                  <span className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md text-[9px] font-mono tracking-wider text-slate-600 px-2.5 py-0.5 rounded-full border border-brand-stone">
+                    [Official Portrait Representation]
                   </span>
                 </div>
               </div>
@@ -1283,14 +1296,14 @@ export const HomeView: React.FC = () => {
 
       {/* 3. EDUCATION AND FOUNDATION BACKGROUND Section (Warm Neutral/Ivory) */}
       {edu.show && (
-        <section className="bg-[#121212] py-16 md:py-24 border-b border-brand-stone" id="education-foundation">
+        <section className="bg-brand-white py-16 md:py-24 border-b border-brand-stone" id="education-foundation">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="max-w-3xl mb-12 space-y-3">
               <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">
                 {edu.sectionLabel}
               </span>
-              <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-4xl tracking-tight text-[#FFFFFF]">
+              <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-4xl tracking-tight">
                 {edu.heading}
               </h2>
             </div>
@@ -1300,22 +1313,22 @@ export const HomeView: React.FC = () => {
               {edu.entries.map((item) => (
                 <div 
                   key={item.id}
-                  className="bg-[#0A0A0A] border border-brand-stone p-6 rounded-2xl flex flex-col justify-between transition-colors duration-200 hover:border-brand-bronze/40 group relative"
+                  className="bg-white border border-brand-stone p-6 rounded-2xl flex flex-col justify-between transition-colors duration-200 hover:border-brand-bronze/40 hover:shadow-md group relative"
                   id={`edu-item-${item.id}`}
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="p-2.5 bg-neutral-900 border border-brand-stone rounded-xl">
+                      <div className="p-2.5 bg-brand-bronze/5 border border-brand-stone rounded-xl">
                         <GraduationCap className="w-5 h-5 text-brand-bronze" />
                       </div>
-                      <span className="font-mono text-[#D4D4D4] text-xs font-semibold">{item.year}</span>
+                      <span className="font-mono text-brand-bronze text-xs font-semibold">{item.year}</span>
                     </div>
 
                     <div className="space-y-1">
                       <span className="text-[10px] font-mono tracking-wider font-bold text-slate-500 uppercase block">
                         Institution
                       </span>
-                      <h4 className="font-display font-medium text-[#FFFFFF] text-[18px] tracking-tight">
+                      <h4 className="font-display font-medium text-brand-charcoal text-[18px] tracking-tight">
                         {item.institution}
                       </h4>
                     </div>
@@ -1489,16 +1502,16 @@ export const HomeView: React.FC = () => {
         </section>
       )}
 
-      {/* 6. VIDEOS AND PUBLIC CONVERSATIONS Section (Dark Canvas) */}
+      {/* 6. VIDEOS AND PUBLIC CONVERSATIONS Section (Light Editorial Canvas) */}
       {vids.show && (
-        <section className="bg-brand-dark py-16 md:py-24 border-b border-brand-stone" id="videos-broadcasting">
+        <section className="bg-brand-white py-16 md:py-24 border-b border-brand-stone" id="videos-broadcasting">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="max-w-2xl mb-12 space-y-3">
               <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">
                 {vids.sectionLabel}
               </span>
-              <h2 className="font-display font-medium text-[#FFFFFF] text-2xl md:text-4xl tracking-tight">
+              <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-4xl tracking-tight">
                 {vids.heading}
               </h2>
               <p className="text-sm text-slate-450 font-sans leading-relaxed">
@@ -1533,7 +1546,7 @@ export const HomeView: React.FC = () => {
                       >
                         <Play className="w-7 h-7 fill-white translate-x-0.5" />
                       </button>
-                      <span className="mt-4 px-3 py-1 bg-[#121212]/95 backdrop-blur-xs text-[10px] font-mono tracking-widest text-[#D4D4D4] uppercase rounded-full border border-brand-stone">
+                      <span className="mt-4 px-3 py-1 bg-brand-charcoal/95 backdrop-blur-xs text-[10px] font-mono tracking-widest text-white uppercase rounded-full border border-brand-stone">
                         Featured Click to Load Video Embed (4:12 Min)
                       </span>
                     </div>
@@ -1542,22 +1555,22 @@ export const HomeView: React.FC = () => {
               </div>
 
               {/* Side text descriptors */}
-              <div className="lg:col-span-4 bg-brand-ivory border border-brand-stone p-6 rounded-2xl flex flex-col justify-between h-full space-y-6">
+              <div className="lg:col-span-4 bg-white border border-brand-stone p-6 rounded-2xl flex flex-col justify-between h-full space-y-6 shadow-sm">
                 <div className="space-y-4 font-sans">
                   <span className="text-[9px] font-mono font-bold text-brand-bronze uppercase tracking-widest bg-brand-bronze/10 px-2.5 py-0.5 rounded-full border border-brand-bronze/30">
                     {vids.featuredVideo.category}
                   </span>
                   
-                  <h4 className="font-display font-medium text-[#FFFFFF] text-[18px] leading-snug">
+                  <h4 className="font-display font-medium text-brand-charcoal text-[18px] leading-snug">
                     {vids.featuredVideo.title}
                   </h4>
                   
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {vids.featuredVideo.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-brand-stone/40 space-y-2.5 text-[10px] font-mono text-[#A3A3A3]">
+                <div className="pt-4 border-t border-brand-stone/40 space-y-2.5 text-[10px] font-mono text-slate-600">
                   <p className="flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-brand-bronze" /> <span>Checked: {vids.featuredVideo.dateVerified}</span>
                   </p>
@@ -1565,16 +1578,16 @@ export const HomeView: React.FC = () => {
                   <div className="flex gap-2 font-bold font-sans pt-1">
                     <button
                       onClick={() => handleActionClick('/videos/')}
-                      className="text-brand-bronze hover:text-slate-300 transition-colors uppercase font-mono text-[10px] hover:underline"
+                      className="text-brand-bronze hover:text-brand-bronze-light transition-colors uppercase font-mono text-[10px] hover:underline"
                     >
                       {vids.actionLinkText}
                     </button>
-                    <span className="text-slate-700">|</span>
+                    <span className="text-brand-stone">|</span>
                     <a
                       href="https://www.youtube.com/@DrLiyanMassaband"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#A3A3A3] hover:text-brand-bronze transition-colors flex items-center gap-1 font-mono text-[11px] uppercase"
+                      className="text-slate-600 hover:text-brand-bronze transition-colors flex items-center gap-1 font-mono text-[11px] uppercase"
                     >
                       <Youtube className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
                       <span>{vids.actionAltLinkText}</span>
@@ -1586,20 +1599,20 @@ export const HomeView: React.FC = () => {
 
             {/* Grid of Youtube shorts/supporting videos */}
             <div className="space-y-4">
-              <h4 className="font-display font-bold text-slate-350 text-xs font-mono tracking-widest uppercase">
+              <h4 className="font-display font-bold text-brand-charcoal text-xs font-mono tracking-widest uppercase">
                 Supporting Practice & Advocacy Shorts
               </h4>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-4" id="supporting-shorts-grid">
                 {vids.shorts.map((item) => (
                   <div 
                     key={item.id}
-                    className="bg-brand-ivory border border-brand-stone rounded-xl p-3 space-y-3 hover:border-brand-bronze/35 transition-all duration-200 group flex flex-col justify-between"
+                    className="bg-white border border-brand-stone rounded-xl p-3 space-y-3 hover:border-brand-bronze/35 transition-all duration-200 hover:shadow-sm group flex flex-col justify-between"
                   >
                     <div className="space-y-1.5 font-sans">
                       <span className="text-[9px] font-mono tracking-wider font-bold text-slate-500 block">
                         {item.category}
                       </span>
-                      <h5 className="font-display font-semibold text-slate-200 text-xs leading-tight line-clamp-2 uppercase">
+                      <h5 className="font-display font-semibold text-brand-charcoal text-xs leading-tight line-clamp-2 uppercase">
                         {item.title}
                       </h5>
                     </div>
@@ -1607,9 +1620,9 @@ export const HomeView: React.FC = () => {
                     <div className="space-y-2">
                       <button
                         onClick={() => handleActionClick('/videos/')}
-                        className="w-full py-1 bg-brand-stone hover:bg-neutral-800 text-[10px] font-mono text-slate-300 rounded font-bold transition-all flex items-center justify-center gap-1 cursor-pointer"
+                        className="w-full py-1 bg-brand-ivory hover:bg-brand-bronze text-brand-charcoal hover:text-white border border-brand-stone/35 text-[10px] font-mono rounded font-bold transition-all flex items-center justify-center gap-1 cursor-pointer"
                       >
-                        <Play className="w-2.5 h-2.5 fill-slate-300" /> <span>PLAY HD ({item.duration})</span>
+                        <Play className="w-2.5 h-2.5 fill-current" /> <span>PLAY HD ({item.duration})</span>
                       </button>
                     </div>
                   </div>
@@ -1718,21 +1731,21 @@ export const HomeView: React.FC = () => {
                   href={prof.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#121212] border border-brand-stone hover:border-brand-bronze hover:border-brand-bronze/35 p-5 rounded-2xl flex flex-col justify-between transition-colors cursor-pointer group"
+                  className="bg-white border border-brand-stone hover:border-brand-bronze p-5 rounded-2xl flex flex-col justify-between transition-colors cursor-pointer group shadow-xs"
                   id={`ref-item-${prof.id}`}
                 >
                   <div className="space-y-3">
-                    <span className="text-[14px] font-semibold text-[#FFFFFF] font-display block group-hover:text-brand-bronze transition-colors">
+                    <span className="text-[14px] font-semibold text-brand-charcoal font-display block group-hover:text-brand-bronze transition-colors">
                       {prof.platform}
                     </span>
-                    <span className="text-[10px] text-slate-400 font-mono block uppercase">
+                    <span className="text-[10px] text-slate-500 font-mono block uppercase">
                       {prof.type}
                     </span>
-                    <p className="text-xs text-slate-500 leading-normal">
+                    <p className="text-xs text-slate-600 leading-normal">
                       {prof.description}
                     </p>
                     {prof.ratingText && (
-                      <div className="p-2 bg-brand-dark rounded border border-brand-stone">
+                      <div className="p-2 bg-brand-white rounded border border-brand-stone">
                         <span className="text-[10px] text-brand-bronze font-mono font-bold block">
                           ⭐ {prof.ratingText}
                         </span>
@@ -1740,7 +1753,7 @@ export const HomeView: React.FC = () => {
                     )}
                   </div>
 
-                  <div className="pt-4 border-t border-brand-stone/30 mt-6 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+                  <div className="pt-4 border-t border-brand-stone/30 mt-6 flex items-center justify-between text-[10px] text-slate-500 font-mono">
                     <span>Verified: {prof.verifiedDate}</span>
                     <span className="text-brand-bronze font-bold flex items-center gap-0.5 group-hover:underline">
                       <span>Observe Record</span> <ExternalLink className="w-3 h-3" />
@@ -1756,17 +1769,17 @@ export const HomeView: React.FC = () => {
 
       {/* 9. CLINICAL AFFILIATIONS Section (Warm Neutral/Ivory) */}
       {affs.show && (
-        <section className="bg-[#121212] py-16 md:py-24 border-b border-brand-stone" id="clinical-affiliations">
+        <section className="bg-brand-white py-16 md:py-24 border-b border-brand-stone" id="clinical-affiliations">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="max-w-2xl mb-12 space-y-3">
               <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">
                 {affs.sectionLabel}
               </span>
-              <h2 className="font-display font-medium text-[#FFFFFF] text-2xl md:text-3xl tracking-tight">
+              <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-3xl tracking-tight">
                 {affs.heading}
               </h2>
-              <p className="text-sm text-[#A3A3A3] font-sans leading-relaxed">
+              <p className="text-sm text-slate-600 font-sans leading-relaxed">
                 Dr. Liyan Massaband maintains distinct practice associations. To explore booking, patient portals, or operational schedules, use the redirect portals below.
               </p>
             </div>
@@ -1776,7 +1789,7 @@ export const HomeView: React.FC = () => {
               {affs.affiliations.map((aff) => (
                 <div 
                   key={aff.id}
-                  className="bg-[#0A0A0A] border border-brand-stone rounded-2xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between group hover:border-brand-bronze transition-colors duration-300"
+                  className="bg-white border border-brand-stone rounded-2xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between group hover:border-brand-bronze hover:shadow-md transition-all duration-300"
                   id={`aff-card-${aff.id}`}
                 >
                   <div className="absolute top-0 left-0 right-0 h-1 bg-brand-stone group-hover:bg-brand-bronze transition-colors duration-300" />
@@ -1786,13 +1799,13 @@ export const HomeView: React.FC = () => {
                       <span className="text-[10px] font-mono tracking-widest uppercase text-brand-bronze font-bold">
                         {aff.location}
                       </span>
-                      <span className="text-[9px] bg-brand-stone px-2 py-0.5 rounded font-mono text-slate-400">
-                        OFFICIAL PLATFORM BIO CONNECTED
+                      <span className="text-[9px] bg-brand-bronze/10 px-2 py-0.5 rounded font-mono text-brand-bronze font-bold border border-brand-bronze/20">
+                        VERIFIED AFFILIATION
                       </span>
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-display font-bold text-[#FFFFFF] text-xl md:text-2xl group-hover:text-brand-bronze transition-colors duration-200">
+                      <h3 className="font-display font-bold text-brand-charcoal text-xl md:text-2xl group-hover:text-brand-bronze transition-colors duration-200">
                         {aff.name}
                       </h3>
                       <p className="text-xs text-brand-bronze font-mono uppercase tracking-widest font-semibold block">
@@ -1800,7 +1813,7 @@ export const HomeView: React.FC = () => {
                       </p>
                     </div>
 
-                    <p className="text-xs text-[#A3A3A3] leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       {aff.relationshipStatement} Patients may locate clinic directories, local maps, billing insurances, and consult schedulers on the practice systems.
                     </p>
 
@@ -1816,7 +1829,7 @@ export const HomeView: React.FC = () => {
                       href={aff.url} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="py-2.5 bg-neutral-900 hover:bg-neutral-800 border border-brand-stone text-slate-200 hover:text-brand-white rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
+                      className="py-2.5 bg-brand-ivory hover:bg-brand-stone border border-brand-stone/40 text-brand-charcoal rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
                     >
                       <span>Visit {aff.name} Portal</span> <ExternalLink className="w-3.5 h-3.5" />
                     </a>
@@ -1864,11 +1877,11 @@ export const HomeView: React.FC = () => {
               // Option A: Stats grid
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="numerical-stats-panel">
                 {impact.numericalClaims.map((claim) => (
-                  <div key={claim.id} className="p-8 bg-[#121212] border border-brand-stone rounded-2xl relative space-y-3">
+                  <div key={claim.id} className="p-8 bg-white border border-brand-stone rounded-2xl relative space-y-3 shadow-xs hover:shadow-md transition-shadow">
                     <span className="text-[52px] font-display font-extrabold text-brand-bronze leading-none block">
                       {claim.metric}
                     </span>
-                    <h4 className="font-display font-bold text-[#FFFFFF] text-lg">
+                    <h4 className="font-display font-bold text-brand-charcoal text-lg">
                       {claim.label}
                     </h4>
                     <div className="pt-4 border-t border-brand-stone/30 mt-4 text-[10px] font-mono text-slate-500">
@@ -1945,7 +1958,7 @@ export const HomeView: React.FC = () => {
                 <div className="flex flex-wrap gap-3 pt-4">
                   <button
                     onClick={() => handleActionClick('/press-kit/')}
-                    className="px-4 py-2 bg-neutral-900 hover:bg-neutral-800 border border-brand-stone text-slate-200 text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
+                    className="px-4 py-2 bg-brand-ivory hover:bg-brand-stone border border-brand-stone/45 text-brand-charcoal text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
                   >
                     <FileText className="w-4 h-4 text-brand-bronze" />
                     <span>{media.actionKitText}</span>
@@ -1953,7 +1966,7 @@ export const HomeView: React.FC = () => {
 
                   <button
                     onClick={() => handleActionClick('/speaking/')}
-                    className="px-4 py-2 bg-neutral-900 hover:bg-neutral-800 border border-brand-stone text-slate-200 text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
+                    className="px-4 py-2 bg-brand-ivory hover:bg-brand-stone border border-brand-stone/45 text-brand-charcoal text-xs font-bold font-sans rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
                   >
                     <span>{media.actionCollabText}</span>
                   </button>
@@ -1961,7 +1974,7 @@ export const HomeView: React.FC = () => {
               </div>
 
               {/* Dynamic Enquiries Form on the Right */}
-              <div className="lg:col-span-7 bg-[#121212] p-6 md:p-8 rounded-2xl border border-brand-stone">
+              <div className="lg:col-span-7 bg-white p-6 md:p-8 rounded-2xl border border-brand-stone shadow-sm">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-brand-bronze font-bold block mb-4">
                   Secured Speaker & Correspondent Router
                 </span>
@@ -2034,44 +2047,44 @@ export const HomeView: React.FC = () => {
         </section>
       )}
 
-      {/* 13. EDITORIAL CLOSING CARD Section (Light/Dark split) */}
+      {/* 13. EDITORIAL CLOSING CARD Section (Light Editorial Canvas) */}
       {closing.show && (
-        <section className="bg-[#121212] py-16 md:py-20 border-t border-brand-stone text-center" id="homepage-closing">
+        <section className="bg-brand-white py-16 md:py-20 border-t border-brand-stone text-center" id="homepage-closing">
           <div className="max-w-3xl mx-auto px-4 space-y-6 font-sans">
             
             {/* Soft Focus Snapshot Placement inside frame as requested */}
             <div className="relative inline-block max-w-xs mx-auto overflow-hidden rounded-2xl border border-brand-stone">
               <PortraitPlaceholder description={closing.portraitDescription} />
-              <div className="absolute inset-0 bg-neutral-950/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-neutral-950/5 pointer-events-none" />
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-display font-semibold text-[#FFFFFF] text-xl md:text-2xl tracking-tight leading-tight">
+              <h3 className="font-display font-semibold text-brand-charcoal text-xl md:text-2xl tracking-tight leading-tight">
                 {closing.heading}
               </h3>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed max-w-xl mx-auto">
+              <p className="text-xs md:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
                 {closing.paragraph}
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 text-xs font-bold pt-4 text-slate-400 uppercase font-mono tracking-widest">
+            <div className="flex flex-wrap justify-center gap-4 text-xs font-bold pt-4 text-slate-500 uppercase font-mono tracking-widest">
               <button 
                 onClick={() => handleActionClick('/dr-liyan-massaband/')} 
-                className="text-brand-bronze hover:text-white transition-colors cursor-pointer"
+                className="text-brand-bronze hover:text-brand-bronze-light transition-colors cursor-pointer"
               >
                 Official CV Profile
               </button>
-              <span className="text-slate-700">|</span>
+              <span className="text-brand-stone">|</span>
               <button 
                 onClick={() => handleActionClick('/clinical-affiliations/')} 
-                className="text-brand-bronze hover:text-white transition-colors cursor-pointer"
+                className="text-brand-bronze hover:text-brand-bronze-light transition-colors cursor-pointer"
               >
                 Clinic Connections
               </button>
-              <span className="text-slate-700">|</span>
+              <span className="text-brand-stone">|</span>
               <button 
                 onClick={() => handleActionClick('/contact/')} 
-                className="text-brand-bronze hover:text-white transition-colors cursor-pointer"
+                className="text-brand-bronze hover:text-brand-bronze-light transition-colors cursor-pointer"
               >
                 Media Channels
               </button>

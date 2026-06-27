@@ -3,6 +3,21 @@
   <head>
     <script>
       window.onerror = function(message, source, lineno, colno, error) {
+        // Log all captured errors to the backend for auditing first
+        var errorData = {
+          type: 'error',
+          message: message,
+          source: source || 'unknown',
+          lineno: lineno || 0,
+          colno: colno || 0,
+          stack: error ? error.stack : 'none'
+        };
+        fetch('/api/log-client-error', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(errorData)
+        }).catch(function() {});
+
         // Safe-guard: Ignore cross-origin third-party "Script error" or empty source references
         // since they do not affect our application and are usually triggered by browser extensions or iframe wrappers.
         if (message === "Script error." || message === "Script error" || !source) {
@@ -18,20 +33,6 @@
         } else {
           console.error("No stack trace available.");
         }
-
-        var errorData = {
-          type: 'error',
-          message: message,
-          source: source,
-          lineno: lineno,
-          colno: colno,
-          stack: error ? error.stack : null
-        };
-        fetch('/api/log-client-error', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(errorData)
-        }).catch(function() {});
         return false;
       };
       window.addEventListener('unhandledrejection', function(event) {

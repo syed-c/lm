@@ -69,8 +69,8 @@ export const SiteHeader: React.FC = () => {
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 w-full ${
         scrolled 
-          ? 'bg-[#050505]/95 border-b border-brand-stone shadow-lg py-3 backdrop-blur-md' 
-          : 'bg-[#050505] border-b border-brand-stone/50 py-4'
+          ? 'bg-brand-white/95 border-b border-brand-stone shadow-sm py-3 backdrop-blur-md' 
+          : 'bg-brand-white border-b border-brand-stone/40 py-4'
       }`}
       id="site-nav-header"
     >
@@ -82,14 +82,14 @@ export const SiteHeader: React.FC = () => {
           aria-label="Dr Liyan Massaband Official Home"
         >
           <div className="flex items-center gap-1.5">
-            <span className="font-display font-semibold text-brand-white text-lg tracking-tight group-hover:text-brand-bronze transition-colors duration-200">
+            <span className="font-display font-semibold text-brand-charcoal text-lg tracking-tight group-hover:text-brand-bronze transition-colors duration-200">
               {BRAND_CONFIG.personName}
             </span>
-            <span className="text-brand-bronze text-[11px] font-mono tracking-wider font-semibold border border-brand-bronze/30 px-1.5 py-0.2 rounded-full">
+            <span className="text-brand-bronze text-[11px] font-mono tracking-wider font-semibold border border-brand-bronze/20 bg-brand-bronze/5 px-1.5 py-0.2 rounded-full">
               D.M.D., M.P.H.
             </span>
           </div>
-          <span className="text-[10px] font-mono font-medium text-slate-400 uppercase tracking-widest leading-none mt-0.5">
+          <span className="text-[10px] font-mono font-medium text-slate-500 uppercase tracking-widest leading-none mt-0.5">
             Official Professional Authority Hub
           </span>
         </Link>
@@ -101,8 +101,8 @@ export const SiteHeader: React.FC = () => {
             <button
               onClick={() => toggleDropdown('profile')}
               onMouseEnter={() => setActiveDropdown('profile')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-white/5 ${
-                isDropdownActive(profileLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-200'
+              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
+                isDropdownActive(profileLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
               }`}
               aria-expanded={activeDropdown === 'profile'}
               id="desktop-nav-profile"
@@ -112,7 +112,7 @@ export const SiteHeader: React.FC = () => {
             </button>
             {activeDropdown === 'profile' && (
               <div 
-                className="absolute left-0 mt-1.5 w-60 bg-brand-ivory border border-brand-stone shadow-xl rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
+                className="absolute left-0 mt-1.5 w-60 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {profileLinks.map(link => (
@@ -121,8 +121,8 @@ export const SiteHeader: React.FC = () => {
                     to={link.to}
                     className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
                       isActive(link.to) 
-                        ? 'bg-brand-bronze/15 text-brand-bronze font-medium' 
-                        : 'text-slate-300 hover:bg-white/5 hover:text-brand-white'
+                        ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
+                        : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
                     }`}
                   >
                     {link.label}
@@ -137,8 +137,8 @@ export const SiteHeader: React.FC = () => {
             <button
               onClick={() => toggleDropdown('public-work')}
               onMouseEnter={() => setActiveDropdown('public-work')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-white/5 ${
-                isDropdownActive(publicWorkLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-200'
+              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
+                isDropdownActive(publicWorkLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
               }`}
               id="desktop-nav-work"
             >
@@ -147,7 +147,7 @@ export const SiteHeader: React.FC = () => {
             </button>
             {activeDropdown === 'public-work' && (
               <div 
-                className="absolute left-0 mt-1.5 w-60 bg-brand-ivory border border-brand-stone shadow-xl rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
+                className="absolute left-0 mt-1.5 w-60 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {publicWorkLinks.map(link => (
@@ -156,8 +156,8 @@ export const SiteHeader: React.FC = () => {
                     to={link.to}
                     className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
                       isActive(link.to) 
-                        ? 'bg-brand-bronze/15 text-brand-bronze font-medium' 
-                        : 'text-slate-300 hover:bg-white/5 hover:text-brand-white'
+                        ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
+                        : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
                     }`}
                   >
                     {link.label}
@@ -172,8 +172,8 @@ export const SiteHeader: React.FC = () => {
             <button
               onClick={() => toggleDropdown('media')}
               onMouseEnter={() => setActiveDropdown('media')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-white/5 ${
-                isDropdownActive(mediaLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-200'
+              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
+                isDropdownActive(mediaLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
               }`}
               id="desktop-nav-media"
             >
@@ -182,7 +182,7 @@ export const SiteHeader: React.FC = () => {
             </button>
             {activeDropdown === 'media' && (
               <div 
-                className="absolute left-0 mt-1.5 w-60 bg-brand-ivory border border-brand-stone shadow-xl rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
+                className="absolute left-0 mt-1.5 w-60 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {mediaLinks.map(link => (
@@ -191,8 +191,8 @@ export const SiteHeader: React.FC = () => {
                     to={link.to}
                     className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
                       isActive(link.to) 
-                        ? 'bg-brand-bronze/15 text-brand-bronze font-medium' 
-                        : 'text-slate-300 hover:bg-white/5 hover:text-brand-white'
+                        ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
+                        : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
                     }`}
                   >
                     {link.label}
@@ -207,8 +207,8 @@ export const SiteHeader: React.FC = () => {
             <button
               onClick={() => toggleDropdown('affiliations')}
               onMouseEnter={() => setActiveDropdown('affiliations')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-white/5 ${
-                isDropdownActive(affiliationLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-200'
+              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
+                isDropdownActive(affiliationLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
               }`}
               id="desktop-nav-affiliations"
             >
@@ -217,7 +217,7 @@ export const SiteHeader: React.FC = () => {
             </button>
             {activeDropdown === 'affiliations' && (
               <div 
-                className="absolute right-0 mt-1.5 w-64 bg-brand-ivory border border-brand-stone shadow-xl rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
+                className="absolute right-0 mt-1.5 w-64 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {affiliationLinks.map(link => (
@@ -226,8 +226,8 @@ export const SiteHeader: React.FC = () => {
                     to={link.to}
                     className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
                       isActive(link.to) 
-                        ? 'bg-brand-bronze/15 text-brand-bronze font-medium' 
-                        : 'text-slate-300 hover:bg-white/5 hover:text-brand-white'
+                        ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
+                        : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
                     }`}
                   >
                     {link.label}
@@ -241,7 +241,7 @@ export const SiteHeader: React.FC = () => {
           <Link
             to="/contact/"
             className={`px-3 py-2 text-[13px] font-medium rounded-lg transition-colors ${
-              isActive('/contact/') ? 'text-brand-bronze font-semibold bg-white/5' : 'text-slate-200 hover:bg-white/5 hover:text-brand-white'
+              isActive('/contact/') ? 'text-brand-bronze font-semibold bg-brand-bronze/5' : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
             }`}
           >
             Contact
@@ -252,10 +252,10 @@ export const SiteHeader: React.FC = () => {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/contact/"
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-stone hover:bg-neutral-800 border border-brand-stone text-slate-100 hover:text-brand-white font-display text-[12.5px] font-semibold tracking-wide rounded-lg transition-colors duration-200"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-[12.5px] font-semibold tracking-wide rounded-lg transition-colors duration-200 shadow-sm"
             id="desktop-header-media-enquiry-action"
           >
-            <Calendar className="w-4 h-4 text-brand-bronze" />
+            <Calendar className="w-4 h-4 text-white" />
             <span>Media Enquiries</span>
           </Link>
         </div>
@@ -264,14 +264,14 @@ export const SiteHeader: React.FC = () => {
         <div className="lg:hidden flex items-center gap-3">
           <Link
             to="/contact/"
-            className="p-2 bg-brand-bronze hover:bg-brand-bronze-light rounded-lg text-brand-white transition-colors cursor-pointer"
+            className="p-2 bg-brand-bronze hover:bg-brand-bronze-light rounded-lg text-white transition-colors cursor-pointer"
             aria-label="Enquire professional paths"
           >
             <Calendar className="w-4.5 h-4.5" />
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 bg-brand-ivory text-slate-200 hover:bg-[#1a1a1a] border border-brand-stone rounded-lg hover:text-brand-white transition-colors cursor-pointer"
+            className="p-2 bg-white text-slate-700 hover:bg-slate-50 border border-brand-stone rounded-lg hover:text-brand-bronze transition-colors cursor-pointer"
             aria-label="Toggle structural menu drawer"
             id="mobile-drawer-trigger"
           >
@@ -282,17 +282,17 @@ export const SiteHeader: React.FC = () => {
 
       {/* Mobile Drawer Drawer (grouped sections as requested) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0A0A0A] border-t border-brand-stone py-5 px-4 max-h-[85vh] overflow-y-auto shadow-2xl animate-reveal" id="mobile-nav-drawer">
+        <div className="lg:hidden bg-brand-white border-t border-brand-stone py-5 px-4 max-h-[85vh] overflow-y-auto shadow-2xl animate-reveal" id="mobile-nav-drawer">
           <div className="space-y-6">
             {/* PROFILE SECTION */}
             <div>
               <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Profile Background</p>
-              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/10 pl-3">
+              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
                 {profileLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-300'}`}
+                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-700'}`}
                   >
                     {link.label}
                   </Link>
@@ -303,12 +303,12 @@ export const SiteHeader: React.FC = () => {
             {/* PUBLIC WORK SECTION */}
             <div>
               <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Public Work</p>
-              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/10 pl-3">
+              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
                 {publicWorkLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-300'}`}
+                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-700'}`}
                   >
                     {link.label}
                   </Link>
@@ -319,12 +319,12 @@ export const SiteHeader: React.FC = () => {
             {/* MEDIA */}
             <div>
               <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Media Opportunities</p>
-              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/10 pl-3">
+              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
                 {mediaLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-300'}`}
+                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-700'}`}
                   >
                     {link.label}
                   </Link>
@@ -335,12 +335,12 @@ export const SiteHeader: React.FC = () => {
             {/* AFFILIATIONS */}
             <div>
               <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Clinical affiliations</p>
-              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/10 pl-3">
+              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
                 {affiliationLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-300'}`}
+                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-700'}`}
                   >
                     {link.label}
                   </Link>
@@ -352,16 +352,16 @@ export const SiteHeader: React.FC = () => {
             <div className="pt-2 border-t border-brand-stone flex flex-col gap-3">
               <Link
                 to="/contact/"
-                className={`py-2 text-sm text-center font-medium ${isActive('/contact/') ? 'text-brand-bronze font-bold' : 'text-slate-100'}`}
+                className={`py-2 text-sm text-center font-medium ${isActive('/contact/') ? 'text-brand-bronze font-bold' : 'text-slate-700'}`}
               >
                 Direct Connection & General Inquiries
               </Link>
               
-              <div className="bg-brand-stone/10 p-3 rounded-lg flex items-center justify-between text-xs text-slate-400">
+              <div className="bg-brand-bronze/5 p-3 rounded-lg flex items-center justify-between text-xs text-slate-600">
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-brand-bronze" /> Verified Credentials
                 </span>
-                <span className="font-mono">NPI Verified</span>
+                <span className="font-mono text-brand-bronze">NPI Verified</span>
               </div>
             </div>
           </div>
