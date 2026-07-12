@@ -170,6 +170,30 @@ button, a {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Beautiful dotted grid background pattern */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(18, 60, 51, 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Deluxe glass-like panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(223, 213, 198, 0.45);
+}
+
+/* Tactile 3D lift on hover */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(18, 60, 51, 0.06);
+  border-color: rgba(18, 60, 51, 0.3);
+}
+
 /* Accent borders and hover glow states matching clinical excellence */
 .border-accent {
   border-color: #1F4D44;

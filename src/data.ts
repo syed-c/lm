@@ -661,8 +661,8 @@ export const SEO_ROUTES_META: Record<string, SeoMetaData> = {
     schemaType: "CollectionPage"
   },
   "/social-highlights/": {
-    title: "Social Highlights & Patient Education | Dr. Liyan Massaband",
-    description: "Explore selected educational and professional social content from Dr. Liyan Massaband's official public profiles.",
+    title: "Curated Social Highlights & Educational Content | Dr. Liyan Massaband",
+    description: "Verified educational post guides and clinical explanations shared by Dr. Liyan Massaband on official social channels.",
     canonical: "/social-highlights/",
     ogType: "website",
     ogImage: "https://picsum.photos/seed/social/1200/630",
@@ -820,15 +820,6 @@ export const SEO_ROUTES_META: Record<string, SeoMetaData> = {
     ogType: "website",
     ogImage: "https://picsum.photos/seed/burbanklocation/1200/630",
     robots: "index, follow",
-    schemaType: "WebPage"
-  },
-  "/authority-dashboard/": {
-    title: "Off-Page Digital PR & Core Authority Console | Dr. Liyan Massaband",
-    description: "Diagnostic scoring dashboard indexing backlink profiles, citations, brand safety audits, and public healthcare directories.",
-    canonical: "/authority-dashboard/",
-    ogType: "noindex, nofollow",
-    ogImage: "https://picsum.photos/seed/dash/1200/630",
-    robots: "noindex, nofollow",
     schemaType: "WebPage"
   }
 };

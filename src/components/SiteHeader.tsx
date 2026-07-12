@@ -49,6 +49,7 @@ export const SiteHeader: React.FC = () => {
     { to: '/media/', label: 'Media Center' },
     { to: '/press-kit/', label: 'Press Kit' },
     { to: '/speaking/', label: 'Speaking Engagement' },
+    { to: '/social-highlights/', label: 'Social Highlights' },
   ];
 
   const toggleDropdown = (name: string) => {

@@ -55,9 +55,15 @@ export const HomeView: React.FC = () => {
   return (
     <div className="bg-brand-white" id="home-view-root">
       
-      {/* 1. HERO SECTION (Editorial personal brand layout) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-stone/30 via-brand-white to-brand-white py-20 lg:py-32 border-b border-brand-stone/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 1. HERO SECTION (Editorial personal brand layout with dot grid background details) */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-stone/20 via-brand-white to-brand-white py-20 lg:py-32 border-b border-brand-stone/40">
+        
+        {/* Subtle, beautiful floating medical engineering dot grid in background */}
+        <div className="absolute inset-0 bg-dot-grid opacity-60 pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-bronze/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-brand-plum/5 rounded-full blur-2xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Content column */}
@@ -65,44 +71,44 @@ export const HomeView: React.FC = () => {
               
               {/* Premium credential badges */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/30 bg-brand-bronze/5 px-3 py-1 rounded-full">
+                <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/30 bg-brand-bronze/5 px-3.5 py-1.5 rounded-full shadow-2xs">
                   Dr. Liyan Massaband, D.M.D., M.P.H.
                 </span>
-                <span className="text-[11px] font-mono font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-2xs">
-                  <ShieldCheck className="w-3.5 h-3.5" /> 1,000+ Dental Implants Placed
+                <span className="text-[11px] font-mono font-semibold text-emerald-800 bg-emerald-50/85 border border-emerald-200 px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-2xs">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 animate-pulse" /> 1,000+ Dental Implants Placed
                 </span>
               </div>
-
+ 
               {/* Main Authority Headline */}
-              <h1 className="font-display font-medium text-brand-charcoal text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.05]">
+              <h1 className="font-display font-medium text-brand-charcoal text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] drop-shadow-3xs">
                 Premium Dental Implant & Full-Mouth Restoration Specialist
               </h1>
-
+ 
               {/* Patient Positioning Pitch */}
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans max-w-xl">
                 Reclaim your smile's natural beauty, solid biting force, and speaking confidence. As a dual-trained medical professional with extensive practice in Beverly Hills and Burbank, {BRAND_CONFIG.personName} customizes every full-arch, All-on-X, and single-tooth replacement using state-of-the-art 3D biological mapping.
               </p>
-
+ 
               {/* Action Buttons */}
               <div className="pt-4 flex flex-wrap gap-4 font-sans">
                 <Link
                   to="/contact/"
-                  className="px-6 py-4 bg-brand-bronze hover:bg-brand-bronze-light text-white text-sm font-semibold tracking-wide rounded-xl transition-all duration-200 shadow-md flex items-center gap-2"
+                  className="px-6 py-4 bg-brand-bronze hover:bg-brand-bronze-light text-white text-sm font-semibold tracking-wide rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5"
                 >
                   <Calendar className="w-4.5 h-4.5 text-white" />
                   <span>Request an Implant Assessment</span>
                 </Link>
                 <Link
                   to="/dental-implants/"
-                  className="px-6 py-4 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze text-sm font-semibold tracking-wide rounded-xl transition-all duration-200 bg-white"
+                  className="px-6 py-4 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze text-sm font-semibold tracking-wide rounded-xl transition-all duration-300 bg-white shadow-3xs hover:shadow-2xs transform hover:-translate-y-0.5"
                 >
                   Explore Dental Implants Guide
                 </Link>
               </div>
-
+ 
               {/* Trust signals block */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-brand-stone/60">
-                <div className="flex gap-3">
+                <div className="flex gap-3 p-3 rounded-xl hover:bg-white/50 transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-brand-bronze/5 border border-brand-bronze/20 flex items-center justify-center shrink-0">
                     <Award className="w-5 h-5 text-brand-bronze" />
                   </div>
@@ -113,8 +119,8 @@ export const HomeView: React.FC = () => {
                     </p>
                   </div>
                 </div>
-
-                <div className="flex gap-3">
+ 
+                <div className="flex gap-3 p-3 rounded-xl hover:bg-white/50 transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-brand-bronze/5 border border-brand-bronze/20 flex items-center justify-center shrink-0">
                     <GraduationCap className="w-5 h-5 text-brand-bronze" />
                   </div>
@@ -126,41 +132,42 @@ export const HomeView: React.FC = () => {
                   </div>
                 </div>
               </div>
-
+ 
             </div>
-
+ 
             {/* Right Column Visual Portal */}
             <div className="lg:col-span-5 relative font-sans">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-brand-stone/60 relative">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-brand-stone/60 relative group">
                 <img 
                   src="https://images.unsplash.com/photo-1579684389782-64d84b5e905d?auto=format&fit=crop&q=80&w=850"
                   alt="Dr Liyan Massaband Dental Implant Specialist" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/20 to-transparent" />
                 
                 {/* Micro badge indicator */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 bg-brand-charcoal/40 backdrop-blur-sm rounded-xl border border-white/10 space-y-1">
+                <div className="absolute bottom-6 left-6 right-6 p-5 bg-brand-charcoal/60 backdrop-blur-md rounded-xl border border-white/10 space-y-1">
                   <div className="flex items-center gap-1.5 text-emerald-400">
-                    <ShieldCheck className="w-4 h-4" />
+                    <ShieldCheck className="w-4 h-4 animate-pulse" />
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider">Verified Professional Authority</span>
                   </div>
-                  <p className="text-xs text-slate-100 leading-normal">
-                    \"Every dental implant is a biological fusion with your living body. We design each anchor to ensure natural integration and lasting biomechanical stability.\"
+                  <p className="text-xs text-slate-200 leading-relaxed">
+                    "Every dental implant is a biological fusion with your living body. We design each anchor to ensure natural integration and lasting biomechanical stability."
                   </p>
-                  <span className="text-[9px] font-mono text-brand-bronze uppercase tracking-widest block font-bold pt-1">— {BRAND_CONFIG.displayName}</span>
+                  <span className="text-[9px] font-mono text-brand-bronze uppercase tracking-widest block font-bold pt-1.5 border-t border-white/10">— {BRAND_CONFIG.displayName}</span>
                 </div>
               </div>
             </div>
-
+ 
           </div>
         </div>
       </section>
 
-      {/* 2. PATIENT CONCERNS SECTION (Empathy and Biology focus) */}
-      <section className="py-16 md:py-24 bg-white border-b border-brand-stone/40 font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 2. PATIENT CONCERNS SECTION (Empathy and Biology focus with elegant card details) */}
+      <section className="py-16 md:py-24 bg-white border-b border-brand-stone/40 font-sans relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-stone/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">
@@ -176,26 +183,29 @@ export const HomeView: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <div className="border border-brand-stone p-6 rounded-2xl bg-brand-stone/5 space-y-3">
+            <div className="border border-brand-stone/60 p-7 rounded-2xl bg-brand-stone/10 space-y-3 hover-lift transition-all duration-350 shadow-3xs relative group">
+              <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
               <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider">01. Bone Loss Prevention</span>
-              <p className="text-brand-charcoal font-display font-bold text-base">Continuous Jawbone Deterioration</p>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-brand-charcoal font-display font-bold text-lg">Continuous Jawbone Deterioration</p>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 When a natural tooth is lost, the surrounding bone minerals resorb. Titanium implant posts act as artificial roots, stimulating the bone and preventing facial bone collapse.
               </p>
             </div>
 
-            <div className="border border-brand-stone p-6 rounded-2xl bg-brand-stone/5 space-y-3">
+            <div className="border border-brand-stone/60 p-7 rounded-2xl bg-brand-stone/10 space-y-3 hover-lift transition-all duration-350 shadow-3xs relative group">
+              <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
               <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider">02. Restoring Chewing force</span>
-              <p className="text-brand-charcoal font-display font-bold text-base">Dietary and Speech Restrictions</p>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-brand-charcoal font-display font-bold text-lg">Dietary and Speech Restrictions</p>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Traditional dentures restore only 15% to 20% of original chewing force. Fixed dental implants restore up to 90% of natural biting force, allowing you to eat a healthy diet.
               </p>
             </div>
 
-            <div className="border border-brand-stone p-6 rounded-2xl bg-brand-stone/5 space-y-3">
+            <div className="border border-brand-stone/60 p-7 rounded-2xl bg-brand-stone/10 space-y-3 hover-lift transition-all duration-350 shadow-3xs relative group">
+              <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
               <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider">03. Permanent Stability</span>
-              <p className="text-brand-charcoal font-display font-bold text-base">Denture Slipping & Social Anxiety</p>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-brand-charcoal font-display font-bold text-lg">Denture Slipping & Social Anxiety</p>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Loose dentures can slide around, making speaking and laughing uncomfortable. Implants lock teeth firmly in place, eliminating the need for messy adhesives or pastes.
               </p>
             </div>
@@ -205,9 +215,10 @@ export const HomeView: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. IMPLANT SPECIALTIES GRID (Deeper look at treatments) */}
-      <section className="py-16 md:py-24 bg-brand-stone/5 border-b border-brand-stone/40 font-sans" id="implant-treatment-sectors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 3. IMPLANT SPECIALTIES GRID (Deeper look at treatments with premium cards) */}
+      <section className="py-16 md:py-24 bg-brand-stone/5 border-b border-brand-stone/40 font-sans relative overflow-hidden" id="implant-treatment-sectors">
+        <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">
@@ -224,103 +235,103 @@ export const HomeView: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Specialty 1 */}
-            <div className="bg-white border border-brand-stone/60 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 p-6 rounded-2xl hover-lift transition-all duration-300 flex flex-col justify-between shadow-xs">
               <div className="space-y-3">
                 <span className="font-mono text-[10px] text-brand-bronze font-bold block uppercase tracking-wider">SINGLE TOOTH LOSS</span>
                 <h3 className="font-display font-bold text-brand-charcoal text-lg">Single Dental Implants</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Replaces a missing tooth from root to crown without modifying neighboring teeth. This is the gold standard alternative to traditional dental bridges.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/40 mt-6 flex justify-between items-center text-xs font-semibold">
                 <span className="text-[10px] text-slate-400 font-mono font-bold">Independent anchor</span>
-                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Specialty 2 */}
-            <div className="bg-white border border-brand-stone/60 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 p-6 rounded-2xl hover-lift transition-all duration-300 flex flex-col justify-between shadow-xs">
               <div className="space-y-3">
                 <span className="font-mono text-[10px] text-brand-bronze font-bold block uppercase tracking-wider">MULTIPLE MISSING TEETH</span>
                 <h3 className="font-display font-bold text-brand-charcoal text-lg">Multiple Dental Implants</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Ideal for resolving several missing teeth in sequence. Multiple posts support custom ceramic implant bridges, avoiding partial dentures.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/40 mt-6 flex justify-between items-center text-xs font-semibold">
                 <span className="text-[10px] text-slate-400 font-mono font-bold">Custom ceramic bridges</span>
-                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Specialty 3 */}
-            <div className="bg-white border border-brand-stone/60 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 p-6 rounded-2xl hover-lift transition-all duration-300 flex flex-col justify-between shadow-xs">
               <div className="space-y-3">
                 <span className="font-mono text-[10px] text-brand-bronze font-bold block uppercase tracking-wider">FULL-ARCH FIXED TEETH</span>
                 <h3 className="font-display font-bold text-brand-charcoal text-lg">All-on-X Implants</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   A revolutionary full-arch solution. A strategically planned number of implants (typically 4 to 6) support a full, fixed, cosmetic arch of replacement teeth.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/40 mt-6 flex justify-between items-center text-xs font-semibold">
                 <span className="text-[10px] text-slate-400 font-mono font-bold">Computer-guided arches</span>
-                <Link to="/all-on-x/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore All-on-X</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/all-on-x/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore All-on-X</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Specialty 4 */}
-            <div className="bg-white border border-brand-stone/60 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 p-6 rounded-2xl hover-lift transition-all duration-300 flex flex-col justify-between shadow-xs">
               <div className="space-y-3">
                 <span className="font-mono text-[10px] text-brand-bronze font-bold block uppercase tracking-wider">STABILIZING OVERDENTURES</span>
                 <h3 className="font-display font-bold text-brand-charcoal text-lg">Implant-Supported Dentures</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Combines the relative affordability of a denture with the stability of implants. Posts physically snap-on to secure the denture in place.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/40 mt-6 flex justify-between items-center text-xs font-semibold">
                 <span className="text-[10px] text-slate-400 font-mono font-bold">No slips or adhesives</span>
-                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Specialty 5 */}
-            <div className="bg-white border border-brand-stone/60 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 p-6 rounded-2xl hover-lift transition-all duration-300 flex flex-col justify-between shadow-xs">
               <div className="space-y-3">
                 <span className="font-mono text-[10px] text-brand-bronze font-bold block uppercase tracking-wider">BONE REBUILDING</span>
                 <h3 className="font-display font-bold text-brand-charcoal text-lg">Grafting & Sinus Lifts</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Essential for patients with localized bone deficiencies. Dr. Massaband performs guided tissue regeneration to create a stable implant foundation.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/40 mt-6 flex justify-between items-center text-xs font-semibold">
                 <span className="text-[10px] text-slate-400 font-mono font-bold">Guided Regeneration</span>
-                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/dental-implants/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Specialty 6 */}
-            <div className="bg-white border border-brand-stone/60 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 p-6 rounded-2xl hover-lift transition-all duration-300 flex flex-col justify-between shadow-xs">
               <div className="space-y-3">
                 <span className="font-mono text-[10px] text-brand-bronze font-bold block uppercase tracking-wider">CORRECTIVE CARE</span>
                 <h3 className="font-display font-bold text-brand-charcoal text-lg">Implant Revision & Assessment</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Evaluations for older implant complications, loose fixtures, pain, or bleeding. We provide clear, diagnostic assessments and correction plans.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/40 mt-6 flex justify-between items-center text-xs font-semibold">
                 <span className="text-[10px] text-slate-400 font-mono font-bold">Specialist assessment</span>
-                <Link to="/contact/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Request Assessment</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/contact/" className="text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Request Assessment</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>

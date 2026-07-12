@@ -73,6 +73,7 @@ export const SiteFooter: React.FC = () => {
               </h4>
               <nav className="flex flex-col gap-2 text-[13px] text-slate-700" aria-label="Footer Public Work">
                 <Link to="/videos/" className="hover:text-brand-bronze transition-colors">Video Library</Link>
+                <Link to="/social-highlights/" className="hover:text-brand-bronze transition-colors">Social Highlights</Link>
                 <Link to="/articles/" className="hover:text-brand-bronze transition-colors">Insights & Articles</Link>
                 <Link to="/professional-focus/" className="hover:text-brand-bronze transition-colors">Expert Focus</Link>
                 <Link to="/philosophy/" className="hover:text-brand-bronze transition-colors">Core Philosophy</Link>

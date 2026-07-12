@@ -61,31 +61,35 @@ export const DentalImplantsView: React.FC = () => {
     <div className="bg-brand-white" id="dental-implants-view-root">
       
       {/* 1. HERO SECTION (Editorial personal brand overlay) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-stone/20 via-brand-white to-brand-white py-20 lg:py-28 border-b border-brand-stone/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-brand-stone/5 py-20 lg:py-28 border-b border-brand-stone/40">
+        <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-brand-stone/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
+        <div className="absolute top-1/2 -right-40 w-96 h-96 bg-brand-stone/10 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/30 bg-brand-bronze/5 px-3 py-1 rounded-full inline-block">
+              <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/35 bg-brand-bronze/5 px-3 py-1 rounded-full inline-block">
                 Advanced Oral Restorations
               </span>
               <h1 className="font-display font-medium text-brand-charcoal text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
                 Dental Implants in Beverly Hills & Burbank
               </h1>
-              <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-xl font-sans">
+              <p className="text-sm md:text-base text-slate-650 leading-relaxed max-w-xl font-sans">
                 Restore your natural chewing force, speech clarity, and structural smile confidence. Under the guidance of {BRAND_CONFIG.personName}, each dental implant case receives personalized biological planning, ultra-precise 3D digital guides, and medically elite materials.
               </p>
               
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
                   to="/contact/"
-                  className="px-6 py-3.5 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-200 shadow-md"
+                  className="px-6 py-3.5 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-350 shadow-md hover:shadow-lg hover:-translate-y-0.5"
                 >
                   Request an Implant Consultation
                 </Link>
                 <Link
                   to="/all-on-x/"
-                  className="px-6 py-3.5 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-200 bg-white"
+                  className="px-6 py-3.5 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-350 bg-white shadow-3xs hover:shadow-xs"
                 >
                   Explore All-on-X Treatment
                 </Link>
@@ -93,7 +97,7 @@ export const DentalImplantsView: React.FC = () => {
 
               {/* Verified Badge */}
               <div className="pt-6 border-t border-brand-stone/60 flex items-center gap-3.5">
-                <div className="bg-emerald-50 text-emerald-700 p-2 rounded-lg">
+                <div className="bg-emerald-50 text-emerald-700 p-2.5 rounded-xl border border-emerald-100">
                   <ShieldCheck className="w-5 h-5 shrink-0" />
                 </div>
                 <div>
@@ -109,22 +113,22 @@ export const DentalImplantsView: React.FC = () => {
 
             {/* Hero Right Visual Column */}
             <div className="lg:col-span-5 relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-brand-stone/60 relative">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-brand-stone/60 relative group">
                 <img 
                   src="https://images.unsplash.com/photo-1579684389782-64d84b5e905d?auto=format&fit=crop&q=80&w=800"
                   alt="Dr. Liyan Massaband Dental Implant Planning Session" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white p-4 bg-brand-charcoal/40 backdrop-blur-sm rounded-xl border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white p-5 bg-brand-charcoal/50 backdrop-blur-md rounded-xl border border-white/10 shadow-lg">
                   <p className="text-xs font-mono tracking-wider text-emerald-400 font-bold uppercase mb-1">
                     • CLINICAL BIOLOGY FIRST
                   </p>
                   <p className="text-xs text-slate-100 font-sans leading-relaxed">
-                    \"An implant is not simply a tooth replacement. It is a biological integration with the living jaw structure. Every design parameter must coordinate with your unique bite dynamics.\"
+                    "An implant is not simply a tooth replacement. It is a biological integration with the living jaw structure. Every design parameter must coordinate with your unique bite dynamics."
                   </p>
-                  <p className="text-[10px] font-bold text-brand-bronze mt-2 block tracking-wider uppercase">
+                  <p className="text-[10px] font-bold text-brand-bronze mt-2.5 block tracking-wider uppercase">
                     — {BRAND_CONFIG.personName}
                   </p>
                 </div>
@@ -154,9 +158,10 @@ export const DentalImplantsView: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Visual Diagram Left */}
-            <div className="lg:col-span-5 flex flex-col items-center justify-center bg-brand-stone/10 rounded-2xl p-8 border border-brand-stone/40 min-h-[420px]">
+            <div className="lg:col-span-5 flex flex-col items-center justify-center bg-brand-stone/10 rounded-2xl p-8 border border-brand-stone/40 min-h-[420px] relative overflow-hidden">
+              <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
               
-              <div className="relative w-full max-w-[280px] h-[340px] flex flex-col justify-between py-4 select-none">
+              <div className="relative w-full max-w-[280px] h-[340px] flex flex-col justify-between py-4 select-none z-10">
                 {/* Crown Representation */}
                 <button 
                   onClick={() => setActiveDiagramPart('crown')}
@@ -248,10 +253,10 @@ export const DentalImplantsView: React.FC = () => {
                 <h3 className="font-display font-bold text-xl text-brand-charcoal">
                   {diagramParts[activeDiagramPart].title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed font-sans">
+                <p className="text-sm text-slate-605 leading-relaxed font-sans">
                   {diagramParts[activeDiagramPart].description}
                 </p>
-                <p className="text-xs text-slate-500 bg-brand-stone/5 p-3 rounded-lg border-l-2 border-brand-bronze leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 bg-brand-stone/5 p-4 rounded-xl border-l-2 border-brand-bronze leading-relaxed font-sans">
                   {diagramParts[activeDiagramPart].details}
                 </p>
               </div>
@@ -285,8 +290,9 @@ export const DentalImplantsView: React.FC = () => {
       </section>
 
       {/* 3. IMPLANT TREATMENT OPTIONS (Single, Multiple, supported, etc.) */}
-      <section className="py-16 md:py-24 bg-brand-ivory/20 border-b border-brand-stone/40" id="implant-treatment-options">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 bg-brand-stone/5 border-b border-brand-stone/40 relative overflow-hidden" id="implant-treatment-options">
+        <div className="absolute inset-0 bg-dot-grid opacity-25 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">
@@ -303,7 +309,7 @@ export const DentalImplantsView: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Treatment Card 1 */}
-            <div className="bg-white border border-brand-stone/60 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 rounded-2xl p-6 hover-lift transition-all duration-350 flex flex-col justify-between shadow-xs">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-stone/10 flex items-center justify-center font-display font-bold text-brand-bronze">
                   01
@@ -311,20 +317,20 @@ export const DentalImplantsView: React.FC = () => {
                 <h3 className="font-display font-bold text-lg text-brand-charcoal">
                   Single Dental Implants
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   Replaces one missing tooth from root to crown without modifying or damaging adjacent healthy teeth. This is the gold standard alternative to traditional dental bridges.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/30 mt-6 flex justify-between items-center">
                 <span className="text-[10px] font-mono text-brand-bronze font-bold uppercase tracking-wider">Independent anchor</span>
-                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Treatment Card 2 */}
-            <div className="bg-white border border-brand-stone/60 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 rounded-2xl p-6 hover-lift transition-all duration-350 flex flex-col justify-between shadow-xs">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-stone/10 flex items-center justify-center font-display font-bold text-brand-bronze">
                   02
@@ -332,20 +338,20 @@ export const DentalImplantsView: React.FC = () => {
                 <h3 className="font-display font-bold text-lg text-brand-charcoal">
                   Multiple Dental Implants
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   Ideal for resolving several missing teeth in sequence. Multiple posts can support customized multi-unit implant bridges, eliminating the need for partial dentures.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/30 mt-6 flex justify-between items-center">
                 <span className="text-[10px] font-mono text-brand-bronze font-bold uppercase tracking-wider">Implant-supported bridges</span>
-                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Treatment Card 3 */}
-            <div className="bg-white border border-brand-stone/60 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 rounded-2xl p-6 hover-lift transition-all duration-350 flex flex-col justify-between shadow-xs">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-stone/10 flex items-center justify-center font-display font-bold text-brand-bronze">
                   03
@@ -353,20 +359,20 @@ export const DentalImplantsView: React.FC = () => {
                 <h3 className="font-display font-bold text-lg text-brand-charcoal">
                   All-on-X Dental Implants
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   A revolutionary full-arch solution. A strategically planned number of implants (typically 4 to 6) support a full, fixed, cosmetic arch of replacement teeth.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/30 mt-6 flex justify-between items-center">
                 <span className="text-[10px] font-mono text-brand-bronze font-bold uppercase tracking-wider">Full-mouth fixed teeth</span>
-                <Link to="/all-on-x/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore All-on-X</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/all-on-x/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore All-on-X</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Treatment Card 4 */}
-            <div className="bg-white border border-brand-stone/60 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 rounded-2xl p-6 hover-lift transition-all duration-350 flex flex-col justify-between shadow-xs">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-stone/10 flex items-center justify-center font-display font-bold text-brand-bronze">
                   04
@@ -374,20 +380,20 @@ export const DentalImplantsView: React.FC = () => {
                 <h3 className="font-display font-bold text-lg text-brand-charcoal">
                   Implant-Supported Dentures
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   Combines the relative affordability of a removable denture with the absolute stability of dental implants. Posts physically snap-on to retain the denture firmly.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/30 mt-6 flex justify-between items-center">
                 <span className="text-[10px] font-mono text-brand-bronze font-bold uppercase tracking-wider">No slips, no adhesives</span>
-                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Treatment Card 5 */}
-            <div className="bg-white border border-brand-stone/60 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 rounded-2xl p-6 hover-lift transition-all duration-350 flex flex-col justify-between shadow-xs">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-stone/10 flex items-center justify-center font-display font-bold text-brand-bronze">
                   05
@@ -395,20 +401,20 @@ export const DentalImplantsView: React.FC = () => {
                 <h3 className="font-display font-bold text-lg text-brand-charcoal">
                   Bone Grafting & Sinus Lifts
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   Essential for patients with localized bone deficiencies. Dr. Massaband executes guided bone regeneration (GBR) to rebuild healthy foundation tissue before placement.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/30 mt-6 flex justify-between items-center">
                 <span className="text-[10px] font-mono text-brand-bronze font-bold uppercase tracking-wider">Guided Regeneration</span>
-                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Explore</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Explore</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Treatment Card 6 */}
-            <div className="bg-white border border-brand-stone/60 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div className="bg-white border border-brand-stone/50 rounded-2xl p-6 hover-lift transition-all duration-350 flex flex-col justify-between shadow-xs">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-stone/10 flex items-center justify-center font-display font-bold text-brand-bronze">
                   06
@@ -416,14 +422,14 @@ export const DentalImplantsView: React.FC = () => {
                 <h3 className="font-display font-bold text-lg text-brand-charcoal">
                   Implant Revision & Assessment
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   Specialized evaluation of older implant work, loose crowns, pain, or complications. Dr. Massaband provides clinical diagnostic clarity and corrective treatment routes.
                 </p>
               </div>
               <div className="pt-6 border-t border-brand-stone/30 mt-6 flex justify-between items-center">
                 <span className="text-[10px] font-mono text-brand-bronze font-bold uppercase tracking-wider">Corrective evaluation</span>
-                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1">
-                  <span>Request Assessment</span> <ChevronRight className="w-3.5 h-3.5" />
+                <Link to="/contact/" className="text-xs font-semibold text-brand-bronze hover:text-brand-bronze-light flex items-center gap-1 group">
+                  <span className="border-b border-transparent group-hover:border-brand-bronze transition-all">Request Assessment</span> <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </div>

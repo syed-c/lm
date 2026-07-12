@@ -46,6 +46,7 @@ import {
 import { AuthorityDashboardView } from './components/views/AuthorityDashboardView.tsx';
 import { BrandGovernanceViews } from './components/views/BrandGovernanceViews.tsx';
 import { FactSheetView } from './components/views/FactSheetView.tsx';
+import { SocialHighlightsView } from './components/views/SocialHighlightsView.tsx';
 
 // Specialty Implant and Location Views
 import { DentalImplantsView } from './components/views/DentalImplantsView.tsx';
@@ -157,6 +158,9 @@ const AppContent: React.FC = () => {
       <RouteView routePath="/speaking/">
         <MediaCenterView />
       </RouteView>
+      <RouteView routePath="/social-highlights/">
+        <SocialHighlightsView />
+      </RouteView>
       <RouteView routePath="/contact/">
         <ContactView />
       </RouteView>
@@ -232,7 +236,7 @@ const Fallback404Route: React.FC = () => {
     '/articles/', '/clinical-affiliations/', '/clinical-affiliations/magnolia-dentistry/',
     '/clinical-affiliations/confidental-beverly-hills/', '/patient-trust/', '/official-profiles/',
     '/medical-review-policy/', '/corrections-policy/',
-    '/media/', '/press-kit/', '/speaking/',
+    '/media/', '/press-kit/', '/speaking/', '/social-highlights/',
     '/contact/', '/medical-disclaimer/', '/privacy-policy/', '/accessibility/',
     '/editorial-standards/', '/sitemap/', '/authority-dashboard/', '/brand-governance/', '/fact-sheet/',
     '/dental-implants/', '/all-on-x/', '/patient-stories/', '/implant-education/', '/experience-1000-implants/',
