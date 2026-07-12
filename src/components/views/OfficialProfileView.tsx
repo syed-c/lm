@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter, Link } from '../AppRouter.tsx';
 import { SourceReferenceBadge } from '../SourceReferenceBadge.tsx';
 import { PortraitPlaceholder } from './ProfileViews.tsx';
+import { TrustVerificationShield } from '../TrustVerificationShield.tsx';
 import { 
   Award, 
   MapPin, 
@@ -521,6 +522,24 @@ export const OfficialProfileView: React.FC = () => {
 
         </div>
       </div>
+
+      {/* Trust & Cybersecurity Hub */}
+      <section className="bg-brand-white border-t border-brand-stone/60 py-16" id="profile-trust-shield">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="max-w-2xl space-y-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-brand-bronze font-bold block">
+              Cryptographic Safeguards & E-E-A-T
+            </span>
+            <h3 className="font-display font-medium text-brand-charcoal text-xl md:text-2xl">
+              Credential Verification & Cybersecurity Locks
+            </h3>
+            <p className="text-xs text-slate-500">
+              Run real-time security checks, copy cryptographic checksums of our PR assets, or audit how Google Search bots map her professional entity.
+            </p>
+          </div>
+          <TrustVerificationShield />
+        </div>
+      </section>
 
       {/* Sources and Verification Section */}
       <section className="bg-brand-stone/10 border-t border-brand-stone py-12" id="verification-source-audit-footer">

@@ -1,0 +1,210 @@
+import React from 'react';
+import { MapPin, Clock, Info, ShieldCheck, Star, Calendar, Phone, ArrowRight, Compass } from 'lucide-react';
+import { Link } from '../AppRouter.tsx';
+import { BRAND_CONFIG } from '../../data.ts';
+
+export const BurbankLocationView: React.FC = () => {
+  const reviews = [
+    {
+      author: "Sandra L.",
+      rating: 5,
+      date: "June 2026",
+      text: "I was extremely anxious about replacing my two lower missing molars. Dr. Massaband placed two implants at her Burbank suite. Her explanation of bone healing was so reassuring. The clinical care is top-tier and the space is so warm."
+    },
+    {
+      author: "Thomas P.",
+      rating: 5,
+      date: "May 2026",
+      text: "The best dental experience I have ever had. Dr. Massaband placed a dental implant to replace my broken premolar. She uses computerized planning so you see exactly where the titanium anchor is going before they start. Unbelievable precision."
+    }
+  ];
+
+  return (
+    <div className="bg-brand-white font-sans" id="burbank-location-root">
+      
+      {/* 1. Header Hero */}
+      <section className="bg-gradient-to-b from-brand-stone/20 via-brand-white to-brand-white py-16 md:py-24 border-b border-brand-stone/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/30 bg-brand-bronze/5 px-3 py-1 rounded-full inline-block">
+                Burbank Practice Location
+              </span>
+              <h1 className="font-display font-medium text-brand-charcoal text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+                Implant Dentistry in Burbank
+              </h1>
+              <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-xl font-sans">
+                Affiliated with Magnolia Dentistry, our Burbank clinic brings elite dental implant care to Glendale, Studio City, Toluca Lake, Sherman Oaks, and surrounding San Fernando Valley communities. Utilizing modern biological concepts to restore solid teeth and smile comfort.
+              </p>
+              
+              <div className="pt-2 flex flex-wrap gap-4">
+                <Link
+                  to="/contact/"
+                  className="px-6 py-3.5 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-200 shadow-md flex items-center gap-2"
+                >
+                  <Calendar className="w-4.5 h-4.5 text-white" />
+                  <span>Request Appointment</span>
+                </Link>
+                <a
+                  href="tel:8185550144"
+                  className="px-6 py-3.5 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-200 bg-white flex items-center gap-2"
+                >
+                  <Phone className="w-4.5 h-4.5 text-brand-bronze" />
+                  <span>Call Burbank</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Visual Right */}
+            <div className="lg:col-span-5">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-brand-stone/60">
+                <img 
+                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
+                  alt="Burbank Magnolia Dentistry Practice Suite" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Location Specific Information */}
+      <section className="py-16 bg-white border-b border-brand-stone/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* Address & Hours */}
+            <div className="bg-brand-stone/5 border border-brand-stone/40 p-6 rounded-2xl space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-brand-bronze/10 flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-brand-bronze" />
+              </div>
+              <h3 className="font-display font-bold text-brand-charcoal text-base">Practice Location Details</h3>
+              
+              <div className="text-xs text-slate-600 space-y-3 font-sans">
+                <p>
+                  <strong>Burbank Office (Magnolia Dentistry)</strong><br />
+                  1923 W Magnolia Blvd<br />
+                  Burbank, CA 91506
+                </p>
+                <p className="border-t border-brand-stone/40 pt-3 flex items-start gap-2">
+                  <Clock className="w-4 h-4 text-slate-400 mt-0.5" />
+                  <span>
+                    <strong>Hours:</strong><br />
+                    Tuesday – Friday: 8:30 AM – 5:30 PM<br />
+                    Saturday: By Appointment Only
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            {/* Parking & Directions */}
+            <div className="bg-brand-stone/5 border border-brand-stone/40 p-6 rounded-2xl space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-brand-bronze/10 flex items-center justify-center">
+                <Compass className="w-5 h-5 text-brand-bronze" />
+              </div>
+              <h3 className="font-display font-bold text-brand-charcoal text-base">Parking & Access Guide</h3>
+              
+              <div className="text-xs text-slate-600 space-y-3 font-sans">
+                <p>
+                  <strong>Complimentary Parking:</strong> Free dedicated client parking is available directly behind our building off the alley.
+                </p>
+                <p className="border-t border-brand-stone/40 pt-3">
+                  <strong>Street Parking:</strong> Ample, unrestricted free street parking is also available directly along Magnolia Boulevard.
+                </p>
+                <p className="border-t border-brand-stone/40 pt-3">
+                  <strong>Local Landmarks:</strong> Situated in beautiful Magnolia Park, surrounded by local boutiques, Burbank Town Center, and Walt Disney Studios.
+                </p>
+              </div>
+            </div>
+
+            {/* Offered Implant Treatments */}
+            <div className="bg-brand-stone/5 border border-brand-stone/40 p-6 rounded-2xl space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-brand-bronze/10 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-brand-bronze" />
+              </div>
+              <h3 className="font-display font-bold text-brand-charcoal text-base">Implant Specialties Available</h3>
+              
+              <div className="text-xs text-slate-600 space-y-3 font-sans">
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-bronze shrink-0" />
+                    <span>Single tooth computer-guided implants</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-bronze shrink-0" />
+                    <span>Socket preservation & local bone grafts</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-bronze shrink-0" />
+                    <span>Snap-on implant supported dentures</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-bronze shrink-0" />
+                    <span>Advanced digital 3D intraoral mapping</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Burbank Reviews */}
+      <section className="py-16 bg-brand-white border-b border-brand-stone/40 font-sans">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center space-y-3 mb-12">
+            <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">Local Patient Stories</span>
+            <h2 className="font-display font-medium text-brand-charcoal text-3xl tracking-tight">Reviews from Burbank</h2>
+          </div>
+
+          <div className="space-y-6">
+            {reviews.map((rev, idx) => (
+              <div key={idx} className="bg-white border border-brand-stone/60 p-6 rounded-2xl space-y-3 shadow-xs">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <strong className="text-xs font-semibold text-brand-charcoal block">{rev.author}</strong>
+                    <span className="text-[10px] text-slate-400">{rev.date} • Burbank Office</span>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {[...Array(rev.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-brand-bronze text-brand-bronze" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 leading-relaxed italic">
+                  \"{rev.text}\"
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Contact redirection */}
+      <section className="py-16 bg-white font-sans">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
+          <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-3xl tracking-tight">
+            Schedule an Implant Consultation in Burbank
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
+            Discuss your tooth replacement options with Dr. Massaband in our beautiful Magnolia Park Burbank office.
+          </p>
+          <div className="pt-2">
+            <Link
+              to="/contact/"
+              className="px-6 py-3.5 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-xs font-bold uppercase tracking-wider rounded-xl transition-all"
+            >
+              Book Burbank Assessment
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};

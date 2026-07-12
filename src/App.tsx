@@ -8,6 +8,7 @@ import { AppRouter, RouteView, useRouter, Link, normalizePath } from './componen
 import { SiteHeader } from './components/SiteHeader.tsx';
 import { SiteFooter } from './components/SiteFooter.tsx';
 import { FloatingContactWidget } from './components/FloatingContactWidget.tsx';
+import { ScrollProgressBar } from './components/ScrollProgressBar.tsx';
 
 // View Imports
 import { HomeView } from './components/views/HomeView.tsx';
@@ -45,6 +46,15 @@ import {
 import { AuthorityDashboardView } from './components/views/AuthorityDashboardView.tsx';
 import { BrandGovernanceViews } from './components/views/BrandGovernanceViews.tsx';
 import { FactSheetView } from './components/views/FactSheetView.tsx';
+
+// Specialty Implant and Location Views
+import { DentalImplantsView } from './components/views/DentalImplantsView.tsx';
+import { AllOnXView } from './components/views/AllOnXView.tsx';
+import { PatientStoriesView } from './components/views/PatientStoriesView.tsx';
+import { ImplantEducationView } from './components/views/ImplantEducationView.tsx';
+import { ImplantExperienceView } from './components/views/ImplantExperienceView.tsx';
+import { BeverlyHillsLocationView } from './components/views/BeverlyHillsLocationView.tsx';
+import { BurbankLocationView } from './components/views/BurbankLocationView.tsx';
 
 // Dynamic Param Matcher Helper component
 const AppContent: React.FC = () => {
@@ -150,6 +160,29 @@ const AppContent: React.FC = () => {
         <MediaCenterView />
       </RouteView>
 
+      {/* Specialty Implant Restorations & Authority Nodes */}
+      <RouteView routePath="/dental-implants/">
+        <DentalImplantsView />
+      </RouteView>
+      <RouteView routePath="/all-on-x/">
+        <AllOnXView />
+      </RouteView>
+      <RouteView routePath="/patient-stories/">
+        <PatientStoriesView />
+      </RouteView>
+      <RouteView routePath="/implant-education/">
+        <ImplantEducationView />
+      </RouteView>
+      <RouteView routePath="/experience-1000-implants/">
+        <ImplantExperienceView />
+      </RouteView>
+      <RouteView routePath="/locations/beverly-hills/">
+        <BeverlyHillsLocationView />
+      </RouteView>
+      <RouteView routePath="/locations/burbank/">
+        <BurbankLocationView />
+      </RouteView>
+
       {/* Policy and Regulatory Shells */}
       <RouteView routePath="/medical-disclaimer/">
         <MedicalDisclaimerView />
@@ -200,7 +233,9 @@ const Fallback404Route: React.FC = () => {
     '/medical-review-policy/', '/corrections-policy/',
     '/media/', '/press-kit/', '/speaking/',
     '/contact/', '/medical-disclaimer/', '/privacy-policy/', '/accessibility/',
-    '/editorial-standards/', '/sitemap/', '/authority-dashboard/', '/brand-governance/', '/fact-sheet/'
+    '/editorial-standards/', '/sitemap/', '/authority-dashboard/', '/brand-governance/', '/fact-sheet/',
+    '/dental-implants/', '/all-on-x/', '/patient-stories/', '/implant-education/', '/experience-1000-implants/',
+    '/locations/beverly-hills/', '/locations/burbank/'
   ];
 
   const normalizedPath = normalizePath(path).toLowerCase();
@@ -279,6 +314,9 @@ export default function App() {
   return (
     <AppRouter>
       <div className="min-h-screen flex flex-col bg-brand-white text-brand-charcoal font-sans" id="applet-global-shell">
+        {/* Subtle, slim progress indicator bar for long-form content */}
+        <ScrollProgressBar />
+
         {/* Core Header */}
         <SiteHeader />
         

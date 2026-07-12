@@ -25,30 +25,30 @@ export const SiteHeader: React.FC = () => {
   }, []);
 
   const profileLinks = [
-    { to: '/dr-liyan-massaband/', label: 'Official Profile' },
+    { to: '/dr-liyan-massaband/', label: 'Meet Dr. Liyan' },
     { to: '/her-story/', label: 'Her Story & Background' },
     { to: '/education-and-credentials/', label: 'Education & Credentials' },
-    { to: '/professional-journey/', label: 'Professional Journey' },
-    { to: '/philosophy/', label: 'Professional Philosophy' },
+    { to: '/philosophy/', label: 'Clinical Philosophy' },
+    { to: '/experience-1000-implants/', label: '1,000+ Implants Experience' },
   ];
 
-  const publicWorkLinks = [
-    { to: '/videos/', label: 'Videos & Case Studies' },
-    { to: '/articles/', label: 'Articles & Oral Insights' },
-    { to: '/professional-focus/', label: 'Core Medical Focus' },
+  const implantLinks = [
+    { to: '/dental-implants/', label: 'Dental Implants' },
+    { to: '/all-on-x/', label: 'All-on-X Treatment' },
+    { to: '/patient-stories/', label: 'Patient Stories' },
+    { to: '/implant-education/', label: 'Implant Education Hub' },
+  ];
+
+  const locationLinks = [
+    { to: '/locations/beverly-hills/', label: 'Beverly Hills Suite' },
+    { to: '/locations/burbank/', label: 'Burbank Magnolia Park' },
+    { to: '/clinical-affiliations/', label: 'Clinical Affiliations' },
   ];
 
   const mediaLinks = [
-    { to: '/media/', label: 'Media & Press Hub' },
-    { to: '/press-kit/', label: 'Press Kit Assets' },
-    { to: '/speaking/', label: 'Keynote & Speaking' },
-  ];
-
-  const affiliationLinks = [
-    { to: '/clinical-affiliations/', label: 'Clinical practices summary' },
-    { to: 'https://www.magnoliadentistry.com/', label: 'Magnolia Dentistry (Burbank)' },
-    { to: 'https://confidentalbeverlyhills.com/', label: 'ConfiDental Beverly Hills' },
-    { to: '/official-profiles/', label: 'External Directory Links' },
+    { to: '/media/', label: 'Media Center' },
+    { to: '/press-kit/', label: 'Press Kit' },
+    { to: '/speaking/', label: 'Speaking Engagement' },
   ];
 
   const toggleDropdown = (name: string) => {
@@ -103,19 +103,29 @@ export const SiteHeader: React.FC = () => {
         </Link>
 
         {/* Desktop Interface */}
-        <nav className="hidden lg:flex items-center gap-1.5">
-          {/* PROFILE Dropdown */}
+        <nav className="hidden lg:flex items-center gap-1">
+          {/* HOME LINK */}
+          <Link
+            to="/"
+            className={`px-2.5 py-2 text-[12.5px] font-medium transition-colors rounded-lg hover:bg-brand-bronze/5 ${
+              isActive('/') ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
+            }`}
+          >
+            Home
+          </Link>
+
+          {/* MEET DR. LIYAN Dropdown */}
           <div className="relative">
             <button
               onClick={() => toggleDropdown('profile')}
               onMouseEnter={() => setActiveDropdown('profile')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-2 text-[12.5px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
                 isDropdownActive(profileLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
               }`}
               aria-expanded={activeDropdown === 'profile'}
               id="desktop-nav-profile"
             >
-              <span>Profile</span>
+              <span>Meet Dr. Liyan</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'profile' ? 'rotate-180' : ''}`} />
             </button>
             {activeDropdown === 'profile' && (
@@ -127,7 +137,7 @@ export const SiteHeader: React.FC = () => {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
+                    className={`block px-3 py-2 text-[12.5px] rounded-lg transition-colors ${
                       isActive(link.to) 
                         ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
                         : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
@@ -140,29 +150,69 @@ export const SiteHeader: React.FC = () => {
             )}
           </div>
 
-          {/* PUBLIC WORK Dropdown */}
+          {/* DENTAL IMPLANTS Direct Link */}
+          <Link
+            to="/dental-implants/"
+            className={`px-2.5 py-2 text-[12.5px] font-medium rounded-lg transition-colors hover:bg-brand-bronze/5 ${
+              isActive('/dental-implants/') ? 'text-brand-bronze font-semibold bg-brand-bronze/5' : 'text-slate-700 hover:text-brand-bronze'
+            }`}
+          >
+            Dental Implants
+          </Link>
+
+          {/* ALL-ON-X Direct Link */}
+          <Link
+            to="/all-on-x/"
+            className={`px-2.5 py-2 text-[12.5px] font-medium rounded-lg transition-colors hover:bg-brand-bronze/5 ${
+              isActive('/all-on-x/') ? 'text-brand-bronze font-semibold bg-brand-bronze/5' : 'text-slate-700 hover:text-brand-bronze'
+            }`}
+          >
+            All-on-X
+          </Link>
+
+          {/* PATIENT STORIES Direct Link */}
+          <Link
+            to="/patient-stories/"
+            className={`px-2.5 py-2 text-[12.5px] font-medium rounded-lg transition-colors hover:bg-brand-bronze/5 ${
+              isActive('/patient-stories/') ? 'text-brand-bronze font-semibold bg-brand-bronze/5' : 'text-slate-700 hover:text-brand-bronze'
+            }`}
+          >
+            Patient Stories
+          </Link>
+
+          {/* IMPLANT EDUCATION Direct Link */}
+          <Link
+            to="/implant-education/"
+            className={`px-2.5 py-2 text-[12.5px] font-medium rounded-lg transition-colors hover:bg-brand-bronze/5 ${
+              isActive('/implant-education/') ? 'text-brand-bronze font-semibold bg-brand-bronze/5' : 'text-slate-700 hover:text-brand-bronze'
+            }`}
+          >
+            Implant Education
+          </Link>
+
+          {/* LOCATIONS Dropdown */}
           <div className="relative">
             <button
-              onClick={() => toggleDropdown('public-work')}
-              onMouseEnter={() => setActiveDropdown('public-work')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
-                isDropdownActive(publicWorkLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
+              onClick={() => toggleDropdown('locations')}
+              onMouseEnter={() => setActiveDropdown('locations')}
+              className={`inline-flex items-center gap-1.5 px-2.5 py-2 text-[12.5px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
+                isDropdownActive(locationLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
               }`}
-              id="desktop-nav-work"
+              id="desktop-nav-locations"
             >
-              <span>Public Work</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'public-work' ? 'rotate-180' : ''}`} />
+              <span>Locations</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'locations' ? 'rotate-180' : ''}`} />
             </button>
-            {activeDropdown === 'public-work' && (
+            {activeDropdown === 'locations' && (
               <div 
-                className="absolute left-0 mt-1.5 w-60 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
+                className="absolute right-0 mt-1.5 w-60 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                {publicWorkLinks.map(link => (
+                {locationLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
+                    className={`block px-3 py-2 text-[12.5px] rounded-lg transition-colors ${
                       isActive(link.to) 
                         ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
                         : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
@@ -180,24 +230,24 @@ export const SiteHeader: React.FC = () => {
             <button
               onClick={() => toggleDropdown('media')}
               onMouseEnter={() => setActiveDropdown('media')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-2 text-[12.5px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
                 isDropdownActive(mediaLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
               }`}
               id="desktop-nav-media"
             >
-              <span>Media Center</span>
+              <span>Media</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'media' ? 'rotate-180' : ''}`} />
             </button>
             {activeDropdown === 'media' && (
               <div 
-                className="absolute left-0 mt-1.5 w-60 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
+                className="absolute right-0 mt-1.5 w-60 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {mediaLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
+                    className={`block px-3 py-2 text-[12.5px] rounded-lg transition-colors ${
                       isActive(link.to) 
                         ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
                         : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
@@ -210,45 +260,10 @@ export const SiteHeader: React.FC = () => {
             )}
           </div>
 
-          {/* AFFILIATIONS Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown('affiliations')}
-              onMouseEnter={() => setActiveDropdown('affiliations')}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium transition-colors cursor-pointer rounded-lg hover:bg-brand-bronze/5 ${
-                isDropdownActive(affiliationLinks) ? 'text-brand-bronze font-semibold' : 'text-slate-700 hover:text-brand-bronze'
-              }`}
-              id="desktop-nav-affiliations"
-            >
-              <span>Affiliations</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'affiliations' ? 'rotate-180' : ''}`} />
-            </button>
-            {activeDropdown === 'affiliations' && (
-              <div 
-                className="absolute right-0 mt-1.5 w-64 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1 z-50 animate-reveal"
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                {affiliationLinks.map(link => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`block px-3 py-2 text-[13px] rounded-lg transition-colors ${
-                      isActive(link.to) 
-                        ? 'bg-brand-bronze/10 text-brand-bronze font-medium' 
-                        : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* CONTACT Directly (No dropdown nested) */}
+          {/* CONTACT Directly */}
           <Link
             to="/contact/"
-            className={`px-3 py-2 text-[13px] font-medium rounded-lg transition-colors ${
+            className={`px-2.5 py-2 text-[12.5px] font-medium rounded-lg transition-colors hover:bg-brand-bronze/5 ${
               isActive('/contact/') ? 'text-brand-bronze font-semibold bg-brand-bronze/5' : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
             }`}
           >
@@ -294,7 +309,7 @@ export const SiteHeader: React.FC = () => {
           <div className="space-y-6">
             {/* PROFILE SECTION */}
             <div>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Profile Background</p>
+              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Meet Dr. Liyan</p>
               <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
                 {profileLinks.map(link => (
                   <Link
@@ -308,11 +323,27 @@ export const SiteHeader: React.FC = () => {
               </div>
             </div>
 
-            {/* PUBLIC WORK SECTION */}
+            {/* IMPLANT DENTISTRY */}
             <div>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Public Work</p>
+              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Implant Services</p>
               <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
-                {publicWorkLinks.map(link => (
+                {implantLinks.map(link => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-700'}`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* LOCATIONS */}
+            <div>
+              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Practice Locations</p>
+              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
+                {locationLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
@@ -326,25 +357,9 @@ export const SiteHeader: React.FC = () => {
 
             {/* MEDIA */}
             <div>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Media Opportunities</p>
+              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Media & PR</p>
               <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
                 {mediaLinks.map(link => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className={`block py-1 text-sm ${isActive(link.to) ? 'text-brand-bronze font-medium' : 'text-slate-700'}`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* AFFILIATIONS */}
-            <div>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Clinical affiliations</p>
-              <div className="grid grid-cols-1 gap-2 border-l border-brand-stone/40 pl-3">
-                {affiliationLinks.map(link => (
                   <Link
                     key={link.to}
                     to={link.to}
