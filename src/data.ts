@@ -758,6 +758,78 @@ export const SEO_ROUTES_META: Record<string, SeoMetaData> = {
     ogImage: "https://picsum.photos/seed/factsheet/1200/630",
     robots: "index, follow",
     schemaType: "WebPage"
+  },
+  "/dental-implants/": {
+    title: "Specialty Implant Restorations | Dr. Liyan Massaband",
+    description: "Learn about biological tooth replacements, computer-guided single dental implants, and titanium/zirconia post restorations.",
+    canonical: "/dental-implants/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/dentalimplants/1200/630",
+    robots: "index, follow",
+    schemaType: "WebPage"
+  },
+  "/all-on-x/": {
+    title: "All-on-X Full-Arch Restoration Systems | Dr. Liyan Massaband",
+    description: "In-depth guide to computer-guided full-arch custom aesthetic rehabilitation using premium multi-unit implant arches.",
+    canonical: "/all-on-x/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/allonx/1200/630",
+    robots: "index, follow",
+    schemaType: "WebPage"
+  },
+  "/patient-stories/": {
+    title: "Surgical Case Reports & Patient Outcomes | Dr. Liyan Massaband",
+    description: "Explore biological implant integration case reviews, dental veneer histories, and certified diagnostic timelines.",
+    canonical: "/patient-stories/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/stories/1200/630",
+    robots: "index, follow",
+    schemaType: "CollectionPage"
+  },
+  "/implant-education/": {
+    title: "Dental Implant Patient Resource Center | Dr. Liyan Massaband",
+    description: "Access diagnostic frameworks, bone graft explanations, structural sinus lifts, and post-operative biological maintenance guidelines.",
+    canonical: "/implant-education/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/implanted/1200/630",
+    robots: "index, follow",
+    schemaType: "CollectionPage"
+  },
+  "/experience-1000-implants/": {
+    title: "1,000+ Implants Experience Verified Milestone | Dr. Liyan Massaband",
+    description: "Review Dr. Liyan Massaband's certified clinical milestone of placing over 1,000 dental implant posts across Southern California.",
+    canonical: "/experience-1000-implants/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/exp1000/1200/630",
+    robots: "index, follow",
+    schemaType: "WebPage"
+  },
+  "/locations/beverly-hills/": {
+    title: "Dentistry in Beverly Hills | ConfiDental Practice Suite",
+    description: "Book aesthetic composite veneer designs, diagnostic CBCT scans, and full-arch computerized guided surgeries in Beverly Hills with Dr. Massaband.",
+    canonical: "/locations/beverly-hills/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/bhlocation/1200/630",
+    robots: "index, follow",
+    schemaType: "WebPage"
+  },
+  "/locations/burbank/": {
+    title: "Dentistry in Burbank | Magnolia Dentistry Office",
+    description: "Proactive biological mouth care, metal-free zirconia crowns, and restorative tooth implants in Burbank with Dr. Liyan Massaband.",
+    canonical: "/locations/burbank/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/burbanklocation/1200/630",
+    robots: "index, follow",
+    schemaType: "WebPage"
+  },
+  "/authority-dashboard/": {
+    title: "Off-Page Digital PR & Core Authority Console | Dr. Liyan Massaband",
+    description: "Diagnostic scoring dashboard indexing backlink profiles, citations, brand safety audits, and public healthcare directories.",
+    canonical: "/authority-dashboard/",
+    ogType: "noindex, nofollow",
+    ogImage: "https://picsum.photos/seed/dash/1200/630",
+    robots: "noindex, nofollow",
+    schemaType: "WebPage"
   }
 };
 

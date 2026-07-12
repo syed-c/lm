@@ -55,6 +55,7 @@ import { ImplantEducationView } from './components/views/ImplantEducationView.ts
 import { ImplantExperienceView } from './components/views/ImplantExperienceView.tsx';
 import { BeverlyHillsLocationView } from './components/views/BeverlyHillsLocationView.tsx';
 import { BurbankLocationView } from './components/views/BurbankLocationView.tsx';
+import { ContactView } from './components/views/ContactView.tsx';
 
 // Dynamic Param Matcher Helper component
 const AppContent: React.FC = () => {
@@ -157,7 +158,7 @@ const AppContent: React.FC = () => {
         <MediaCenterView />
       </RouteView>
       <RouteView routePath="/contact/">
-        <MediaCenterView />
+        <ContactView />
       </RouteView>
 
       {/* Specialty Implant Restorations & Authority Nodes */}
