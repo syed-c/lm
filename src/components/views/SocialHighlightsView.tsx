@@ -137,17 +137,24 @@ export const SocialHighlightsView: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Header */}
-      <section className="bg-brand-charcoal text-brand-white py-16 md:py-20 border-b border-brand-stone" id="social-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Header with Luxury Clinical Theme */}
+      <section className="bg-[#051C18] text-brand-white py-20 md:py-28 border-b border-brand-stone/20 relative overflow-hidden" id="social-hero">
+        {/* Ambient dot grid overlay */}
+        <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
+        
+        {/* Organic glowing background elements */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-teal-glow opacity-40 pointer-events-none rounded-full blur-[90px]" />
+        <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-gold-glow opacity-30 pointer-events-none rounded-full blur-[90px]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-bronze/15 border border-brand-bronze/30 rounded-full text-[11px] font-mono text-brand-bronze font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-plum/15 border border-brand-plum/30 rounded-full text-[11px] font-mono text-[#EAD8C3] font-bold uppercase tracking-wider">
               <Instagram className="w-3.5 h-3.5" /> Curated Educational Resource
             </div>
-            <h1 className="font-display font-medium text-brand-white text-3xl md:text-5xl tracking-tight leading-zero">
-              Social Highlights & Patient Education Channels
+            <h1 className="font-display font-extrabold text-brand-white text-4xl md:text-6xl tracking-tight leading-tight">
+              Social Highlights & Patient Education
             </h1>
-            <p className="text-slate-300 text-sm md:text-base leading-relaxed font-sans">
+            <p className="text-slate-300 text-sm md:text-base leading-relaxed font-sans max-w-2xl">
               To support accessible scientific transparency, Dr. Liyan Massaband manages an official educational channel on Instagram. Below we have catalogued and structured her key educational posts, providing clear synopses, timestamps, scientific takeaways, and strict professional disclaimers.
             </p>
             <div className="pt-2">
@@ -155,7 +162,7 @@ export const SocialHighlightsView: React.FC = () => {
                 href="https://www.instagram.com/drliyanmassaband/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-bronze text-brand-white hover:bg-brand-white hover:text-brand-charcoal rounded-xl text-xs font-mono font-bold transition-all border border-brand-bronze"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-plum text-brand-white hover:bg-white hover:text-brand-charcoal rounded-xl text-xs font-mono font-bold transition-all border border-brand-plum shadow-lg shadow-brand-plum/20"
                 id="visit-instagram-button"
               >
                 <Instagram className="w-4 h-4" />

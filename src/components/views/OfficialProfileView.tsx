@@ -135,54 +135,61 @@ export const OfficialProfileView: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Section (Ivory Clinical) */}
-      <section className="bg-brand-ivory text-brand-charcoal py-12 md:py-20 border-b border-brand-stone/40" id="profile-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section (Glowing Dark Clinical Theme) */}
+      <section className="bg-[#051C18] text-brand-white py-16 md:py-24 border-b border-brand-stone/10 relative overflow-hidden" id="profile-hero">
+        {/* Ambient dot grid overlay */}
+        <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
+        
+        {/* Organic glowing background elements */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-teal-glow opacity-40 pointer-events-none rounded-full blur-[90px]" />
+        <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-gold-glow opacity-30 pointer-events-none rounded-full blur-[90px]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
             
             {/* Hero Profile Photo */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-sm">
+              <div className="w-full max-w-sm rounded-2xl overflow-hidden border border-brand-stone/20 p-2 bg-white/5 backdrop-blur-md shadow-2xl">
                 <PortraitPlaceholder description="Dr. Liyan Massaband DMD MPH - Official Profile Headshot" />
               </div>
             </div>
 
             {/* Hero Statement */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-[11px] font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/40 px-3 py-1 rounded-full inline-block">
+              <span className="text-[11px] font-mono font-bold text-brand-plum uppercase tracking-widest border border-brand-plum/40 px-3 py-1 bg-brand-plum/10 rounded-full inline-block">
                 Official Professional Profile
               </span>
               
               <div className="space-y-2">
-                <h1 className="font-display font-medium text-3xl md:text-5.5xl tracking-tight text-brand-charcoal leading-tight">
-                  Dr. Liyan Massaband, <span className="text-slate-500 text-2xl md:text-4xl block md:inline-block font-sans font-normal ml-0 md:ml-1.5">D.M.D., M.P.H.</span>
+                <h1 className="font-display font-extrabold text-4xl md:text-6xl tracking-tight text-white leading-tight">
+                  Dr. Liyan Massaband <span className="text-[#EAD8C3] text-2xl md:text-4xl block md:inline-block font-sans font-light ml-0 md:ml-2">D.M.D., M.P.H.</span>
                 </h1>
-                <p className="text-xs font-mono uppercase tracking-widest text-brand-bronze font-medium">
+                <p className="text-xs font-mono uppercase tracking-widest text-brand-stone font-medium">
                   Dentist • D.M.D. • M.P.H. • Burbank • Beverly Hills
                 </p>
               </div>
 
-              <p className="text-slate-650 text-base md:text-lg leading-relaxed font-sans max-w-2xl">
+              <p className="text-slate-300 text-base md:text-lg leading-relaxed font-sans max-w-2xl">
                 Dr. Liyan Massaband is a California dentist with an academic foundation in physiological sciences, public health and dental medicine. She is professionally associated with Magnolia Dentistry in Burbank and ConfiDental Beverly Hills.
               </p>
 
-              {/* Primary Profile Actions (No direct booking focus as per instructions) */}
+              {/* Primary Profile Actions */}
               <div className="flex flex-wrap gap-3.5 pt-2">
                 <Link 
                   to="/her-story/" 
-                  className="px-5 py-2.5 bg-brand-bronze text-white font-display text-[13px] font-semibold tracking-wide rounded-lg hover:bg-brand-charcoal transition-colors duration-200 shadow-xs"
+                  className="px-6 py-3.5 bg-brand-plum text-white font-display text-[13px] font-bold tracking-wide rounded-lg hover:bg-white hover:text-brand-charcoal transition-all duration-200 shadow-md shadow-brand-plum/10"
                 >
                   Explore Her Story
                 </Link>
                 <Link 
                   to="/education-and-credentials/" 
-                  className="px-5 py-2.5 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze font-display text-[13px] font-semibold tracking-wide rounded-lg transition-colors duration-200"
+                  className="px-6 py-3.5 border border-brand-stone/35 bg-white/5 hover:border-brand-plum hover:bg-white/10 text-brand-stone hover:text-white font-display text-[13px] font-bold tracking-wide rounded-lg transition-colors duration-200"
                 >
                   View Education & Credentials
                 </Link>
                 <Link 
                   to="/contact/" 
-                  className="px-5 py-2.5 text-slate-500 hover:text-brand-bronze font-display text-[13px] font-semibold tracking-wide rounded-lg transition-colors duration-200"
+                  className="px-6 py-3.5 text-slate-400 hover:text-white font-display text-[13px] font-bold tracking-wide rounded-lg transition-colors duration-200"
                 >
                   Media Enquiries
                 </Link>

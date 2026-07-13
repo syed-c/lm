@@ -43,13 +43,13 @@ export const InteractiveVideoPlayer: React.FC<InteractiveVideoPlayerProps> = ({
       id={`interactive-player-deck-${video.id}`}
     >
       {/* 1. Header Branding Strip */}
-      <div className="bg-brand-bronze text-brand-white px-4 py-2.5 flex items-center justify-between text-xs font-mono tracking-wider">
+      <div className="bg-[#0A2621] text-brand-white px-5 py-3 flex items-center justify-between text-xs font-mono tracking-wider">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-          <span className="font-bold">MEDIA VERIFICATION SYSTEM</span>
+          <Sparkles className="w-4.5 h-4.5 text-brand-bronze" />
+          <span className="font-bold text-white uppercase tracking-widest text-[10px]">PATIENT EDUCATIONAL VIDEO</span>
         </div>
-        <div className="flex items-center gap-1 text-slate-300">
-          <span>PORTAL MATCH: <b>ACTIVE</b></span>
+        <div className="flex items-center gap-1.5 text-[#EAD8C3] text-[10.5px]">
+          <span className="font-sans font-bold">Magnolia & ConfiDental Affiliated</span>
         </div>
       </div>
 
@@ -331,9 +331,9 @@ export const InteractiveVideoPlayer: React.FC<InteractiveVideoPlayerProps> = ({
         )}
       </div>
 
-      {/* 5. Bottom Verification bar */}
-      <div className="bg-brand-white border-t border-brand-stone/50 px-4 py-2.5 text-center text-[9.5px] text-slate-400 font-mono">
-        DR. LIYAN MASSABAND • MEDIA ID: <b>{video.id.toUpperCase()}</b> • CLINICAL REGISTRY ACTIVE
+      {/* 5. Bottom Disclaimer bar */}
+      <div className="bg-brand-white border-t border-brand-stone/50 px-5 py-3 text-center text-[10.5px] text-slate-550 font-sans font-medium">
+        Educational content presented by Dr. Liyan Massaband. Always seek professional clinical diagnosis for individual treatment planning.
       </div>
     </div>
   );

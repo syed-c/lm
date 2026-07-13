@@ -8,9 +8,17 @@ import dotenv from 'dotenv';
 // Load variables
 dotenv.config();
 
-// Resolve paths for ES Modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Resolve paths for ES Modules and CommonJS
+const getMetaUrl = () => {
+  try {
+    return new Function('return import.meta.url')();
+  } catch {
+    return '';
+  }
+};
+
+const _filename = typeof __filename !== 'undefined' ? __filename : (getMetaUrl() ? fileURLToPath(getMetaUrl()) : '');
+const _dirname = typeof __dirname !== 'undefined' ? __dirname : (_filename ? path.dirname(_filename) : process.cwd());
 
 const PORT = 3000;
 const app = express();
@@ -37,13 +45,13 @@ app.use((req, res, next) => {
   // Log request to requests.log for auditing
   try {
     fs.appendFileSync(
-      path.resolve(__dirname, 'requests.log'),
+      path.resolve(_dirname, 'requests.log'),
       `[${new Date().toISOString()}] ${req.method} ${host} ${scheme} ${url}\n`
     );
   } catch (e) {}
 
   // Force HTTPS in production on canonical domains
-  const isProd = __filename.includes('dist') || __filename.endsWith('.cjs');
+  const isProd = _filename.includes('dist') || _filename.endsWith('.cjs');
   const isStagingDomain = host.includes('.run.app') || host.includes('localhost') || host.includes('127.0.0.1');
   const isCanonicalHost = host === 'drliyanmassaband.com' || host === 'www.drliyanmassaband.com';
 
@@ -353,7 +361,7 @@ app.post('/api/log-client-error', (req, res) => {
   const errorData = req.body;
   try {
     const logMessage = `[${new Date().toISOString()}] CLIENT ERROR: ${JSON.stringify(errorData)}\n`;
-    fs.appendFileSync(path.resolve(__dirname, 'requests.log'), logMessage);
+    fs.appendFileSync(path.resolve(_dirname, 'requests.log'), logMessage);
     console.error('Captured client error:', errorData);
   } catch (e) {
     console.error('Failed to write client error:', e);
@@ -707,7 +715,7 @@ function injectSeoSolarCore(html: string, currentPath: string, domain: string, h
 
 // 4. Initialize Core Server logic
 async function bootstrap() {
-  const isProd = __filename.includes('dist') || __filename.endsWith('.cjs');
+  const isProd = _filename.includes('dist') || _filename.endsWith('.cjs');
 
   if (!isProd) {
     // Dev Mode - Mount Vite Server
@@ -727,7 +735,7 @@ async function bootstrap() {
       }
 
       try {
-        let template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        let template = fs.readFileSync(path.resolve(_dirname, 'index.html'), 'utf-8');
         template = await vite.transformIndexHtml(url, template);
 
         const scheme = req.headers['x-forwarded-proto'] || 'http';
