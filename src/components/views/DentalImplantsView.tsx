@@ -61,35 +61,44 @@ export const DentalImplantsView: React.FC = () => {
     <div className="bg-brand-white" id="dental-implants-view-root">
       
       {/* 1. HERO SECTION (Editorial personal brand overlay) */}
-      <section className="relative overflow-hidden bg-brand-stone/5 py-20 lg:py-28 border-b border-brand-stone/40">
-        <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-brand-stone/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
-        <div className="absolute top-1/2 -right-40 w-96 h-96 bg-brand-stone/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE1] via-brand-white to-brand-white py-20 lg:py-28 border-b border-brand-stone/50">
         
+        {/* Subtle, beautiful floating medical engineering dot grid in background */}
+        <div className="absolute inset-0 bg-dot-grid opacity-75 pointer-events-none" />
+        
+        {/* Luxury glowing visual abstract elements */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-teal-glow pointer-events-none opacity-80" />
+        <div className="absolute -bottom-20 -left-10 w-[400px] h-[400px] rounded-full bg-gold-glow pointer-events-none opacity-90" />
+        
+        {/* Curved absolute background lines */}
+        <svg className="absolute left-1/4 top-10 text-brand-plum/10 w-[200px] h-[200px] hidden xl:block pointer-events-none" fill="none" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
+        </svg>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/35 bg-brand-bronze/5 px-3 py-1 rounded-full inline-block">
+            <div className="lg:col-span-7 space-y-7">
+              <span className="text-xs font-mono font-extrabold text-[#916E3B] uppercase tracking-widest border border-brand-plum/40 bg-brand-plum/5 px-3.5 py-1.5 rounded-full inline-block shadow-2xs">
                 Advanced Oral Restorations
               </span>
-              <h1 className="font-display font-medium text-brand-charcoal text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
-                Dental Implants in Beverly Hills & Burbank
+              <h1 className="font-display font-black text-[#0A2621] text-4xl sm:text-5xl lg:text-[56px] tracking-tight leading-[1.08] drop-shadow-3xs">
+                Dental Implants in <span className="text-brand-plum">Beverly Hills</span> & <span className="text-brand-bronze">Burbank</span>
               </h1>
-              <p className="text-sm md:text-base text-slate-650 leading-relaxed max-w-xl font-sans">
+              <p className="text-sm md:text-base text-slate-700 leading-relaxed max-w-xl font-sans font-medium">
                 Restore your natural chewing force, speech clarity, and structural smile confidence. Under the guidance of {BRAND_CONFIG.personName}, each dental implant case receives personalized biological planning, ultra-precise 3D digital guides, and medically elite materials.
               </p>
               
-              <div className="pt-4 flex flex-wrap gap-4">
+              <div className="pt-2 flex flex-wrap gap-4">
                 <Link
                   to="/contact/"
-                  className="px-6 py-3.5 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-350 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  className="px-6 py-4 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-sm font-extrabold tracking-wide rounded-xl transition-all duration-350 shadow-md hover:shadow-lg hover:-translate-y-0.5"
                 >
                   Request an Implant Consultation
                 </Link>
                 <Link
                   to="/all-on-x/"
-                  className="px-6 py-3.5 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze font-display text-sm font-semibold tracking-wide rounded-xl transition-all duration-350 bg-white shadow-3xs hover:shadow-xs"
+                  className="px-6 py-4 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze font-display text-sm font-extrabold tracking-wide rounded-xl transition-all duration-350 bg-white shadow-3xs hover:shadow-xs"
                 >
                   Explore All-on-X Treatment
                 </Link>
@@ -101,7 +110,7 @@ export const DentalImplantsView: React.FC = () => {
                   <ShieldCheck className="w-5 h-5 shrink-0" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-brand-charcoal">
+                  <p className="text-xs font-bold text-brand-charcoal">
                     1,000+ Dental Implants Placed
                   </p>
                   <p className="text-[11px] text-slate-500 font-sans">

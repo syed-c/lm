@@ -55,52 +55,95 @@ export const HomeView: React.FC = () => {
   return (
     <div className="bg-brand-white" id="home-view-root">
       
-      {/* 1. HERO SECTION (Editorial personal brand layout with dot grid background details) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-stone/20 via-brand-white to-brand-white py-20 lg:py-32 border-b border-brand-stone/40">
+      {/* 1. HERO SECTION (Editorial personal brand layout with custom background shapes and abstract golden dental mesh) */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE1] via-brand-white to-brand-white py-20 lg:py-32 border-b border-brand-stone/50">
         
-        {/* Subtle, beautiful floating medical engineering dot grid in background */}
-        <div className="absolute inset-0 bg-dot-grid opacity-60 pointer-events-none" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-bronze/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-brand-plum/5 rounded-full blur-2xl pointer-events-none" />
+        {/* Glowing visual abstract elements and luxury dot grid in background */}
+        <div className="absolute inset-0 bg-dot-grid opacity-75 pointer-events-none" />
+        
+        {/* Real-world high-end aesthetic backdrop details (abstract absolute shapes) */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-teal-glow pointer-events-none opacity-80" />
+        <div className="absolute -bottom-20 -left-10 w-[400px] h-[400px] rounded-full bg-gold-glow pointer-events-none opacity-90" />
+        
+        {/* Subtle decorative curved luxury layout line */}
+        <svg className="absolute right-0 top-1/2 -translate-y-1/2 text-brand-plum/10 w-[300px] h-[600px] hidden xl:block pointer-events-none" fill="none" viewBox="0 0 100 200">
+          <path d="M100,0 C50,50 50,150 100,200" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
+          <circle cx="60" cy="100" r="4" fill="currentColor" />
+        </svg>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Content column */}
-            <div className="lg:col-span-7 space-y-6 lg:pr-6">
+            <div className="lg:col-span-7 space-y-7 lg:pr-6">
               
               {/* Premium credential badges */}
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/30 bg-brand-bronze/5 px-3.5 py-1.5 rounded-full shadow-2xs">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="text-xs font-mono font-extrabold text-[#916E3B] uppercase tracking-widest border border-brand-plum/40 bg-brand-plum/5 px-3.5 py-1.5 rounded-full shadow-2xs">
                   Dr. Liyan Massaband, D.M.D., M.P.H.
                 </span>
-                <span className="text-[11px] font-mono font-semibold text-emerald-800 bg-emerald-50/85 border border-emerald-200 px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-2xs">
+                <span className="text-[11px] font-mono font-extrabold text-emerald-800 bg-emerald-50/90 border border-emerald-200 px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-2xs">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 animate-pulse" /> 1,000+ Dental Implants Placed
                 </span>
               </div>
  
-              {/* Main Authority Headline */}
-              <h1 className="font-display font-medium text-brand-charcoal text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] drop-shadow-3xs">
-                Premium Dental Implant & Full-Mouth Restoration Specialist
+              {/* Main Authority Headline with Ultra-Bold fonts */}
+              <h1 className="font-display font-black text-[#0A2621] text-4xl sm:text-5xl lg:text-[64px] tracking-tight leading-[1.05] drop-shadow-3xs">
+                Premium Dental Implant & <span className="text-brand-plum">Full-Mouth</span> Restoration
               </h1>
  
               {/* Patient Positioning Pitch */}
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans max-w-xl">
-                Reclaim your smile's natural beauty, solid biting force, and speaking confidence. As a dual-trained medical professional with extensive practice in Beverly Hills and Burbank, {BRAND_CONFIG.personName} customizes every full-arch, All-on-X, and single-tooth replacement using state-of-the-art 3D biological mapping.
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans max-w-xl font-medium">
+                Reclaim your smile's natural beauty, solid biting force, and speaking confidence. As an elite dual-trained cosmetic and implant surgeon with premier practice affiliations in <strong className="text-brand-bronze">Beverly Hills</strong> and <strong className="text-brand-plum">Burbank</strong>, {BRAND_CONFIG.personName} customizes every full-arch restoration, All-on-X, and single-tooth replacement using state-of-the-art 3D biological mapping.
               </p>
+
+              {/* PRACTICE ALIGNMENT COHERENCE RIBBON (User-requested Dentist Websites Integration) */}
+              <div className="bg-white/90 border border-brand-stone/80 backdrop-blur-md p-4 rounded-xl shadow-xs space-y-2.5 max-w-xl">
+                <span className="text-[9.5px] font-mono font-extrabold text-[#916E3B] tracking-widest block">
+                  • AFFILIATE CLINICAL PARTNERS
+                </span>
+                <div className="grid grid-cols-2 gap-4 items-center">
+                  <a 
+                    href="https://confidentalbeverlyhills.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group border-r border-brand-stone/60 pr-2 block"
+                  >
+                    <p className="text-xs font-bold text-[#0F2D26] group-hover:text-brand-plum transition-colors">
+                      ConfiDental Beverly Hills
+                    </p>
+                    <p className="text-[10px] text-slate-500 font-sans group-hover:underline">
+                      confidentalbeverlyhills.com →
+                    </p>
+                  </a>
+                  <a 
+                    href="https://www.magnoliadentistry.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group block"
+                  >
+                    <p className="text-xs font-bold text-[#0F2D26] group-hover:text-brand-plum transition-colors">
+                      Magnolia Dentistry Burbank
+                    </p>
+                    <p className="text-[10px] text-slate-500 font-sans group-hover:underline">
+                      magnoliadentistry.com →
+                    </p>
+                  </a>
+                </div>
+              </div>
  
               {/* Action Buttons */}
-              <div className="pt-4 flex flex-wrap gap-4 font-sans">
+              <div className="pt-2 flex flex-wrap gap-4 font-sans">
                 <Link
                   to="/contact/"
-                  className="px-6 py-4 bg-brand-bronze hover:bg-brand-bronze-light text-white text-sm font-semibold tracking-wide rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5"
+                  className="px-6 py-4 bg-brand-bronze hover:bg-brand-bronze-light text-white text-sm font-extrabold tracking-wide rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5"
                 >
                   <Calendar className="w-4.5 h-4.5 text-white" />
                   <span>Request an Implant Assessment</span>
                 </Link>
                 <Link
                   to="/dental-implants/"
-                  className="px-6 py-4 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze text-sm font-semibold tracking-wide rounded-xl transition-all duration-300 bg-white shadow-3xs hover:shadow-2xs transform hover:-translate-y-0.5"
+                  className="px-6 py-4 border border-brand-stone hover:border-brand-bronze text-brand-charcoal hover:text-brand-bronze text-sm font-extrabold tracking-wide rounded-xl transition-all duration-300 bg-white shadow-3xs hover:shadow-2xs transform hover:-translate-y-0.5"
                 >
                   Explore Dental Implants Guide
                 </Link>
@@ -113,8 +156,8 @@ export const HomeView: React.FC = () => {
                     <Award className="w-5 h-5 text-brand-bronze" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-semibold text-brand-charcoal">Medically Driven Approach</h3>
-                    <p className="text-[11px] text-slate-500 font-sans leading-normal">
+                    <h3 className="text-xs font-bold text-brand-charcoal">Medically Driven Approach</h3>
+                    <p className="text-[11px] text-slate-650 font-sans leading-normal">
                       Combining clinical dental surgery (D.M.D.) with public health standards (M.P.H.) for maximum safety.
                     </p>
                   </div>
@@ -125,8 +168,8 @@ export const HomeView: React.FC = () => {
                     <GraduationCap className="w-5 h-5 text-brand-bronze" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-semibold text-brand-charcoal">Digital Computerized Planning</h3>
-                    <p className="text-[11px] text-slate-500 font-sans leading-normal">
+                    <h3 className="text-xs font-bold text-brand-charcoal">Digital Computerized Planning</h3>
+                    <p className="text-[11px] text-slate-650 font-sans leading-normal">
                       We use pre-surgical 3D CBCT scans to ensure implant fixtures align with your unique bone architecture.
                     </p>
                   </div>
@@ -137,6 +180,10 @@ export const HomeView: React.FC = () => {
  
             {/* Right Column Visual Portal */}
             <div className="lg:col-span-5 relative font-sans">
+              
+              {/* Decorative golden ring behind the image to elevate attractability */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-plum to-brand-bronze rounded-3xl blur-md opacity-25 group-hover:opacity-40 transition-opacity duration-500" />
+              
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-brand-stone/60 relative group">
                 <img 
                   src="https://images.unsplash.com/photo-1579684389782-64d84b5e905d?auto=format&fit=crop&q=80&w=850"

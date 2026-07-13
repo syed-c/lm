@@ -130,7 +130,7 @@
 
 /* Accent Tracking for high-end subheadings and labels */
 .font-mono {
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
@@ -138,14 +138,13 @@
 #applet-global-shell::before {
   content: "";
   position: absolute;
-  top: 15%;
+  top: 5%;
   right: 5%;
-  width: 40vw;
-  height: 40vw;
-  background-color: #E8F1EE; /* Soft calming eucalyptus green */
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(18, 60, 51, 0.12) 0%, rgba(163, 127, 85, 0.08) 50%, transparent 100%); /* Calming teal-gold luxury glow */
   border-radius: 9999px;
-  filter: blur(140px);
-  opacity: 0.65;
+  filter: blur(120px);
   pointer-events: none;
   z-index: 0;
 }
@@ -153,45 +152,63 @@
 #applet-global-shell::after {
   content: "";
   position: absolute;
-  bottom: 15%;
+  bottom: 10%;
   left: 5%;
-  width: 45vw;
-  height: 45vw;
-  background-color: #F8F3EA; /* Soft elegant champagne sand */
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(163, 127, 85, 0.12) 0%, rgba(18, 60, 51, 0.06) 60%, transparent 100%); /* Soft champagne gold-teal ambient orb */
   border-radius: 9999px;
-  filter: blur(160px);
-  opacity: 0.75;
+  filter: blur(140px);
   pointer-events: none;
   z-index: 0;
 }
 
+/* Beautiful clinical background element classes */
+.bg-gold-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(163, 127, 85, 0.15) 0%, transparent 70%);
+}
+
+.bg-teal-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(18, 60, 51, 0.1) 0%, transparent 70%);
+}
+
+.luxury-card-border {
+  border: 1px solid rgba(163, 127, 85, 0.25);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(245, 237, 228, 0.4));
+}
+
+.luxury-card-border:hover {
+  border-color: rgba(163, 127, 85, 0.7);
+  box-shadow: 0 10px 30px -10px rgba(18, 60, 51, 0.12);
+}
+
 /* Button & Card tweaks */
 button, a {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Beautiful dotted grid background pattern */
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(18, 60, 51, 0.08) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(18, 60, 51, 0.09) 1.5px, transparent 1.5px);
   background-size: 24px 24px;
 }
 
 /* Deluxe glass-like panel */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(223, 213, 198, 0.45);
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(163, 127, 85, 0.22);
 }
 
 /* Tactile 3D lift on hover */
 .hover-lift {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hover-lift:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 12px 30px rgba(18, 60, 51, 0.06);
-  border-color: rgba(18, 60, 51, 0.3);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 40px -15px rgba(18, 60, 51, 0.14);
+  border-color: rgba(163, 127, 85, 0.6);
 }
 
 /* Accent borders and hover glow states matching clinical excellence */
