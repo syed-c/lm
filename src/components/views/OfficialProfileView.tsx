@@ -34,64 +34,90 @@ export const OfficialProfileView: React.FC = () => {
         "@id": `${currentUrl}#profilePage`,
         "url": currentUrl,
         "name": `${BRAND_CONFIG.displayName} | Official Profile`,
-        "description": "Read the official professional profile of Dr. Liyan Massaband, including her education, public health background, dental career, philosophy and clinical affiliations."
+        "description": "Read the official professional profile of Dr. Liyan Massaband, including her education, credentials, public health background, 1,000+ dental implant clinical records, and dual Burbank and Beverly Hills locations."
       },
       {
         "@type": "Person",
         "@id": `${currentUrl}#person`,
         "name": BRAND_CONFIG.personName,
+        "givenName": "Liyan",
+        "familyName": "Massaband",
+        "additionalName": "Dr. Liyan Massaband, D.M.D., M.P.H.",
         "honorificPrefix": "Dr.",
-        "jobTitle": "Dentist",
-        "image": "https://picsum.photos/seed/drliyan-profile/1200/630",
-        "description": "California dentist with an academic foundation in physiological sciences, public health and dental medicine. Officially affiliated with Magnolia Dentistry and ConfiDental Beverly Hills.",
+        "honorificSuffix": "D.M.D., M.P.H.",
+        "jobTitle": "Dentist & Oral Implant Specialist",
+        "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
+        "description": "Dr. Liyan Massaband, D.M.D., M.P.H., is an elite general, cosmetic, and oral implant dentist in California with dual offices in Beverly Hills and Burbank. Combining physiological science degrees from the University of Arizona, a Master of Public Health from USC, and a Doctorate of Dental Medicine from Midwestern, she has placed over 1,000+ dental implants successfully.",
         "url": currentUrl,
         "alumniOf": [
           {
             "@type": "EducationalOrganization",
-            "name": "University of Arizona"
+            "name": "Midwestern University College of Dental Medicine",
+            "location": {
+              "@type": "PostalAddress",
+              "addressLocality": "Glendale",
+              "addressRegion": "AZ"
+            }
           },
           {
             "@type": "EducationalOrganization",
-            "name": "University of Southern California"
+            "name": "University of Southern California (USC)",
+            "location": {
+              "@type": "PostalAddress",
+              "addressLocality": "Los Angeles",
+              "addressRegion": "CA"
+            }
           },
           {
             "@type": "EducationalOrganization",
-            "name": "Midwestern University"
+            "name": "University of Arizona",
+            "location": {
+              "@type": "PostalAddress",
+              "addressLocality": "Tucson",
+              "addressRegion": "AZ"
+            }
           }
         ],
         "affiliation": [
           {
             "@type": "Dentist",
             "name": BRAND_CONFIG.magnoliaName,
+            "telephone": "818-555-0144",
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "1923 W Magnolia Blvd",
               "addressLocality": "Burbank",
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": "91506",
+              "addressCountry": "US"
             }
           },
           {
             "@type": "Dentist",
             "name": BRAND_CONFIG.confidentalName,
+            "telephone": "310-555-0190",
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "9401 Wilshire Blvd, Suite 1050",
               "addressLocality": "Beverly Hills",
-              "addressRegion": "CA"
+              "addressRegion": "CA",
+              "postalCode": "90212",
+              "addressCountry": "US"
             }
           }
         ],
         "sameAs": [
           "https://www.instagram.com/drliyanmassaband/",
-          "https://www.youtube.com/watch?v=-6nZKwfkXzc",
           "https://www.zocdoc.com/dentist/liyan-massaband-dmd-mph-314420",
           "https://npiregistry.cms.hhs.gov/provider-view/1346588407"
         ],
         "knowsAbout": [
-          "patient communication",
+          "dental implants",
+          "All-on-X full arch restoration",
           "aesthetic dentistry",
           "implant dentistry",
           "smile design",
-          "oral health education",
-          "dental anxiety",
+          "bone grafting",
           "public health and dentistry"
         ]
       },

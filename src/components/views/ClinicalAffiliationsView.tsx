@@ -49,7 +49,20 @@ export const ClinicalAffiliationsView: React.FC = () => {
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-brand-bronze/30 group-hover:bg-brand-bronze transition-colors duration-300" />
             
             <div className="space-y-4">
-              <div className="flex justify-between items-start">
+              {/* Beautiful Clinic Header Image representing the office */}
+              <div className="aspect-[16/9] w-full rounded-xl overflow-hidden border border-brand-stone relative">
+                <img 
+                  src={aff.id === 'magnolia' 
+                    ? 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800' 
+                    : 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800'} 
+                  alt={`${aff.name} Clinical Office Suite`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+              </div>
+
+              <div className="flex justify-between items-start pt-2">
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-brand-bronze">
                     <Building2 className="w-5 h-5 shrink-0" />
@@ -66,7 +79,7 @@ export const ClinicalAffiliationsView: React.FC = () => {
                 <SourceReferenceBadge sourceIds={aff.id === 'magnolia' ? ['magnolia-bio'] : ['confidental-bio']} />
               </div>
 
-              <p className="text-sm text-slate-500 leading-relaxed font-sans pt-3 border-t border-brand-stone/10">
+              <p className="text-sm text-slate-500 leading-relaxed font-sans pt-3 border-t border-brand-stone/15">
                 {aff.description}
               </p>
 

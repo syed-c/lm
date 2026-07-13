@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { JsonLd, getFaqSchema, PERSON_SCHEMA, BURBANK_DENTIST_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA } from '../JsonLd.tsx';
 import { 
   CheckCircle2, 
   HelpCircle, 
@@ -96,6 +97,7 @@ export const AllOnXView: React.FC = () => {
 
   return (
     <div className="bg-brand-white" id="all-on-x-view-root">
+      <JsonLd schema={[PERSON_SCHEMA, BURBANK_DENTIST_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA, getFaqSchema(faqs)]} />
       
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE1] via-brand-white to-brand-white py-20 lg:py-28 border-b border-brand-stone/50">

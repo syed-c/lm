@@ -9,6 +9,7 @@ import { SiteHeader } from './components/SiteHeader.tsx';
 import { SiteFooter } from './components/SiteFooter.tsx';
 import { FloatingContactWidget } from './components/FloatingContactWidget.tsx';
 import { ScrollProgressBar } from './components/ScrollProgressBar.tsx';
+import { SeoManager, SeoAuditorWidget } from './components/SeoManager.tsx';
 
 // View Imports
 import { HomeView } from './components/views/HomeView.tsx';
@@ -318,6 +319,7 @@ const Fallback404Route: React.FC = () => {
 export default function App() {
   return (
     <AppRouter>
+      <SeoManager />
       <div className="min-h-screen flex flex-col bg-brand-white text-brand-charcoal font-sans" id="applet-global-shell">
         {/* Subtle, slim progress indicator bar for long-form content */}
         <ScrollProgressBar />
@@ -333,6 +335,9 @@ export default function App() {
         
         {/* Floating Patient Appointment / Care Routing Widget */}
         <FloatingContactWidget />
+
+        {/* Floating SEO Auditor and Real-Time Configurator Widget */}
+        <SeoAuditorWidget />
       </div>
     </AppRouter>
   );

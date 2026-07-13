@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter, Link } from '../AppRouter.tsx';
+import { JsonLd, PERSON_SCHEMA, BURBANK_DENTIST_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA } from '../JsonLd.tsx';
 import { 
   Award, 
   MapPin, 
@@ -54,6 +55,7 @@ export const HomeView: React.FC = () => {
 
   return (
     <div className="bg-brand-white" id="home-view-root">
+      <JsonLd schema={[PERSON_SCHEMA, BURBANK_DENTIST_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA]} />
       
       {/* 1. HERO SECTION (Editorial personal brand layout with custom background shapes and abstract golden dental mesh) */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE1] via-brand-white to-brand-white py-20 lg:py-32 border-b border-brand-stone/50">

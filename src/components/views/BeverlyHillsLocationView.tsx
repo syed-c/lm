@@ -1,4 +1,5 @@
 import React from 'react';
+import { JsonLd, PERSON_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA } from '../JsonLd.tsx';
 import { MapPin, Clock, Info, ShieldCheck, Star, Calendar, Phone, ArrowRight, Compass } from 'lucide-react';
 import { Link } from '../AppRouter.tsx';
 import { BRAND_CONFIG } from '../../data.ts';
@@ -21,6 +22,7 @@ export const BeverlyHillsLocationView: React.FC = () => {
 
   return (
     <div className="bg-brand-white font-sans" id="beverly-hills-location-root">
+      <JsonLd schema={[PERSON_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA]} />
       
       {/* 1. Header Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#F2ECE1] via-brand-white to-brand-white py-16 md:py-24 border-b border-brand-stone/50">

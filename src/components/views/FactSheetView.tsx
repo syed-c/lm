@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { JsonLd, PERSON_SCHEMA, BURBANK_DENTIST_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA } from '../JsonLd.tsx';
 import { 
   FileCheck, 
   Copy, 
@@ -209,6 +210,7 @@ export const FactSheetView: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 animate-reveal" id="fact-sheet-container">
+      <JsonLd schema={[PERSON_SCHEMA, BURBANK_DENTIST_SCHEMA, BEVERLY_HILLS_DENTIST_SCHEMA]} />
       {/* CANONICAL EMBED FOR HTML HEAD (Client-side Simulation) */}
       <link rel="canonical" href="https://drliyanmassaband.com/fact-sheet/" />
 

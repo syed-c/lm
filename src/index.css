@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   /* Round and Bold Geometric Brand Fonts */
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit", "Plus Jakarta Sans", sans-serif;
-  --font-mono: "Outfit", monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
 
-  /* Sophisticated Dental Clinic Light Color System */
-  --color-brand-charcoal: #1A2421;         /* Deepest rich pine/charcoal for premium readability */
-  --color-brand-dark: #FAF8F5;             /* Warm alabaster/ivory background */
-  --color-brand-ivory: #F5EDE4;            /* Luxurious sand-gold panel surface */
-  --color-brand-white: #FAF8F5;            /* Crisp clean body backdrop */
-  --color-brand-stone: #DFD5C6;            /* Delicate champagne-stone borders */
-  --color-brand-bronze: #123C33;           /* Royal deep green-teal accent - authoritative & medical */
-  --color-brand-bronze-light: #1A5448;     /* Warm friendly teal hover */
-  --color-brand-plum: #A37F55;             /* Muted Champagne Gold secondary accent */
-  --color-brand-plum-light: #BC9970;       /* Lighter gold hover */
+  /* Sophisticated Dental Clinic White & Blue Color System */
+  --color-brand-charcoal: #0F172A;         /* Deepest rich navy-slate for premium readability */
+  --color-brand-dark: #F8FAFC;             /* Clean ice-blue/white background */
+  --color-brand-ivory: #F0F4F8;            /* Smooth light blue panel surface */
+  --color-brand-white: #FFFFFF;            /* Brilliant pure white body backdrop */
+  --color-brand-stone: #E2E8F0;            /* Delicate slate borders */
+  --color-brand-bronze: #1E40AF;           /* Royal medical blue accent - authoritative & surgical */
+  --color-brand-bronze-light: #2563EB;     /* Vibrant blue hover */
+  --color-brand-plum: #0284C7;             /* Fresh sky blue secondary accent */
+  --color-brand-plum-light: #0EA5E9;       /* Lighter sky blue hover */
 }
 
 /* Base Accessibility, Layout and Scroll Anchoring Customizations */
@@ -25,15 +25,15 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FAF8F5;
-    color: #1A2421;
+    background-color: #FFFFFF;
+    color: #0F172A;
   }
 
   body {
     font-family: var(--font-sans);
     overflow-x: hidden;
-    background-color: #FAF8F5;
-    color: #1A2421;
+    background-color: #FFFFFF;
+    color: #0F172A;
   }
 
   /* Structural shell layout - clean and seamless */
@@ -46,33 +46,33 @@
     font-family: var(--font-display);
     font-weight: 700; /* Force bold/extra bold round styles */
     letter-spacing: -0.015em;
-    color: #0F2D26; /* High contrast deep medical pine forest */
+    color: #1E3A8A; /* High contrast deep clinical navy */
   }
 
   /* Maintain beautiful, high-contrast light-mode colors */
   .text-slate-500 {
-    color: #4A5560 !important; /* Made significantly darker for readability */
+    color: #475569 !important; /* Made significantly darker for readability */
   }
   .text-slate-600 {
-    color: #33414D !important; /* Made significantly darker */
+    color: #334155 !important; /* Made significantly darker */
   }
   .text-slate-400 {
-    color: #5C6A75 !important; /* Lifted from low-contrast light grey to readable slate */
+    color: #64748B !important; /* Lifted from low-contrast light grey to readable slate */
   }
   .text-slate-300 {
-    color: #E2E8F0 !important;
+    color: #CBD5E1 !important;
   }
   .text-slate-800 {
-    color: #0F171E !important;
+    color: #1E293B !important;
   }
   .text-slate-700 {
-    color: #24303B !important;
+    color: #334155 !important;
   }
   .text-slate-900 {
-    color: #090D11 !important;
+    color: #0F172A !important;
   }
   .text-brand-charcoal {
-    color: #1A2421 !important;
+    color: #0F172A !important;
   }
 
   /* Soft light-mode container backgrounds */
@@ -80,28 +80,28 @@
     background-color: #FFFFFF !important;
   }
   .bg-brand-white {
-    background-color: #FAF8F5 !important;
+    background-color: #FFFFFF !important;
   }
   .bg-brand-ivory {
-    background-color: #F5EDE4 !important;
+    background-color: #F0F4F8 !important;
   }
   
   /* Inputs & Forms styled after luxury medical/clinic theme */
   input, textarea, select {
     background-color: #FFFFFF !important;
-    border-color: #DFD5C6 !important;
-    color: #1A2421 !important;
+    border-color: #CBD5E1 !important;
+    color: #0F172A !important;
   }
   input:focus, textarea:focus, select:focus {
-    border-color: #123C33 !important;
-    --tw-ring-color: #123C33 !important;
+    border-color: #1E40AF !important;
+    --tw-ring-color: #1E40AF !important;
   }
 
   /* Custom keyboard focus states compliant with WCAG AA */
   *:focus-visible {
-    outline: 2px solid #123C33;
+    outline: 2px solid #1E40AF;
     outline-offset: 4px;
-    box-shadow: 0 0 0 4px rgba(18, 60, 51, 0.4);
+    box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.4);
   }
 
   /* Clean up lists to match standard */
@@ -142,7 +142,7 @@
   right: 5%;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(18, 60, 51, 0.12) 0%, rgba(163, 127, 85, 0.08) 50%, transparent 100%); /* Calming teal-gold luxury glow */
+  background: radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, rgba(2, 132, 199, 0.05) 50%, transparent 100%); /* Blue/Sky professional clinical glow */
   border-radius: 9999px;
   filter: blur(120px);
   pointer-events: none;
@@ -156,7 +156,7 @@
   left: 5%;
   width: 55vw;
   height: 55vw;
-  background: radial-gradient(circle, rgba(163, 127, 85, 0.12) 0%, rgba(18, 60, 51, 0.06) 60%, transparent 100%); /* Soft champagne gold-teal ambient orb */
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.1) 0%, rgba(30, 64, 175, 0.05) 60%, transparent 100%); /* Sky/Blue ambient glow */
   border-radius: 9999px;
   filter: blur(140px);
   pointer-events: none;
@@ -165,21 +165,21 @@
 
 /* Beautiful clinical background element classes */
 .bg-gold-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(163, 127, 85, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.15) 0%, transparent 70%);
 }
 
 .bg-teal-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(18, 60, 51, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.1) 0%, transparent 70%);
 }
 
 .luxury-card-border {
-  border: 1px solid rgba(163, 127, 85, 0.25);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(245, 237, 228, 0.4));
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 248, 0.4));
 }
 
 .luxury-card-border:hover {
-  border-color: rgba(163, 127, 85, 0.7);
-  box-shadow: 0 10px 30px -10px rgba(18, 60, 51, 0.12);
+  border-color: rgba(30, 64, 175, 0.7);
+  box-shadow: 0 10px 30px -10px rgba(30, 64, 175, 0.12);
 }
 
 /* Button & Card tweaks */
@@ -189,7 +189,7 @@ button, a {
 
 /* Beautiful dotted grid background pattern */
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(18, 60, 51, 0.09) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(30, 64, 175, 0.09) 1.5px, transparent 1.5px);
   background-size: 24px 24px;
 }
 
@@ -198,7 +198,7 @@ button, a {
   background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(163, 127, 85, 0.22);
+  border: 1px solid rgba(2, 132, 199, 0.22);
 }
 
 /* Tactile 3D lift on hover */
@@ -207,18 +207,18 @@ button, a {
 }
 .hover-lift:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 20px 40px -15px rgba(18, 60, 51, 0.14);
-  border-color: rgba(163, 127, 85, 0.6);
+  box-shadow: 0 20px 40px -15px rgba(30, 64, 175, 0.14);
+  border-color: rgba(2, 132, 199, 0.6);
 }
 
 /* Accent borders and hover glow states matching clinical excellence */
 .border-accent {
-  border-color: #1F4D44;
+  border-color: #1E40AF;
 }
 
 .hover-glow:hover {
-  box-shadow: 0 4px 20px rgba(31, 77, 68, 0.08);
-  border-color: #1F4D44;
+  box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08);
+  border-color: #1E40AF;
 }
 
 /* Restrained micro-interaction animations */
@@ -243,12 +243,12 @@ button, a {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E1DACF;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1F4D44;
+  background: #1E40AF;
 }
