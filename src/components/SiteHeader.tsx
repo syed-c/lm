@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter, Link, normalizePath } from './AppRouter.tsx';
-import { Menu, X, ChevronDown, Sparkles, Phone, Video, Calendar, ShieldCheck } from 'lucide-react';
+import { Menu, X, ChevronDown, Sparkles, Phone, Video, Calendar, ShieldCheck, Globe, Check } from 'lucide-react';
 import { BRAND_CONFIG } from '../data.ts';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const SiteHeader: React.FC = () => {
   const { path } = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('en');
+  const [showToast, setShowToast] = useState<string | null>(null);
+
+  const languages = [
+    { code: 'en', label: 'English', isDefault: true },
+    { code: 'es', label: 'Español', placeholder: true },
+    { code: 'fa', label: 'فارسی', placeholder: true } // Persian
+  ];
 
   // Close menus on path transition
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
+    setLangDropdownOpen(false);
   }, [path]);
 
   // Track scroll position to add micro-contrast/elevation
@@ -272,8 +283,55 @@ export const SiteHeader: React.FC = () => {
           </Link>
         </nav>
 
-        {/* Global Action CTA Button */}
-        <div className="hidden lg:flex items-center gap-3">
+        {/* Global Action CTA Button & Language Toggle Placeholder */}
+        <div className="hidden lg:flex items-center gap-4">
+          {/* Elegant Language Selector Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-brand-stone text-slate-700 hover:text-brand-bronze hover:border-brand-bronze bg-brand-white/80 rounded-lg text-xs font-semibold transition-all cursor-pointer select-none"
+              title="Select Language (Future Localization)"
+              aria-label="Language Selector"
+              id="desktop-language-toggle"
+            >
+              <Globe className="w-3.5 h-3.5 text-slate-500" />
+              <span className="uppercase font-mono">{currentLang}</span>
+              <ChevronDown className="w-3 h-3 text-slate-400" />
+            </button>
+            {langDropdownOpen && (
+              <div 
+                className="absolute right-0 mt-1.5 w-44 bg-white border border-brand-stone shadow-lg rounded-xl p-2.5 space-y-1.5 z-50 text-left font-sans animate-reveal"
+                onMouseLeave={() => setLangDropdownOpen(false)}
+              >
+                <p className="text-[10px] font-mono font-bold text-slate-400 uppercase px-1 pb-1 border-b border-brand-stone/30">Select Language</p>
+                {languages.map(lang => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setCurrentLang(lang.code);
+                      setLangDropdownOpen(false);
+                      if (lang.placeholder) {
+                        setShowToast(`Localization for ${lang.label} is coming soon. English remains default.`);
+                        setTimeout(() => setShowToast(null), 4000);
+                      }
+                    }}
+                    className={`w-full flex items-center justify-between px-2.5 py-1.5 text-xs rounded-lg transition-colors text-left font-medium cursor-pointer ${
+                      currentLang === lang.code
+                        ? 'bg-brand-bronze/10 text-brand-bronze'
+                        : 'text-slate-700 hover:bg-brand-bronze/5 hover:text-brand-bronze'
+                    }`}
+                  >
+                    <span>{lang.label}</span>
+                    {currentLang === lang.code && <Check className="w-3.5 h-3.5 text-brand-bronze" />}
+                  </button>
+                ))}
+                <div className="border-t border-brand-stone/40 pt-1.5 px-1 text-[9px] text-slate-400 text-center leading-normal font-medium">
+                  English active by default.
+                </div>
+              </div>
+            )}
+          </div>
+
           <Link
             to="/contact/"
             className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-bronze hover:bg-brand-bronze-light text-white font-display text-[12.5px] font-semibold tracking-wide rounded-lg transition-colors duration-200 shadow-sm"
@@ -308,6 +366,32 @@ export const SiteHeader: React.FC = () => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-brand-white border-t border-brand-stone py-5 px-4 max-h-[85vh] overflow-y-auto shadow-2xl animate-reveal" id="mobile-nav-drawer">
           <div className="space-y-6">
+            {/* FUTURE LOCALIZATION LANGUAGE SELECTOR */}
+            <div className="border-b border-brand-stone/40 pb-4">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Select Language (Localization)</p>
+              <div className="flex gap-2">
+                {languages.map(lang => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setCurrentLang(lang.code);
+                      if (lang.placeholder) {
+                        setShowToast(`Localization for ${lang.label} is coming soon. English remains default.`);
+                        setTimeout(() => setShowToast(null), 4000);
+                      }
+                    }}
+                    className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg border text-xs font-semibold transition-all cursor-pointer ${
+                      currentLang === lang.code
+                        ? 'bg-brand-bronze/10 border-brand-bronze text-brand-bronze'
+                        : 'bg-brand-white border-brand-stone text-slate-700 hover:border-brand-bronze'
+                    }`}
+                  >
+                    {lang.code === 'en' && <Globe className="w-3.5 h-3.5" />}
+                    <span>{lang.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
             {/* PROFILE SECTION */}
             <div>
               <p className="text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase mb-2">Meet Dr. Liyan</p>
@@ -391,6 +475,23 @@ export const SiteHeader: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Floating Global Language Toast Alert */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="fixed top-24 right-6 z-50 max-w-sm bg-brand-charcoal text-brand-white text-xs px-4 py-3 rounded-xl shadow-xl border border-brand-bronze/30 flex items-center gap-2.5 font-sans"
+            id="language-toast-notification"
+          >
+            <Sparkles className="w-4 h-4 text-brand-bronze shrink-0 animate-pulse" />
+            <span>{showToast}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

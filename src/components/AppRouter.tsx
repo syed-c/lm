@@ -109,6 +109,22 @@ export const normalizePath = (p: string): string => {
   return clean || '/';
 };
 
+export const isInternalSession = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  const params = new URLSearchParams(window.location.search);
+  
+  if (params.get('admin') === 'false' || params.get('internal') === 'false') {
+    localStorage.removeItem('drliyan_internal_team');
+    return false;
+  }
+  
+  if (params.get('admin') === 'true' || params.get('internal') === 'true') {
+    localStorage.setItem('drliyan_internal_team', 'true');
+    return true;
+  }
+  return localStorage.getItem('drliyan_internal_team') === 'true';
+};
+
 // Layout container to trigger standard motion fades on route changing
 export const RouteView: React.FC<{ routePath: string; exact?: boolean; children: React.ReactNode }> = ({ 
   routePath, 

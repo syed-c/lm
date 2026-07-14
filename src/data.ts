@@ -741,15 +741,6 @@ export const SEO_ROUTES_META: Record<string, SeoMetaData> = {
     robots: "index, follow",
     schemaType: "WebPage"
   },
-  "/brand-governance/": {
-    title: "Brand Governance Hub & Identity Vault | Dr. Liyan Massaband",
-    description: "Secure workspace and consistency panel detailing primary claims verification, official biography releases, and active citation monitoring.",
-    canonical: "/brand-governance/",
-    ogType: "website",
-    ogImage: "https://picsum.photos/seed/governance/1200/630",
-    robots: "noindex, nofollow",
-    schemaType: "WebPage"
-  },
   "/fact-sheet/": {
     title: "Official Media & LLM Crawler Fact Sheet | Dr. Liyan Massaband",
     description: "Unambiguous structured data record of credentials, educational timeline, and clinic alignments optimized for machine recognition.",

@@ -3,6 +3,7 @@ import { useRouter, Link } from '../AppRouter.tsx';
 import { VIDEOS, ARTICLES, BRAND_CONFIG, ArticleRecord, VideoRecord } from '../../data.ts';
 import { SourceReferenceBadge } from '../SourceReferenceBadge.tsx';
 import { InteractiveVideoPlayer } from '../InteractiveVideoPlayer.tsx';
+import { calculateReadingTime } from '../../lib/readingTime.ts';
 import { 
   Play, 
   Clock, 
@@ -614,6 +615,8 @@ export const ArticleDetailView: React.FC<{ slug: string }> = ({ slug }) => {
     );
   }
 
+  const computedReadingTime = calculateReadingTime(article.content);
+
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20" id={`article-detail-${article.slug}`}>
       
@@ -636,9 +639,9 @@ export const ArticleDetailView: React.FC<{ slug: string }> = ({ slug }) => {
             <User className="w-3.5 h-3.5" />
             <span>Author: {article.author}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5" />
-            <span>{article.readTime}</span>
+          <div className="flex items-center gap-1.5" title={`${computedReadingTime.wordCount} words, calculated at 200 WPM`}>
+            <Clock className="w-3.5 h-3.5 text-brand-bronze" />
+            <span>{computedReadingTime.text} ({computedReadingTime.wordCount} words)</span>
           </div>
           <div>
             <span>Published: {article.publishDate}</span>

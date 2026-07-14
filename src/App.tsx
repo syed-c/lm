@@ -4,12 +4,13 @@
  */
 
 import React from 'react';
-import { AppRouter, RouteView, useRouter, Link, normalizePath } from './components/AppRouter.tsx';
+import { AppRouter, RouteView, useRouter, Link, normalizePath, isInternalSession } from './components/AppRouter.tsx';
 import { SiteHeader } from './components/SiteHeader.tsx';
 import { SiteFooter } from './components/SiteFooter.tsx';
 import { FloatingContactWidget } from './components/FloatingContactWidget.tsx';
 import { ScrollProgressBar } from './components/ScrollProgressBar.tsx';
 import { SeoManager, SeoAuditorWidget } from './components/SeoManager.tsx';
+import { BackToTop } from './components/BackToTop.tsx';
 
 // View Imports
 import { HomeView } from './components/views/HomeView.tsx';
@@ -216,14 +217,18 @@ const AppContent: React.FC = () => {
       </RouteView>
       
       {/* Off-page Digital PR and authority scoring matrix console */}
-      <RouteView routePath="/authority-dashboard/">
-        <AuthorityDashboardView />
-      </RouteView>
+      {isInternalSession() && (
+        <RouteView routePath="/authority-dashboard/">
+          <AuthorityDashboardView />
+        </RouteView>
+      )}
       
       {/* Brand Governance, Visual Asset and Reputation Control system */}
-      <RouteView routePath="/brand-governance/">
-        <BrandGovernanceViews />
-      </RouteView>
+      {isInternalSession() && (
+        <RouteView routePath="/brand-governance/">
+          <BrandGovernanceViews />
+        </RouteView>
+      )}
       
       {/* Human and AI readable Fact Sheet */}
       <RouteView routePath="/fact-sheet/">
@@ -239,6 +244,7 @@ const AppContent: React.FC = () => {
 // Elegant, indexable and helpful 404 handler (Compliance checklist item)
 const Fallback404Route: React.FC = () => {
   const { path } = useRouter();
+  const showInternal = isInternalSession();
   
   const knownRoutes = [
     '/', '/dr-liyan-massaband/', '/her-story/', '/education-and-credentials/',
@@ -248,9 +254,10 @@ const Fallback404Route: React.FC = () => {
     '/medical-review-policy/', '/corrections-policy/',
     '/media/', '/press-kit/', '/speaking/', '/social-highlights/',
     '/contact/', '/medical-disclaimer/', '/privacy-policy/', '/accessibility/',
-    '/editorial-standards/', '/sitemap/', '/sitemap.xml', '/sitemap.xml/', '/authority-dashboard/', '/brand-governance/', '/fact-sheet/',
+    '/editorial-standards/', '/sitemap/', '/sitemap.xml', '/sitemap.xml/', '/fact-sheet/',
     '/dental-implants/', '/all-on-x/', '/patient-stories/', '/implant-education/', '/experience-1000-implants/',
-    '/locations/beverly-hills/', '/locations/burbank/'
+    '/locations/beverly-hills/', '/locations/burbank/',
+    ...(showInternal ? ['/authority-dashboard/', '/brand-governance/'] : [])
   ];
 
   const normalizedPath = normalizePath(path).toLowerCase();
@@ -346,7 +353,10 @@ export default function App() {
         <FloatingContactWidget />
 
         {/* Floating SEO Auditor and Real-Time Configurator Widget */}
-        <SeoAuditorWidget />
+        {isInternalSession() && <SeoAuditorWidget />}
+
+        {/* Floating Back to Top Button */}
+        <BackToTop />
       </div>
     </AppRouter>
   );
