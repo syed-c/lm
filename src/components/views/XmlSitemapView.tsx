@@ -131,9 +131,49 @@ ${VIDEOS.map(video => {
     'sitemap-videos.xml';
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(activeXml);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(activeXml)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        })
+        .catch(err => {
+          console.warn('Clipboard copy failed: ', err);
+          // Fallback
+          try {
+            const textArea = document.createElement("textarea");
+            textArea.value = activeXml;
+            textArea.style.position = "fixed"; 
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+          } catch (e) {
+            console.error('Fallback copy failed', e);
+          }
+        });
+    } else {
+      // Fallback
+      try {
+        const textArea = document.createElement("textarea");
+        textArea.value = activeXml;
+        textArea.style.position = "fixed"; 
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (e) {
+        console.error('Fallback copy failed', e);
+      }
+    }
   };
 
   const handleDownload = () => {

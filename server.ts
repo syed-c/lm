@@ -104,7 +104,7 @@ app.use((req, res, next) => {
 });
 
 // 1. Dynamic Sitemap Index & Sub-Sitemaps Generation
-app.get('/sitemap.xml', (req, res) => {
+app.get(['/sitemap.xml', '/sitemap.xml/'], (req, res) => {
   const host = req.headers.host || 'drliyanmassaband.com';
   const scheme = req.headers['x-forwarded-proto'] || 'https';
   const domain = `${scheme}://${host}`;
@@ -130,7 +130,7 @@ app.get('/sitemap.xml', (req, res) => {
 });
 
 // 1b. Pages Sub-Sitemap with Image Schema markup mapping
-app.get('/sitemap-pages.xml', (req, res) => {
+app.get(['/sitemap-pages.xml', '/sitemap-pages.xml/'], (req, res) => {
   const host = req.headers.host || 'drliyanmassaband.com';
   const scheme = req.headers['x-forwarded-proto'] || 'https';
   const domain = `${scheme}://${host}`;
@@ -172,7 +172,7 @@ ${sitemapUrls}
 });
 
 // 1c. Articles Sub-Sitemap
-app.get('/sitemap-articles.xml', (req, res) => {
+app.get(['/sitemap-articles.xml', '/sitemap-articles.xml/'], (req, res) => {
   const host = req.headers.host || 'drliyanmassaband.com';
   const scheme = req.headers['x-forwarded-proto'] || 'https';
   const domain = `${scheme}://${host}`;
@@ -203,7 +203,7 @@ ${sitemapUrls}
 });
 
 // 1d. Videos Sub-Sitemap with Google Video XML standards
-app.get('/sitemap-videos.xml', (req, res) => {
+app.get(['/sitemap-videos.xml', '/sitemap-videos.xml/'], (req, res) => {
   const host = req.headers.host || 'drliyanmassaband.com';
   const scheme = req.headers['x-forwarded-proto'] || 'https';
   const domain = `${scheme}://${host}`;
@@ -752,7 +752,9 @@ async function bootstrap() {
 
   } else {
     // Production Mode - Serve Pre-compiled Assets
-    const distPath = path.join(process.cwd(), 'dist');
+    // esbuild bundles server.ts into dist/server.cjs. Thus, _dirname is already the 'dist' folder.
+    // If we run the raw ts file in production mode (for any reason), _dirname is the root directory.
+    const distPath = _dirname.endsWith('dist') ? _dirname : path.join(_dirname, 'dist');
     app.use(express.static(distPath, { index: false }));
 
     app.all('*', (req, res, next) => {

@@ -160,9 +160,48 @@ export const SeoAuditorWidget: React.FC = () => {
       "description": customDesc,
       "url": `https://drliyanmassaband.com${path}`
     };
-    navigator.clipboard.writeText(JSON.stringify(microdata, null, 2));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    const text = JSON.stringify(microdata, null, 2);
+    if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        })
+        .catch(err => {
+          console.warn('Clipboard copy failed: ', err);
+          try {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+          } catch (e) {
+            console.error('Fallback copy failed', e);
+          }
+        });
+    } else {
+      try {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (e) {
+        console.error('Fallback copy failed', e);
+      }
+    }
   };
 
   return (

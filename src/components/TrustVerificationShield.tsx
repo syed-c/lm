@@ -37,10 +37,46 @@ export const TrustVerificationShield: React.FC = () => {
   };
 
   const handleCopy = (text: string, label: string) => {
-    if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(text);
-      setCopiedText(label);
-      setTimeout(() => setCopiedText(null), 2000);
+    if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          setCopiedText(label);
+          setTimeout(() => setCopiedText(null), 2000);
+        })
+        .catch(err => {
+          console.warn('Clipboard copy failed: ', err);
+          try {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setCopiedText(label);
+            setTimeout(() => setCopiedText(null), 2000);
+          } catch (e) {
+            console.error('Fallback copy failed', e);
+          }
+        });
+    } else {
+      try {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setCopiedText(label);
+        setTimeout(() => setCopiedText(null), 2000);
+      } catch (e) {
+        console.error('Fallback copy failed', e);
+      }
     }
   };
 
