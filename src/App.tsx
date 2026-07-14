@@ -269,6 +269,22 @@ const Fallback404Route: React.FC = () => {
 
   const isMatched = knownRoutes.some(route => normalizePath(route).toLowerCase() === normalizedPath);
 
+  React.useEffect(() => {
+    if (!isMatched) {
+      console.warn("Client-side 404 triggered for path:", path, "normalized:", normalizedPath);
+      fetch('/api/log-client-error', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: '404',
+          path: path,
+          normalizedPath: normalizedPath,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {});
+    }
+  }, [isMatched, path, normalizedPath]);
+
   if (isMatched) return null;
 
   return (

@@ -978,7 +978,7 @@ async function bootstrap() {
     // Dev Mode - Mount Vite Server
     const vite = await createViteServer({
       server: { middlewareMode: true },
-      appType: 'spa',
+      appType: 'custom',
     });
     
     app.use(vite.middlewares);
