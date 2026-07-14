@@ -44,6 +44,7 @@ import {
   MedicalReviewPolicyView,
   CorrectionsPolicyView
 } from './components/views/PolicyViews.tsx';
+import { XmlSitemapView } from './components/views/XmlSitemapView.tsx';
 import { AuthorityDashboardView } from './components/views/AuthorityDashboardView.tsx';
 import { BrandGovernanceViews } from './components/views/BrandGovernanceViews.tsx';
 import { FactSheetView } from './components/views/FactSheetView.tsx';
@@ -206,6 +207,14 @@ const AppContent: React.FC = () => {
         <SitemapView />
       </RouteView>
       
+      <RouteView routePath="/sitemap.xml">
+        <XmlSitemapView />
+      </RouteView>
+
+      <RouteView routePath="/sitemap.xml/">
+        <XmlSitemapView />
+      </RouteView>
+      
       {/* Off-page Digital PR and authority scoring matrix console */}
       <RouteView routePath="/authority-dashboard/">
         <AuthorityDashboardView />
@@ -239,7 +248,7 @@ const Fallback404Route: React.FC = () => {
     '/medical-review-policy/', '/corrections-policy/',
     '/media/', '/press-kit/', '/speaking/', '/social-highlights/',
     '/contact/', '/medical-disclaimer/', '/privacy-policy/', '/accessibility/',
-    '/editorial-standards/', '/sitemap/', '/authority-dashboard/', '/brand-governance/', '/fact-sheet/',
+    '/editorial-standards/', '/sitemap/', '/sitemap.xml', '/sitemap.xml/', '/authority-dashboard/', '/brand-governance/', '/fact-sheet/',
     '/dental-implants/', '/all-on-x/', '/patient-stories/', '/implant-education/', '/experience-1000-implants/',
     '/locations/beverly-hills/', '/locations/burbank/'
   ];

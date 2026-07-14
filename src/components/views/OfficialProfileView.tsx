@@ -288,15 +288,28 @@ export const OfficialProfileView: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
                 {/* Magnolia Burbank */}
-                <div className="border border-brand-stone p-6 rounded-2xl space-y-4 hover:border-brand-bronze transition-colors flex flex-col justify-between" id="magnolia-burbank-card">
-                  <div className="space-y-2">
-                    <span className="text-xs font-mono text-slate-400 block">Burbank Practice Affiliation</span>
-                    <h3 className="font-display font-semibold text-lg text-brand-charcoal leading-tight">Magnolia Dentistry</h3>
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                      Providing detailed, family-centric preventative dentistry, digital diagnostics, and comprehensive restoration pathways in the Burbank community.
-                    </p>
+                <div className="border border-brand-stone rounded-2xl overflow-hidden hover:border-brand-bronze transition-colors flex flex-col justify-between group bg-white" id="magnolia-burbank-card">
+                  <div>
+                    <div className="aspect-[16/9] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                      <img 
+                        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
+                        alt="Burbank Magnolia Dentistry Practice Suite"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                    </div>
+                    <div className="p-6 space-y-4">
+                      <div className="space-y-2">
+                        <span className="text-xs font-mono text-slate-400 block">Burbank Practice Affiliation</span>
+                        <h3 className="font-display font-semibold text-lg text-brand-charcoal leading-tight">Magnolia Dentistry</h3>
+                        <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                          Providing detailed, family-centric preventative dentistry, digital diagnostics, and comprehensive restoration pathways in the Burbank community.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="pt-2">
+                  <div className="p-6 pt-0">
                     <a 
                       href="https://www.magnoliadentistry.com/dr-liyan-massaband/" 
                       target="_blank" 
@@ -310,15 +323,28 @@ export const OfficialProfileView: React.FC = () => {
                 </div>
 
                 {/* Confidental Beverly Hills */}
-                <div className="border border-brand-stone p-6 rounded-2xl space-y-4 hover:border-brand-bronze transition-colors flex flex-col justify-between" id="confidental-bh-card">
-                  <div className="space-y-2">
-                    <span className="text-xs font-mono text-slate-400 block">Beverly Hills Practice Affiliation</span>
-                    <h3 className="font-display font-semibold text-lg text-brand-charcoal leading-tight">ConfiDental Beverly Hills</h3>
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                      Focusing on premium biological cosmetics, custom porcelain dental veneers, reconstructive smile design, and advanced physiological tracking.
-                    </p>
+                <div className="border border-brand-stone rounded-2xl overflow-hidden hover:border-brand-bronze transition-colors flex flex-col justify-between group bg-white" id="confidental-bh-card">
+                  <div>
+                    <div className="aspect-[16/9] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                      <img 
+                        src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800"
+                        alt="ConfiDental Beverly Hills Office Suite"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                    </div>
+                    <div className="p-6 space-y-4">
+                      <div className="space-y-2">
+                        <span className="text-xs font-mono text-slate-400 block">Beverly Hills Practice Affiliation</span>
+                        <h3 className="font-display font-semibold text-lg text-brand-charcoal leading-tight">ConfiDental Beverly Hills</h3>
+                        <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                          Focusing on premium biological cosmetics, custom porcelain dental veneers, reconstructive smile design, and advanced physiological tracking.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="pt-2">
+                  <div className="p-6 pt-0">
                     <a 
                       href="https://confidentalbeverlyhills.com/liyan-massaband-dmd/" 
                       target="_blank" 

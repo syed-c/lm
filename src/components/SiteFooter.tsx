@@ -103,7 +103,11 @@ export const SiteFooter: React.FC = () => {
                 <Link to="/medical-disclaimer/" className="hover:text-brand-bronze transition-colors">Medical Disclaimer</Link>
                 <Link to="/accessibility/" className="hover:text-brand-bronze transition-colors">Accessibility Policy</Link>
                 <Link to="/privacy-policy/" className="hover:text-brand-bronze transition-colors">Privacy Policy</Link>
-                <Link to="/sitemap/" className="hover:text-brand-bronze transition-colors font-semibold">Sitemap / Links Directory</Link>
+                <Link to="/sitemap/" className="hover:text-brand-bronze transition-colors">HTML Sitemap Directory</Link>
+                <Link to="/sitemap.xml" className="hover:text-brand-bronze transition-colors font-semibold flex items-center gap-1.5">
+                  <span>XML sitemap.xml</span>
+                  <span className="text-[9px] bg-brand-bronze/15 text-brand-bronze px-1 py-0.5 rounded font-mono font-bold">XML</span>
+                </Link>
               </nav>
             </div>
 

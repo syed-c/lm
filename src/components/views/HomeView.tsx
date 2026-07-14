@@ -232,31 +232,159 @@ export const HomeView: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <div className="border border-brand-stone/60 p-7 rounded-2xl bg-brand-stone/10 space-y-3 hover-lift transition-all duration-350 shadow-3xs relative group">
-              <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
-              <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider">01. Bone Loss Prevention</span>
-              <p className="text-brand-charcoal font-display font-bold text-lg">Continuous Jawbone Deterioration</p>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                When a natural tooth is lost, the surrounding bone minerals resorb. Titanium implant posts act as artificial roots, stimulating the bone and preventing facial bone collapse.
-              </p>
+            <div className="border border-brand-stone/60 rounded-2xl bg-brand-stone/10 overflow-hidden hover-lift transition-all duration-350 shadow-3xs relative group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[16/10] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1579684389782-64d84b5e905d?auto=format&fit=crop&q=80&w=600" 
+                    alt="Bone loss prevention 3D bone mapping diagnostic scan" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-7 space-y-3 relative">
+                  <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
+                  <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider pt-2">01. Bone Loss Prevention</span>
+                  <p className="text-brand-charcoal font-display font-bold text-lg">Continuous Jawbone Deterioration</p>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    When a natural tooth is lost, the surrounding bone minerals resorb. Titanium implant posts act as artificial roots, stimulating the bone and preventing facial bone collapse.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="border border-brand-stone/60 p-7 rounded-2xl bg-brand-stone/10 space-y-3 hover-lift transition-all duration-350 shadow-3xs relative group">
-              <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
-              <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider">02. Restoring Chewing force</span>
-              <p className="text-brand-charcoal font-display font-bold text-lg">Dietary and Speech Restrictions</p>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Traditional dentures restore only 15% to 20% of original chewing force. Fixed dental implants restore up to 90% of natural biting force, allowing you to eat a healthy diet.
-              </p>
+            <div className="border border-brand-stone/60 rounded-2xl bg-brand-stone/10 overflow-hidden hover-lift transition-all duration-350 shadow-3xs relative group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[16/10] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600" 
+                    alt="Restoring chewing force through premium titanium implant anchors" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-7 space-y-3 relative">
+                  <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
+                  <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider pt-2">02. Restoring Chewing force</span>
+                  <p className="text-brand-charcoal font-display font-bold text-lg">Dietary and Speech Restrictions</p>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Traditional dentures restore only 15% to 20% of original chewing force. Fixed dental implants restore up to 90% of natural biting force, allowing you to eat a healthy diet.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="border border-brand-stone/60 p-7 rounded-2xl bg-brand-stone/10 space-y-3 hover-lift transition-all duration-350 shadow-3xs relative group">
-              <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
-              <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider">03. Permanent Stability</span>
-              <p className="text-brand-charcoal font-display font-bold text-lg">Denture Slipping & Social Anxiety</p>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Loose dentures can slide around, making speaking and laughing uncomfortable. Implants lock teeth firmly in place, eliminating the need for messy adhesives or pastes.
+            <div className="border border-brand-stone/60 rounded-2xl bg-brand-stone/10 overflow-hidden hover-lift transition-all duration-350 shadow-3xs relative group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[16/10] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
+                    alt="Restoring social confidence and smile stability with dentist" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-7 space-y-3 relative">
+                  <div className="absolute top-0 left-6 w-12 h-1 bg-brand-bronze/40 rounded-b-full transition-all group-hover:bg-brand-bronze group-hover:w-20" />
+                  <span className="text-xs font-mono text-brand-bronze font-bold uppercase block tracking-wider pt-2">03. Permanent Stability</span>
+                  <p className="text-brand-charcoal font-display font-bold text-lg">Denture Slipping & Social Anxiety</p>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Loose dentures can slide around, making speaking and laughing uncomfortable. Implants lock teeth firmly in place, eliminating the need for messy adhesives or pastes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 2B. STATE-OF-THE-ART CLINICAL & TECHNOLOGY SHOWCASE (Bento Luxury Gallery) */}
+      <section className="py-16 md:py-24 bg-brand-white border-b border-brand-stone/40 font-sans relative overflow-hidden" id="clinic-atmosphere-bento">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+            <div className="lg:col-span-6 space-y-4">
+              <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">Clinical Precision & Luxury Environments</span>
+              <h2 className="font-display font-medium text-brand-charcoal text-3xl md:text-4xl tracking-tight leading-tight">
+                Designed for Medical Excellence & Patient Comfort
+              </h2>
+            </div>
+            <div className="lg:col-span-6">
+              <p className="text-xs md:text-sm text-slate-500 leading-relaxed">
+                We draw from the design principles of Beverly Hills and Burbank's leading practices. Our clinical suites prioritize surgical precision with computerized CBCT 3D scanners, surgical guides, and state-of-the-art sterile fields, balanced by warm lighting, natural woods, and absolute privacy to ease clinical anxiety.
               </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            {/* Tech 1 - Intraoral 3D scans */}
+            <div className="md:col-span-4 rounded-2xl overflow-hidden border border-brand-stone/65 relative group h-80 shadow-3xs bg-brand-stone/10">
+              <img 
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600" 
+                alt="Intraoral computerized 3D scanner mapping oral cavity" 
+                className="w-full h-full object-cover transition-transform duration-750 group-hover:scale-103"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2621]/90 via-[#0A2621]/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 space-y-1">
+                <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest block">COMPUTERIZED IMPLANTOLOGY</span>
+                <h3 className="font-display font-bold text-white text-base">CBCT 3D Bone Scans</h3>
+                <p className="text-[10px] text-slate-300 leading-normal">Digitally measuring remaining jaw bone density to outline exact millimeter implant positioning.</p>
+              </div>
+            </div>
+
+            {/* Tech 2 - Elegant Operating Theater */}
+            <div className="md:col-span-8 rounded-2xl overflow-hidden border border-brand-stone/65 relative group h-80 shadow-3xs bg-brand-stone/10">
+              <img 
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1000" 
+                alt="Beverly Hills clinical treatment suite with modern diagnostic screens" 
+                className="w-full h-full object-cover transition-transform duration-750 group-hover:scale-103"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2621]/90 via-[#0A2621]/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 space-y-1">
+                <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest block">STERILE SURGICAL SUITES</span>
+                <h3 className="font-display font-bold text-white text-base">High-End Guided Surgical Rooms</h3>
+                <p className="text-[10px] text-slate-300 leading-normal">Premium diagnostic displays and high-efficiency surgical lighting representing the ConfiDental Beverly Hills aesthetic.</p>
+              </div>
+            </div>
+
+            {/* Tech 3 - Warm reception and lounge */}
+            <div className="md:col-span-7 rounded-2xl overflow-hidden border border-brand-stone/65 relative group h-80 shadow-3xs bg-brand-stone/10">
+              <img 
+                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000" 
+                alt="Luxurious clinic lounge area for dental patients" 
+                className="w-full h-full object-cover transition-transform duration-750 group-hover:scale-103"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2621]/90 via-[#0A2621]/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 space-y-1">
+                <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest block">PATIENT INTAKE LOUNGES</span>
+                <h3 className="font-display font-bold text-white text-base">High-Comfort Consultation Suites</h3>
+                <p className="text-[10px] text-slate-300 leading-normal">Warm, inviting architectural spaces designed to eliminate clinical anxiety prior to dental implant consultations.</p>
+              </div>
+            </div>
+
+            {/* Tech 4 - Burbank Magnolia Dentistry atmosphere */}
+            <div className="md:col-span-5 rounded-2xl overflow-hidden border border-brand-stone/65 relative group h-80 shadow-3xs bg-brand-stone/10">
+              <img 
+                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=700" 
+                alt="Burbank clinic room at Magnolia Dentistry" 
+                className="w-full h-full object-cover transition-transform duration-750 group-hover:scale-103"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2621]/90 via-[#0A2621]/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 space-y-1">
+                <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest block">BURBANK CLINICAL ALIGNMENT</span>
+                <h3 className="font-display font-bold text-white text-base">Magnolia Dentistry Burbank Suite</h3>
+                <p className="text-[10px] text-slate-300 leading-normal">Elegant dentistry rooms equipped with digital intraoral photography, restorative materials, and sterilized operating tools.</p>
+              </div>
             </div>
 
           </div>
@@ -483,31 +611,42 @@ export const HomeView: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             
             {/* Beverly Hills Clinic Card */}
-            <div className="bg-white border border-brand-stone rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
-              <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/20 bg-brand-bronze/5 px-3 py-1 rounded-full">
-                    Medical District Suite
-                  </span>
-                  <MapPin className="w-5 h-5 text-brand-bronze" />
+            <div className="bg-white border border-brand-stone rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="aspect-[16/9] w-full overflow-hidden border-b border-brand-stone relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800"
+                    alt="Beverly Hills ConfiDental Office Clinical Suite"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
                 </div>
+                <div className="p-6 sm:p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/20 bg-brand-bronze/5 px-3 py-1 rounded-full">
+                      Medical District Suite
+                    </span>
+                    <MapPin className="w-5 h-5 text-brand-bronze" />
+                  </div>
 
-                <h3 className="font-display font-bold text-brand-charcoal text-xl">Beverly Hills Office</h3>
-                
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Located in the prestigious Wilshire medical tower. Highly specialized in full-mouth All-on-X computer-guided operations, sinus lifting, and aesthetic ceramic crowns.
-                </p>
+                  <h3 className="font-display font-bold text-brand-charcoal text-xl">Beverly Hills Office</h3>
+                  
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Located in the prestigious Wilshire medical tower. Highly specialized in full-mouth All-on-X computer-guided operations, sinus lifting, and aesthetic ceramic crowns.
+                  </p>
 
-                <div className="pt-4 border-t border-brand-stone/40 space-y-3 text-xs text-slate-600">
-                  <p>
-                    <strong>Address:</strong> 9401 Wilshire Blvd, Suite 1050, Beverly Hills, CA 90212
-                  </p>
-                  <p>
-                    <strong>Hours:</strong> Mon – Thu: 9:00 AM – 5:00 PM | Fri: 9:00 AM – 3:00 PM
-                  </p>
-                  <p className="bg-brand-stone/10 p-2.5 rounded-lg text-[11px] leading-normal">
-                    <strong>Parking:</strong> Underground tower validation provided for implant consults. Just blocks from Rodeo Drive.
-                  </p>
+                  <div className="pt-4 border-t border-brand-stone/40 space-y-3 text-xs text-slate-600 font-sans">
+                    <p>
+                      <strong>Address:</strong> 9401 Wilshire Blvd, Suite 1050, Beverly Hills, CA 90212
+                    </p>
+                    <p>
+                      <strong>Hours:</strong> Mon – Thu: 9:00 AM – 5:00 PM | Fri: 9:00 AM – 3:00 PM
+                    </p>
+                    <p className="bg-brand-stone/10 p-2.5 rounded-lg text-[11px] leading-normal">
+                      <strong>Parking:</strong> Underground tower validation provided for implant consults. Just blocks from Rodeo Drive.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -528,31 +667,42 @@ export const HomeView: React.FC = () => {
             </div>
 
             {/* Burbank Clinic Card */}
-            <div className="bg-white border border-brand-stone rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
-              <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/20 bg-brand-bronze/5 px-3 py-1 rounded-full">
-                    Magnolia Dentistry Affiliation
-                  </span>
-                  <MapPin className="w-5 h-5 text-brand-bronze" />
+            <div className="bg-white border border-brand-stone rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="aspect-[16/9] w-full overflow-hidden border-b border-brand-stone relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
+                    alt="Burbank Magnolia Dentistry Clinical Suite"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
                 </div>
+                <div className="p-6 sm:p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-widest border border-brand-bronze/20 bg-brand-bronze/5 px-3 py-1 rounded-full">
+                      Magnolia Dentistry Affiliation
+                    </span>
+                    <MapPin className="w-5 h-5 text-brand-bronze" />
+                  </div>
 
-                <h3 className="font-display font-bold text-brand-charcoal text-xl">Burbank Office</h3>
-                
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Serving the San Fernando Valley with state-of-the-art guided dental implantology, immediate tooth extractions, bone grafting, and dental implant prostheses.
-                </p>
+                  <h3 className="font-display font-bold text-brand-charcoal text-xl">Burbank Office</h3>
+                  
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Serving the San Fernando Valley with state-of-the-art guided dental implantology, immediate tooth extractions, bone grafting, and dental implant prostheses.
+                  </p>
 
-                <div className="pt-4 border-t border-brand-stone/40 space-y-3 text-xs text-slate-600">
-                  <p>
-                    <strong>Address:</strong> 1923 W Magnolia Blvd, Burbank, CA 91506
-                  </p>
-                  <p>
-                    <strong>Hours:</strong> Tue – Fri: 8:30 AM – 5:30 PM | Saturday: By Appointment
-                  </p>
-                  <p className="bg-brand-stone/10 p-2.5 rounded-lg text-[11px] leading-normal">
-                    <strong>Parking:</strong> Dedicated free parking spaces directly behind building. Easily accessible street parking.
-                  </p>
+                  <div className="pt-4 border-t border-brand-stone/40 space-y-3 text-xs text-slate-600 font-sans">
+                    <p>
+                      <strong>Address:</strong> 1923 W Magnolia Blvd, Burbank, CA 91506
+                    </p>
+                    <p>
+                      <strong>Hours:</strong> Tue – Fri: 8:30 AM – 5:30 PM | Saturday: By Appointment
+                    </p>
+                    <p className="bg-brand-stone/10 p-2.5 rounded-lg text-[11px] leading-normal">
+                      <strong>Parking:</strong> Dedicated free parking spaces directly behind building. Easily accessible street parking.
+                    </p>
+                  </div>
                 </div>
               </div>
 

@@ -163,6 +163,88 @@ export const BeverlyHillsLocationView: React.FC = () => {
         </div>
       </section>
 
+      {/* 2B. LOCAL CLINICAL GALLERY & TECHNOLOGY SHOWCASE (ConfiDental Beverly Hills) */}
+      <section className="py-16 bg-brand-stone/5 border-b border-brand-stone/40" id="beverly-hills-clinic-gallery">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl mb-12 space-y-3">
+            <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">Beverly Hills Clinical Environment</span>
+            <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-3xl tracking-tight">Advanced Surgical Suites & Diagnostic Diagnostics</h2>
+            <p className="text-xs text-slate-500 max-w-xl">
+              Explore the advanced medical equipment and comfortable patient spaces designed to deliver exceptionally precise and relaxed dental implant therapies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div className="border border-brand-stone rounded-2xl overflow-hidden bg-white shadow-3xs group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[4/3] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600" 
+                    alt="Beverly Hills Sterile Surgical Suite" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-6 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-wider block">CLINICAL OPERATING ROOM</span>
+                  <h4 className="font-display font-bold text-brand-charcoal text-base">High-End Operating Theaters</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    Sterile operating theater equipped with premium diagnostic displays, high-efficiency surgical lighting, and physical support settings.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-brand-stone rounded-2xl overflow-hidden bg-white shadow-3xs group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[4/3] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600" 
+                    alt="Computer-guided implant screens" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-6 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-wider block">GUIDED SURGERY PLANNING</span>
+                  <h4 className="font-display font-bold text-brand-charcoal text-base">Computerized Treatment Chairs</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    Patient treatment suites with immediate access to 3D bone mapping screens, facilitating real-time digital consults during implant planning.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-brand-stone rounded-2xl overflow-hidden bg-white shadow-3xs group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[4/3] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600" 
+                    alt="Clinical diagnostic CBCT scanner and sterilization" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-6 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-wider block">PRECISE DIAGNOSTICS</span>
+                  <h4 className="font-display font-bold text-brand-charcoal text-base">CBCT 3D Radiography</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    In-house diagnostic scanning systems to record high-resolution anatomical details of remaining jaw bone density and canal locations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* 3. Specific Patient Reviews */}
       <section className="py-16 bg-brand-white border-b border-brand-stone/40 font-sans">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">

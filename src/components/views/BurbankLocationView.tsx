@@ -163,6 +163,88 @@ export const BurbankLocationView: React.FC = () => {
         </div>
       </section>
 
+      {/* 2B. LOCAL CLINICAL GALLERY & TECHNOLOGY SHOWCASE (Magnolia Dentistry Burbank) */}
+      <section className="py-16 bg-brand-stone/5 border-b border-brand-stone/40" id="burbank-clinic-gallery">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl mb-12 space-y-3">
+            <span className="text-xs font-mono font-bold text-brand-bronze uppercase tracking-widest block">Burbank Clinical Environment</span>
+            <h2 className="font-display font-medium text-brand-charcoal text-2xl md:text-3xl tracking-tight">Warm Architectural Suites & Precise Guided Systems</h2>
+            <p className="text-xs text-slate-500 max-w-xl">
+              Explore the comfortable environment and state-of-the-art restorative technologies designed to maximize safety, comfort, and natural results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div className="border border-brand-stone rounded-2xl overflow-hidden bg-white shadow-3xs group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[4/3] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600" 
+                    alt="Burbank Magnolia Dentistry Treatment Suite" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-6 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-wider block">CLINICAL OPERATING ROOM</span>
+                  <h4 className="font-display font-bold text-brand-charcoal text-base">Comfortable Treatment Suites</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    Modern restorative suite detailed with digital intraoral diagnostic photography, medical-grade sterilizers, and relaxing ergonomic chairs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-brand-stone rounded-2xl overflow-hidden bg-white shadow-3xs group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[4/3] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1579684389782-64d84b5e905d?auto=format&fit=crop&q=80&w=600" 
+                    alt="Computerized biological planning" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-6 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-wider block">GUIDED PLAN DETAILS</span>
+                  <h4 className="font-display font-bold text-brand-charcoal text-base">Clinician Surgical Guidance</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    Dr. Massaband utilizes high-magnification surgical equipment and computer-modeled drill guides to ensure sub-millimeter clinical accuracy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-brand-stone rounded-2xl overflow-hidden bg-white shadow-3xs group flex flex-col justify-between">
+              <div>
+                <div className="aspect-[4/3] w-full overflow-hidden border-b border-brand-stone/30 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" 
+                    alt="Comfortable Burbank Consultation suite" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+                </div>
+                <div className="p-6 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-brand-bronze uppercase tracking-wider block">RELAXED ENVIRONMENT</span>
+                  <h4 className="font-display font-bold text-brand-charcoal text-base">High-Comfort Intake Lounges</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    Warm, beautiful wood-toned architectural suites designed to relieve clinical dental stress and facilitate comfortable therapeutic consultation.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* 3. Burbank Reviews */}
       <section className="py-16 bg-brand-white border-b border-brand-stone/40 font-sans">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">

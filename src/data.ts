@@ -821,6 +821,24 @@ export const SEO_ROUTES_META: Record<string, SeoMetaData> = {
     ogImage: "https://picsum.photos/seed/burbanklocation/1200/630",
     robots: "index, follow",
     schemaType: "WebPage"
+  },
+  "/sitemap/": {
+    title: "Sitemap Directory & Links Index | Dr. Liyan Massaband",
+    description: "Explore the comprehensive human-readable HTML directory mapping all bio-restoration timelines, media records, and health articles.",
+    canonical: "/sitemap/",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/sitemap/1200/630",
+    robots: "index, follow",
+    schemaType: "CollectionPage"
+  },
+  "/sitemap.xml": {
+    title: "XML Sitemap Feed Index | Dr. Liyan Massaband",
+    description: "Technical SEO XML sitemap feeds optimized for Google search crawler bot indexation of articles, static routes, and clinical media assets.",
+    canonical: "/sitemap.xml",
+    ogType: "website",
+    ogImage: "https://picsum.photos/seed/sitemapxml/1200/630",
+    robots: "index, follow",
+    schemaType: "WebPage"
   }
 };
 
